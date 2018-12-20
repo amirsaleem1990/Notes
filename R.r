@@ -210,6 +210,12 @@ transmute(flights,
 	gain_per_hour = gain / hours
 	)
 
+# another example
+# add a variable for whether this household owns land
+farmData <- farmData %>%
+    mutate(landowner = (tenure1 == 1 | tenure1 == 2)) 
+
+##################################################
 
 summarize # Collapse many values down to a single summarizey
 # These can all be used in conjunction with group_by()
@@ -308,11 +314,30 @@ cume_dist(y)
 # read_csv k output me 1 lamba msg columns k mutalliq print hota h, usy ignore karny k lye:
 col_types = cols()
 # -----------------------------------
+# pipe
+piped <- 3.14152 %>%
+    round(1.5690)
 
+piped == round(3.14152, 1.5690) # the same as the above pipeline
+piped == round(1.5690, 3.14152) # different than the above pipelines
+
+# another example:
+# get a list of all column names in alphabetic order 
+columnsAlphaOrder <- farmData %>% # take farmData and...
+    names() %>% # get the column names and...
+    sort() # sort alphabetically
 # -----------------------------------
-
+# select all dataframe except / minus one particuler column
+farmData %>% # take the farmData data frame and...
+    select(-gender1) %>% # select every column *except* gender1 and...
+    head() # return just the first six lines
 # -----------------------------------
-
+# select only numeric columns
+# select just the numeric columns
+diseaseInfo_numeric <- diseaseInfo_humansRemoved %>%
+    select(-Id) %>% # the case id shouldn't contain useful information
+    select(-c(longitude, latitude)) %>% # location data is also in country data
+    select_if(is.numeric) # select remaining numeric columns
 # -----------------------------------
 
 # -----------------------------------
