@@ -305,7 +305,8 @@ percent_rank(y)
 cume_dist(y)
 #> [1] 0.2 0.6 0.6 NA 0.8 1.0
 # -----------------------------------
-
+# read_csv k output me 1 lamba msg columns k mutalliq print hota h, usy ignore karny k lye:
+col_types = cols()
 # -----------------------------------
 
 # -----------------------------------
