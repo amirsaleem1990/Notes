@@ -551,15 +551,51 @@ void main()
 
 }
 ----------------------------------------------
-
+// SMA: Static Memory Allocation
+	// eg: int a; // compile time par hi decide ho gya h k <a> variable ki type <int> ho gi, or us ko kitni memory mily gi, or un ka kuch name bhi decide ho jata h.
+	// declaration statemnt k zarye jab bhi variable bany ga wo SMA ka example ho ga.
+// DMA: Dynamic Memory Allocation
+	// eg:
+	// complie time par srif memory size define hota h or us memory block ka address ksi pointer me store kar lety hen, phir us address k zarye is block ko use karty hen.
+	// is k lye 1 function use hota h <malloc>, ye function 1 argument lete h <block size eg:2>, us size ka block bana kar us ka address return kar deta h, or ham us address ko ksi pointer me save kar lety hen.
+	// masla:
+	// ab masla ye h k hame pata h k variable or us ka pointer to 1 hi type ka hona chahye, jab k <malloc> ki return type <void> hoti h, is k lye ham u karty hen:
+	main()
+	{
+		float *p;
+		p = (float*)malloc(4);
+		*p = 3.4
+	}
+	// opar waly block me p pointer h, jis ki type <float> h, or ye <malloc> waly 4 bytes k block ka address store kar raha h, yehan ham ny <malloc> sy pehly <(float*)> likha h, or us ki wajah ye h k pehly <malloc(4)> execute ho ga, or 1 4 bytes ka block ban jay ga jis ki type <void> ho gi, ab hame is ka address float pointer me save karna h, jo k mumking nahi, q k pointer or us ka variable ki type same honi chahye to ham is <void> type sy pehly (float*) likh rahy hen taky ye <void> float me convert ho jay, or phir is float block ka code <p> pointer me store ho jay 	 
 ----------------------------------------------
-
+// malloc() vs calloc()
+malloc() // malloc(4)
+calloc() // calloc(5,2)
+// <malloc> 1 variable banata h or <calloc> array banata h.
+// <malloc> me garbage  value hoti h, or <calloc> me me by default 0 hotay hen.
 ----------------------------------------------
-
+// realloc
+// <malloc> ya <calloc> ky zarye sy bany hwy block ko resize karny k lye use hota h
+// eg:
+main()
+{
+	float *ptr;
+	double *q;
+	ptr = (float*)malloc(4);
+	// ab mujhy is 4 bytes k memory block ka size 8 bytes karna h
+	q = realloc(ptr, 8);
+}
 ----------------------------------------------
-
+// free
+// <malloc> or <calloc> k zarye sy bany hwy variable jis function me define hoty hen, us function k khatam hony k baad bhi <malloc> or <calloc> waly variable distroy nahi hoty, ye srif program k end hony par khatam hoty hen, in DMA variables ki memory relieze karny k lye <free> use hota h.
+// syntax:
+evelvation
+free(pointer_of_malloc_or_calloc_variable);
 ----------------------------------------------
-
+// union
+// union same as structure
+// union low lovel par use hota h, or structure hight level par. 
+// sab sy bara jo variable ho ga utni hi memory mily gi.
 ----------------------------------------------
 
 ----------------------------------------------

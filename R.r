@@ -339,25 +339,79 @@ diseaseInfo_numeric <- diseaseInfo_humansRemoved %>%
     select(-c(longitude, latitude)) %>% # location data is also in country data
     select_if(is.numeric) # select remaining numeric columns
 # -----------------------------------
-
+# shuffle the dataframe
+df <- df[sample(1:nrow(df)), ]
 # -----------------------------------
+# xgboost
+ # you can't just pass xgboost a dataframe. The core xgboost function requires data to be a matrix.
+ # A matrix is like a dataframe that only has numbers in it. A sparse matrix is a matrix that has a lot zeros in it. XGBoost has a built-in datatype, DMatrix, that is particularly good at storing and accessing sparse matrices efficiently.
+ # steps: 
+    # Remove information about the target variable from the training data
+    # Reduce the amount of redundant information
+    # Convert categorical information (like country) to a numeric format
+    # Split dataset into testing and training subsets
+    # Convert the cleaned dataframe to a Dmatrix
 
+# put our testing & training data into two seperates Dmatrixs objects
+dtrain <- xgb.DMatrix(data = train_data, label= train_labels)
+dtest <- xgb.DMatrix(data = test_data, label= test_labels)
+
+
+# steps to follow:
+# 1- jo variables nahi chayen un ko remove kar den
+# 2- existing variables ki base par doosry variables banana chahen to banaen
+# 3- string varibles ko one hot encode kar den
+	# one hot encoding me 1 variable k kafi variables ban jaty hen
+# 4- sab dataframes [oringal, one hot encodid metrixes] ko cbin kar den.
+# 5- is final dataframe ka matrix bana den [dimention dono ki 1 hi hon gi]
+# 6- ab is matrix sy train or test split kar len
+# 7- train or test ka matrix ka dmatrix bana den.
+# 8- data ko model me fit kar den.
 # -----------------------------------
-
+# switch TRUE and FALSE
+magrittr::not() # switch TRUE and FALSE (using function from the magrittr package)
 # -----------------------------------
-
+# Reduce the amount of redundant information
+# 1- We also want to make sure we remove columns that have redundant information in them or that we don't want to use to make predictions
+# 2- I also want to remove variables that could be very informative due to chance. So, for example, each observation in this dataset has a numeric ID associated with it. It could be that ID's that end with 8 are more likely to be associated with diseases that spread to humans due to pure chance. We wouldn't want to predict that giving a new disease that is given an ID ending with 8 means its more likely to spread to humans, though!
 # -----------------------------------
+# Convert categorical information (like country) to a numeric format
+ # One way to do this is using one-hot encoding. One-hot encoding takes each category and makes it its own column. Then, for each observation, it puts a "0" in that column if that observation doesn't belong to that column and "1" if it does. In R, we can convert a column with a categorical variable in it to a one-hot matrix like so:
 
+# one-hot matrix for just the first few rows of the "country" column
+model.matrix(~country-1,head(df))
+# You may notice that this new matrix has a lot of zeros in it. This is a good example of the "sparse matrix" 
+
+# Now let's convert the entire "country" column to a big one-hot matrix and save it as a matrix that we can add to our training data later:
+
+# convert categorical factor into one-hot encoding
+region <- model.matrix(~country-1,df)
 # -----------------------------------
-
+# dataframe all values count row_count * column*count
+length(df)
 # -----------------------------------
+# add a boolean column to our numeric dataframe indicating whether a species is domestic
 
+# Note: <speciesDescription> column me morethan 1 values coma sapereted hen.
+head(df$speciesDescription)
+#      NA 'domestic, cattle' 'domestic, cattle' 'domestic, cattle' 'domestic, unspecified bird' 'domestic, cattle' 
+
+df$is_domestic <- str_detect(df$speciesDescription, "domestic")
 # -----------------------------------
-
+# get last word from all observations in particuler columns:
+# NOTE: the output is a list
+speciesList <- df$column_name %>%
+    str_replace("[[:punct:]]", "") %>% # remove punctuation (some rows have parentheses)
+    str_extract("[a-z]*$") # extract the least word in each row
 # -----------------------------------
-
+# convert list into a dataframe...
+df <- tibble(colname = list_name)
+# this <df> contain one column, which is <colname>
 # -----------------------------------
-
+# convert list to a matrix using one hot encoding
+# first we convert a list to dataframe, as we saw earlier, and then:
+options(na.action='na.pass') # don't drop NA values!
+species <- model.matrix(~colname-1,df)
 # -----------------------------------
 
 # -----------------------------------

@@ -256,9 +256,11 @@ df = df.rename(columns={'REGION': 'region'})
 # read tsv file using pandas
 pd.read_csv('Location.tsv',delimiter='\t',encoding='utf-8')
 -------------------------------------------------
-
+# cpecify particuler column while loading csv file
+df = pd.read_csv('file.csv', usecols = [5]) # getting only 5th column from csv file
 -------------------------------------------------
-
+# get only 5th column, and convert it to list
+lst = pd.read_csv('file.csv', usecols = [5], encoding = "ISO-8859-1", error_bad_lines=False).iloc[:, 0].tolist()
 -------------------------------------------------
 
 -------------------------------------------------
