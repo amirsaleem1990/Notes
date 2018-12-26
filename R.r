@@ -413,6 +413,56 @@ df <- tibble(colname = list_name)
 options(na.action='na.pass') # don't drop NA values!
 species <- model.matrix(~colname-1,df)
 # -----------------------------------
+# for all decleared variabels.. like %who in ipython
+ls()
+# -----------------------------------
+# detail of the dataset
+summary()
+str()
+# -----------------------------------
+# remove variable from current session
+rm(variable name)
+# in python we can do: del variable_name
+# -----------------------------------
+# subsets
+subset(df, column_4 == 'Pakistan')
+# in python: df[df.column_4 == 'Pakistan']
+# -----------------------------------
+# histogram
+hist(df$column_n)
+# values of the column_n are shown on the x-axis, and the frequency of these valuse on the y-axis
+# Note: A histrogram is useful for understand for the distribution of the variable.
+# -----------------------------------
+# boxplot
+boxplot(df$column_1 ~ df$column_n, xlab="", ylab="Y-axis", main="title")) 
+# A boxplot is usefull for understanting the statical range of the variable.
+# -----------------------------------
+# outlier:
+# any point that is > 3rd quartile + IQrange or any point that is < 1st quartile - IQrange is considered as outlier 
+# -----------------------------------
+table(df$Region)
+# df$Reagion ki har unique value ki frequency kitni h??
+# tables work well for variables that have only few catogaries.
+# -----------------------------------
+# you can get userull infromations for numerical variables by using <tapply>:
+tapply(df$over60, df$region, mean)
+# <tapply> splits the data by second argument, and the applies the third argument (which is function) to the first argument.
+# so here <tapply> splits the oberservations by <region> and the computes the mean of the variable <over60>.
+# -----------------------------------
+  
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
 
 # -----------------------------------
 
@@ -428,4 +478,79 @@ species <- model.matrix(~colname-1,df)
 
 # -----------------------------------
 
-v
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+
+# -----------------------------------
+

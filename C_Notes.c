@@ -505,6 +505,11 @@ string k functions me ham zyada tar address hi paas kar rahy hoty hen, eg:
 c har s[4]="amir"
 printf(s) // <s> here address of first block (which is here char] in "amir". suppose address of "a" in "amir" is 1000, so whenever you type <s> its treated as 1000, <printf(s)> == <printf(&s[0])>
 ----------------------------------------------
+// there are three ways to define your own datatypes
+// 1- structure
+// 2- union
+// 3- Enumerators
+----------------------------------------------
 // Structure
 // Structure is way to group variables
 // Structure is a collection of dissimilar elements
@@ -594,24 +599,202 @@ free(pointer_of_malloc_or_calloc_variable);
 ----------------------------------------------
 // union
 // union same as structure
-// union low lovel par use hota h, or structure hight level par. 
+// union low lavel par use hota h, or structure hight level par. 
 // sab sy bara jo variable ho ga utni hi memory mily gi.
-----------------------------------------------
+// Union is similar to structure, except it allows you to define variables that share storage space.
+// Defining union means creating new data data type
+// union me chahye jitny bhi variable declear kar len, sab sy aakhri value jo assing ki ho gi us block me wohi value ho gi, eg:
+union item{int x; float y; char z;};
+union item i2;
+i2.x = 5;
+// ahi <i2> k block (4 bit ka block h) me <5> h
+12.z = 'm'
+// ab <i2> k block me <m> h, or wo pichla <5> is block sy remove ho gya
+// to at a time hamar pas <item> type k variabel me 1 hi item store ho sakta h
 
-----------------------------------------------
 
-----------------------------------------------
+// union vs structure
+eg:
+struct item{
+	int x;
+	float y;
+	char z;
+};
+struct item i1; // yahan <i1> ki data type <item> h, jo k struct ki madad sy bana h, to jab ye code compile ho ga to <i1> ko 7 bit memory mily gi, <x> k lye 2, <y> k lye 4, or <z> k lye 1. 
 
+union item{
+	int x;
+	float y;
+	char z;
+};
+union item i2; // yahan <i2> ki data type <item> h, jo k <union> ki madad sy bana h, to jab ye code compile ho ga tab <i2> ko utni memory mily gi jitni us k sab sy bary variable ko chahye ho gi, <int> ko 2, <float> ko 4, or <char> ko 1 bit chahye, chunkay sab sy bary variable <float> ko 4 bit ki zaroorat h to han <i2> ko 4 bit memory mily gi.
 ----------------------------------------------
-
+// Enumerators
+// jo kam Enumerators ki madad sy hoty hen wo is k bager bhi ho sakty hen, magar Enumerators ko use kartny sy program ki readiability zyada ho jati h.
+// example:
+enum month
+{
+	jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec
+};
+// each value on the list of permissible values corresponds to an integer, starting with 0. in the example, <jan> is stored as 0, <feb> is stored as 1..., <dec> is stored as 11.
 ----------------------------------------------
+typedef
+// <typedef> is a keyword.
+// we can use <typedef> to give new name to a type.
+// by convention, uppercase latters are used for these definations to remind the user that the type name is really a symbolic abbreviation, but you can use lowercase.
+// example:
+typedef int LENGTH;
+LENGTH x,y;
+// <x> or <y> ki type int hi h, magar ye readibility k hisab sy acha h k agar me ny agar ksi int variable me lenght rakhni h ksi variable ki to me LENGTH type use kar lun, srif itna faraq pary ga k ainda mujhy or ksi or ko bhi code parhny me aasani ho gi.
+// example:
 
+// without <typedef>:
+struct student
+{
+	int rollno;
+	char name[20];
+	int age;
+};
+void main()
+{
+	struct student s1;
+	s1.rollno = 41;
+}
+
+// with <typedef>:
+typedef struct
+{
+	int rollno;
+	char name[20];
+	int age;
+}STUDENT; // is poory structure ka name ham ny <typedef> sy <STUDENT> kar dya.
+void main()
+{
+	STUDENT s1; // ab chunky me <typedef> wala name use kar raha hn to mujhy <struct> likhny ki zaroorat nahi h.
+	s1.rollno = 41
+}
 ----------------------------------------------
+// Pre-processor
+// Pre-processor is a program which performs before the compilation.
+// Pre-processor only notice # started statements
+// # is called Pre-processor directive
+// Each preprocessing direvtive must be on its own line.
+// The word after # is called Pre-processor command
+// You can write you source code in multiple .c files.
+// You can include all these source files in the same way as you include header files.
+// khulasa: jab ham apna code <.c> file me likh kar us ko compile karty hen to compiler k chalny sy pehly <Pre-processor> program chalta h, ye program srif un lines ko parhta h jis k start me <#> laga hota h (like: #include <stdio.h>) or directory me un files ka contant 1 new file me copy kar deta h, jab sari <#> wali lines poori ho jati hen to hamara code bhi usi file me copy kar deta h bager us code ko chalay hwy, preprocessor ka kaam bas itna hi h, phir compiler us new created file ko compile karta h jis me koi <#> nahi hota. to compiler hamari <.c> k bajy Pre-processor wali file ko parhta h.
+// compliter preprocessor wali file sy .obj file bana deta h, phir <linker> software hamari is .obj file ko library files(jin me sary predefine functions ka code mojud hota h, like: printf, scanf ...) k sath jorta h or phir us ki .exe file bana deta h.
 
+// Pre-processor Commands
+1- #define
+2- #undef
+3- #include
+4- #if
+5- #else
+6- #elif
+7- #endif
+8- #ifdef
+9- #ifndef
+10- ##
+
+// #if, #else, #elif, #endif;
+// as a file being compiled, you can use these commands to cause certain lines of code to be included or not included (for compilation)
+// in command ko dekh kar jo condition true ho gi preprocessor srif us k block ko hi compile k lye agy file me copy kary ga.. or false conditions waly blocks ko compile wali file me copy nahi kary ga. 
+// example:
+#define COUNTRY PAKISTAN
+#if COUNTRY == India
+	printf("Indian Rupees")
+#elif COUNTRY == bangladesh
+	printf("Taka")
+#elif COUNTRY == Nepal
+	printf("Nepali Rupees")
+#else
+	printf("Pakistani Rupees")
+#endif // ye <endif> likhna zaroori h
 ----------------------------------------------
+// #define
+// syntax: 
+// #define macro-name char-sequence
+// eg: 
+#define MSG "hello"
+#define PI 3.14
+// jb preprocessor chaly ga to in lines ko parh kar samajh jay ga k poory program me jahan bhi <PI> likha hwa h wo usy <3.14> sy replace kar dy ga or <MSG> ko <hello> sy replace kar dy ga, to compiler k pas jo file jay gi us me <PI>  or <MSG> kahi nahi ho ga.
 
+
+
+
+
+
+// define a Macro like a function:
+#define SUM(a,b) a+b
+int main()
+{
+	printf("Sum of 3 and 4 is %d\n", SUM(3,4)); // compile hony sy pehly hi preprocessor is <SUM(3,4)> ko 3+4 su replace kar dy ga ga, to compiler k pas ye line yun jay gi:  printf("Sum of 3 and 4 is %d\n", 3+4);
+};
+
+
+
+// #define ABS(a) (a) <0 > -(a) :(a)
+// main()
+// {
+// 	printf("abs of -1 & 1:%d %d", ABS(-1), ABS(-1));
+// }
+
+
+
+
+// NNNOOOTTTEEE: define wali line me kabhi bhi expression ko evelvate nahi karta, wo hamesha replace karta h:
+// eg:
+#define PRODUCT(a,b) a*b
+int main()
+{
+	printf("Product of 3 and 4 is %d", PRODUCT(3+2,4-6)); // shayad ham u kahen k ye line perprocessor u kar de ga: 
+	printf("Product of 3 and 4 is %d", 5*-2); 
+	// magar ye galat h, ye yad rakhny ki baad h k preprocessor kabhi bhi <#define> wali command ky expression solve nahi karta, wo srif replace karta h, to yahan darasal wo u kare ga: 
+	printf("Product of 3 and 4 is %d", 3+2*4-6); 
+	// or resul aay ga 3+8-6 = 5 
+	// agar ham chahty hen k resul -10 ay to hame define ko u likhna ho ga:
+	#define PRODUCT(a,b) (a)*(b)
+	// ab processor is line <printf("Product of 3 and 4 is %d", PRODUCT(3+2,4-6));> ko u replace kary ga:
+	printf("Product of 3 and 4 is %d", (3+2) * (4-6));
+	// or compiler is ko solve karty waqt pehly bracet solve kary ga to 5*(-2) ho jay ga jo k hame karna h..
+}
 ----------------------------------------------
-
+#undef // for undifine macro
+// example:
+#define CLOSE 0
+...
+...
+...
+#undef CLOSE
+// ab is line k neechy <CLOSE> ko nahi pehchana jay ga.
+----------------------------------------------
+#ifdef
+// if the macro has been defined by a #define statement, then the code immediately following the command line will be compiled.
+// example:
+#define COUNTRY "Pakistan"
+#ifdef COUNTRY
+	printf("%s is a great country", COUNTRY)
+#endif
+----------------------------------------------
+#ifndef
+// if the macro has not been defined by a #define statement, then the code immediately following the command will be compiled
+// example:
+#ifndef COUNTRY // agar COUNTRY macro define nahi h to ye block compile kar do
+	printf("I Love my Nation")
+#endif
+----------------------------------------------
+## 
+// The ## operator is used with the #define macro.
+// Using ## concatenates what's before the ## with what's after it
+// example:
+#define ACTION(a,b) a##b+a*b
+main()
+{
+	printf("%d", ACTION(3,4));
+}
+// preprocessor is ko you kar dy ga:
+printf("%d", 34+3*4) // <a> ko 3 or <b> ko 4 assig ho jay ga, phir <a##b> ka matlab k dono elements ko aik sath likh do jo k <34> h or phir us me 3*4 add kar do.
 ----------------------------------------------
 
 ----------------------------------------------
