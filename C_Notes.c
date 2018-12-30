@@ -1,7 +1,6 @@
 #include <stdio.h>
-gcc p1.c -o p
-./p
-
+// gcc p1.c -o p
+// ./p
 ----------------------------------------------
 // if else
 if (condition)
@@ -796,9 +795,82 @@ main()
 // preprocessor is ko you kar dy ga:
 printf("%d", 34+3*4) // <a> ko 3 or <b> ko 4 assig ho jay ga, phir <a##b> ka matlab k dono elements ko aik sath likh do jo k <34> h or phir us me 3*4 add kar do.
 ----------------------------------------------
+// Storage classes
+// jab ham decleration statement (like: int x=5;) to is line sy kuch  cheezen declear hoti hen, 
+// 1- Nmae of the variable
+// 2- Size of memory block
+// 3- type of content
+// ye to wazih hen, is k ilawa 4 cheezen or bhi declear hoti hen.
+// 4- Default value(like: garbage or zero...)
+// 5- storage (RAM or Ragester)
+	1- Automatic(auto) //(by default ye hi hota h)
+	2- Register(register)
+		// jo variables bohot zyada program me use ho rahy hoty hen, un ko ham register type me daal dety hen, jis ki wajah sy un ko rageister me memory mil jati h or program fast ho jata h.
+		// Note:
+		// 1- srif int of char ko ragister me memory milti h.
+		// 2- is baat ki koi guaranty nahi h k waqa ragister me jaga mil jay gi ya nahi, agar ragister me jaga nahi h to jaga nahi mily gi, magar error deny k bajay wo is ko khud hi RAM me jaga dy dy ga.
+	3- Static(static)
+	4- External(extern)
+// 6- Scope (kitni range tak ye variable accesseble h) .. see https://github.com/amirsaleem1990/C_learning_and_notes/blob/master/classes.png
 
+// 7- Life .. see https://github.com/amirsaleem1990/C_learning_and_notes/blob/master/classes.png
+
+
+
+// example of extern
+main(){
+	printf("x=%d\n", d);
+}
+int x=5;
+
+// is program me error aa jay ga q k <main> ki jab pehly line execute ho gi to compiter ko us waqt tak k <x> ka kuch nahi pata, sahi ye h k <int x;> wali line ko ham <main> sy oper likh len, to error nahi aay ga, magar agar hame bad me declear karna h to hame <extern> ka use karna ho ga, or ham u likhen gy:
+main(){
+	extern int x; // is line ka matlab h k bahir kahen int type ka <x> declear hwa hwa h, us ko yahan use karo
+	printf("x=%d\n", d);
+}
+int x=5;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// example of static:
+void f1();
+void main(){
+	f1();
+	f1();
+}
+void f1(){
+	static int i; // Notes: ye <i> ki class static h, to jab pehly dafa <main> ka <f1> chaly gy or <i> ki value us waqa (1) print ho jay gi, to ab ye <i> function k destory hony sy destroy nahi ho ga, balky baqi rahy ga q k is <i> ki class static h, jab doosri dafa main ka <f1> call ho ga to jab is line par aay ga to chunky i pehly hi declaered h to ye line ignore ho jay gi, (Note: override nahi ho gi), or agli line par i me increament ho kar <i> ki value 2 ho jay gi jo k 3rd line me print ho jay gi.
+	i++;
+	printf("i=%d\n", i);
+}
+
+
+
+
+// scope example:
+void main(){
+	int x=5;
+	printf("%d", x); // result: 5
+	{
+		int x=4;
+		printf("%d", x); // result: 4, Note: ham jo bhi variable banaty hen us ka scope un {} ke andar hota h jahan wo declear hwa hota h, ab yahan ye hwa k <main> k brekets me 2 <x> hen, chunky dusra wala alag block (block: {}) me h is lye ye override nahi hon gy, <main> andar sy hamary is waly <x> ko access nahi kya ja sakta, q k hamary is block k <x> ka scope in {} k andar tak h bas, jab ye block chal jay ga to destroy ho jay ga jis ki wajah sy hamara ye local <x> bhi destroy ho jay ga. 
+	}
+	printf("%d", x); // result: 5, q k <main> me to 1 hi x h, wo opar wala <x> to local tha, ji ko us k block sy bahir sy access nahi kya jasakta.
+}
 ----------------------------------------------
-
+  
 ----------------------------------------------
 
 ----------------------------------------------
