@@ -1,0 +1,6 @@
+# we use Assembly language for 3 resions:
+1- Better/deep understanding of software and hardware interaction
+2- Optimization of processing time
+3- Embedded Programming (like telephone, k us me C wagera use nahi ho sakti, srif assambly hi use ho sakti h)
+--------------------------------
+
