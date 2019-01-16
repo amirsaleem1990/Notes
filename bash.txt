@@ -1,0 +1,421 @@
+most of these notes are from the book (The-linux-command-line-A-Complete-introduction)
+---------------------------------
+in 1991, Linus Torvalds wrote the first version of the Linux kernel
+---------------------------------
+Today, the world is very different. Computers are  verywhere, from tiny wristwatches to giant data centers to everything in between. In addition to ubiquitous computers, we also have a ubiquitous network connecting them together. This has created a wondrous new age of personal empowerment and creative freedom, but over the last couple of decades something else has been happening. A single giant corporation has been imposing its control over most of the world’s computers and deciding what you can and cannot do with them. Fortunately, people from all over the world are doing
+something about it. They are fighting to maintain control of their computers by writing their own software. They are building Linux.
+Many people speak of “freedom” with regard to Linux, but I don’t think most people know what this freedom really means. Freedom is the power to decide what your computer does, and the only way to have this freedom is to know what your computer is doing. Freedom is a computer that is without secrets, one where everything can be known if you care enough to find out.
+---------------------------------
+GUI = graphical user interface
+CLI = command line interface
+---------------------------------
+Almost all Linux distributions supply a shell program from the GNU Project called bash.
+The name bash is an acronym for Bourne Again Shell, a
+reference to the fact that bash is an enhanced  eplacement for sh, the original Unix shell program written by Steve Bourne.
+---------------------------------
+When using a graphical user interface, we need another program called a terminal emulator to interact with the shell.
+A number of terminal emulators are available for Linux, but they all do basically the same thing: give us access to the shell.
+---------------------------------
+If the last character of the prompt is a hash mark (#) rather than a dollar sign, the terminal session has  uperuser privileges. This means that either we are logged in as the root user or we’ve selected a terminal emulator that provides superuser (administrative) privileges
+---------------------------------
+ls   # multiple directories bhi pass kar sakty hen. eg: ls Desktop/ Downloads/
+ls -lt #  the t option to sort the result by the file’s modification time
+date # for date
+cal  # for calender
+df   # to know free spaces in disk drives
+free # to know free space in RAM
+pwd  # working directory
+ls -a # for showing hiidden files also, Note: without <-a> you can\t obtain hidden files names.
+less # View file contents, <cat> ki tarah hi kaam karta h, or kuch option zyada hen, asal faida ye h k ye <cat> k baraks poori file yakdam print nahi kardeta, balky 1 k baad 1 page print karta h.
+---------------------------------
+Linux has no concept of a “file extension” like some other operating systems. You may name files any way you like. The contents and/or purpose
+of a file is determined by other means. Although Unix-like operating systems don’t use file extensions to determine the contents/purpose of files,
+some application programs do
+---------------------------------
+aap file ko koi bhi extension dy do, linux uf file ko us k contant k hisab sy hi treat kary ga. let us say:
+agar me py.csv me agar python ka code likh kar termial par <python py.csv> to agarcha is file ka extention <csv> h magar wo python ka code chala dy ga ---------------------------------
+Commands are often followed by one or more options that modify their behavior and, further, by one or more arguments, the items upon which the command acts. So most commands look something like this:
+command -options arguments
+---------------------------------
+In most Unix-like systems it is possible to
+have a file referenced by multiple names. While the value of this may not
+be obvious now, it is really a useful feature.
+---------------------------------
+wildcards:
+
+* 						Any characters
+? 						Any single character
+[characters] 			Any character that is a member of the set characters
+[!characters] 			Any character that is not a member of the set characters
+[[:class:]] 			Any character that is a member of the specified class
+---------------------------------
+Commonly Used Character Classes:
+[:alnum:] 	Any alphanumeric character
+[:alpha:] 	Any alphabetic character
+[:digit:] 	Any numeral
+[:lower:] 	Any lowercase letter
+[:upper:] 	Any uppercase letter
+---------------------------------
+Wildcard Examples:
+* 							All files
+g* 							Any file beginning with g
+b*.txt 						Any file beginning with b followed by any characters and ending with .txt
+Data???						Any file beginning with Data followed by exactly three characters
+[abc]* 						Any file beginning with either a, b, or c
+BACKUP.[0-9][0-9][0-9] 		Any file beginning with BACKUP. followed by exactly three numerals
+[[:upper:]]* 				Any file beginning with an uppercase letter
+[![:digit:]]* 				Any file not beginning with a numeral
+*[[:lower:]123] 			Any file ending with a lowercase letter or the numerals 1, 2, or 3
+---------------------------------
+cp Options
+
+-a, --archive 			Copy the files and directories and all of their attributes, including ownerships and 
+						permissions. Normally, copies take on the default attributes of the user performing the copy.
+-i, --interactive 		Before overwriting an existing file, prompt the user for confirmation. If this option is not 
+						specified, cp will silently overwrite files.
+-r, --recursive 		Recursively copy directories and their contents. This option (or the -a option) is required when 
+						copying directories.
+-u, --update 			When copying files from one directory to another, copy only files that either don’t exist or are
+						newer than the existing corresponding files in the destination directory.
+-v, --verbose 			Display informative messages as the copy is performed.
+---------------------------------
+cp Examples
+
+cp file1 file2 			Copy file1 to file2. If file2 exists, it is overwritten with the contents of file1. If file2 does 
+						not exist, it is created.
+cp -i file1 file2 		Same as above, except that if file2 exists, the user is prompted before it is overwritten.
+cp file1 file2 dir1 	Copy file1 and file2 into directory dir1. dir1 must already exist.
+cp dir1/* dir2 			Using a wildcard, all the files in dir1 are copied into dir2. dir2 must already exist.
+cp -r dir1 dir2 		Copy directory dir1 (and its contents) to directory dir2. If directory dir2 does not exist, it is 
+						created and will contain the same contents as directory dir1.
+---------------------------------
+ls Options
+
+-a 		--all 			List all files, even those with names that begin with a period, which are normally not listed
+						(i.e., hidden).
+-d 		--directory 	Ordinarily, if a directory is specified, ls will list the contents of the directory, not the
+						directory itself. Use this option in conjunction with the -l option to see details about the
+						directory rather than its contents.
+-F 		--classify 		This option will append an indicator character to the end of each listed name (for example, a
+						forward slash if the name is a directory).
+-h 		--human-readable In long format listings, display file sizes in human-readable format rather than in bytes.
+-l 						Display results in long format.
+-r 		--reverse 		Display the results in reverse order. Normally, ls displays its results in ascending alphabetical 
+						order.
+-S 						Sort results by file size.
+-t 						Sort by modification time.
+---------------------------------
+Be particularly careful with wildcards. Consider this classic example. Let’s say you want to delete just the HTML files in a directory. To do this, you type:
+rm *.html
+which is correct, but if you accidentally place a space between the * and the .html like so:
+rm * .html
+the rm command will delete all the files in the directory and then complain that there is no file called .html.
+---------------------------------
+rm Options:
+
+-i, --interactive 		Before deleting an existing file, prompt the user for confirmation. If this option is not 
+						specified, rm will silently delete files.
+-r, --recursive 		Recursively delete directories. This means that if a directory being deleted has 
+						subdirectories, delete them too. To delete a directory, this option must be specified.
+-f, --force 			Ignore nonexistent files and do not prompt. This overrides the --interactive option.
+-v, --verbose			 Display informative messages as the deletion is performed.
+---------------------------------
+rm Examples:
+
+rm file1 			Delete file1 silently.
+rm -i file1 		Before deleting file1, prompt the user for confirmation.
+rm -r file1 dir1 	Delete file1 and dir1 and its contents.
+rm -rf file1 dir1 	Same as above, except that if either file1 or dir1 does not exist, rm will continue silently.
+---------------------------------
+Links:
+links (same as shortcuts in windows).
+
+symbolic links ko ham hard links sy u identify kar sakty hen:
+ls -li 
+is sy jo list return ho gi us k first column me links or hardlinks ko 1 hi number assign ho ga.
+---------------------------------
+ln—Create Links: 
+The ln command is used to create either hard or symbolic links. It is used in one of two ways:
+	ln file link
+to create a hard link and
+	ln -s item link
+to create a symbolic link where item is either a file or a directory.
+---------------------------------
+Links:
+
+1- Hard Links
+Hard links are the original Unix way of creating links; symbolic links are more modern. By default, every file has a single hard link that gives the file its name. When we create a hard link, we create an additional directory entry for a file. Hard links have two important limitations:
+	A hard link cannot reference a file outside its own filesystem. This means a link cannot reference a file that is not on the same disk partition as the link itself.
+	A hard link cannot reference a directory.
+A hard link is indistinguishable from the file itself. Unlike a directory list containing a symbolic link, a directory list containing a hard link shows no special indication of the link. When a hard link is deleted, the link is removed, but the contents of the file itself continue to exist (that is, its space is not deallocated) until all links to the file are deleted.
+
+It is important to be aware of hard links because you might encounter them from time to time, but modern practice prefers symbolic links, which we will cover next.
+
+
+2- Symbolic Links
+Symbolic links were created to overcome the limitations of hard links. Symbolic links work by creating a special type of file that contains a text pointer to the referenced file or directory. In this regard they operate in much the same way as a Windows shortcut, though of course they predate the Windows feature by many years. ;-)
+A file pointed to by a symbolic link and the symbolic link itself are largely indistinguishable from one another. For example, if you write something to the symbolic link, the referenced file is also written to. However, when you delete a symbolic link, only the link is deleted, not the file itself.If the file is deleted before the symbolic link, the link will continue to exist but will point to nothing. In this case, the link is said to be broken. In many implementations, the ls command will display broken links in a distinguishing color, such as red, to reveal their presence.
+
+The concept of links can seem confusing, but hang in there. We’re 	going to try all this stuff and it will, hopefully, become clear.
+---------------------------------
+hard link example:
+cd 
+mkdir playground
+cd playground
+mkdir folder1 folder2
+cp /etc/passwd . 
+# now we have 2 folders and 1 file
+let us create a hard link for the <passwd>
+ln passwd folder1/link_passwd    # yahan ham ny <passwd> ka 1 hard link folder1 k andar bana dya, ab data to 1 hi h is file ka magar us k 2 hard links hen (passwd) and (link_passwd), to ye (link_passwd) shortcut h (passwd) ka, ksi bhi link ko use karen data 1 hi h, yani k is data k ab 2 names ho gay, ksi bhi name sy call karen 1 hi data aay ga.
+---------------------------------
+Most Linux distributions configure ls to display broken links. On a Fedora box, broken links are displayed in blinking red text!
+---------------------------------
+type:
+Display a Command’s Type
+
+eg:
+type cd
+# cd is a shell builtin
+
+
+type copyfrom
+copyfrom is aliased to `xclip -sel cli <'
+---------------------------------
+which:
+Display an Executable’s Location
+works only for executable programs, not builtins or aliases that
+are substitutes for actual executable programs.
+
+
+
+eg:
+which ls
+/bin/ls
+---------------------------------
+help:
+Get Help for Shell Builtins
+help command == command --help
+
+eg:
+help cd
+# cd: cd [-L|-P] [dir]
+Change the current directory to DIR. The variable $HOME is the default DIR.
+The variable CDPATH defines the search path for the directory containing DIR.
+Alternative directory names in CDPATH are separated by a colon (:). A null
+directory name is the same as the current directory, i.e. `.'. If DIR begins
+with a slash (/), then CDPATH is not used. If the directory is not found, and
+the shell option `cdable_vars' is set, then try the word as a variable name.
+If that variable has a value, then cd to the value of that variable. The -P
+option says to use the physical directory structure instead of following
+symbolic links; the -L option forces symbolic links to be followed.
+
+
+A note on notation: When square brackets appear in the description of
+a command’s syntax, they indicate optional items. A vertical bar character
+indicates mutually exclusive items. An example is the cd command above:
+cd [-L|-P] [dir].
+This notation says that the command cd may be followed optionally
+by either a -L or a -P and further, optionally followed by the argument dir.
+---------------------------------
+whatis:
+Display a Very Brief Description of a Command
+
+The whatis program displays the name and a one-line description of a man page matching a specified keyword:
+
+eg:
+whatis ls
+ls (1) - list directory contents
+---------------------------------
+info:
+Display a Program’s Info Entry
+
+The GNU Project provides an alternative to man pages called info pages. Info pages are displayed with a reader program named, appropriately enough, info. Info pages are hyperlinked much like web pages
+
+eg:
+info ls
+
+
+
+
+The info program reads info files, which are tree-structured into individual nodes, each containing a single topic. Info files contain hyperlinks that can move you from node to node. A hyperlink can be identified by its leading asterisk and is activated by placing the cursor upon it and pressing the ENTER key.
+To invoke info, enter info followed optionally by the name of a program. Table 5-2 lists commands used to control the reader while displaying an info page.
+
+
+info Command:
+
+? 						Display command help.
+PAGE UP or BACKSPACE 	Display previous page.
+PAGE DOWN or Spacebar 	Display next page.
+n 						Next—Display the next node.
+p 						Previous—Display the previous node.
+u 						Up—Display the parent node of the currently displayed node, 
+						usually a menu.
+ENTER 					Follow the hyperlink at the cursor location.
+q 						Quit
+---------------------------------
+Most of the command-line programs we have discussed so far are part of the GNU Project’s coreutils package, so you can find more information about them by typing:
+
+info coreutils
+---------------------------------
+It’s possible to put more than one command on a line by separating each command with a semicolon character. It works like this:
+command1; command2; command3...
+---------------------------------
+wc:
+Print Line, Word, and Byte Counts.
+eg:
+wc file.txt
+3 15 30 file.txt
+# this file contain 3 lines, 15 words, and 30 Bytes.
+---------------------------------
+Filters:
+Pipelines are often used to perform complex operations on data. It is possible to put several commands together into a pipeline. Frequently, the commands used this way are referred to as filters. Filters take input, change it
+somehow, and then output it. The first one we will try is sort. Imagine we
+want to make a combined list of all of the executable programs in /bin and
+/usr/bin, put them in sorted order, and then view the list:
+ls /bin /usr/bin | sort | less
+Since we specified two directories (/bin and /usr/bin), the output of ls
+would have consisted of two sorted lists, one for each directory. By including
+sort in our pipeline, we changed the data to produce a single, sorted list.
+
+
+uniq:
+Report or Omit Repeated Lines
+The uniq command is often used in conjunction with sort. uniq accepts a
+sorted list of data from either standard input or a single filename argument
+(see the uniq man page for details) and, by default, removes any duplicates
+from the list. So, to make sure our list has no duplicates (that is, any programs of the same name that appear in both the /bin and /usr/bin directories) we will add uniq to our pipeline:
+ ls /bin /usr/bin | sort | uniq | less
+ In this example, we use uniq to remove any duplicates from the output
+of the sort command. If we want to see the list of duplicates instead, we add
+the -d option to uniq like so:
+ls /bin /usr/bin | sort | uniq -d | less
+
+
+grep:
+Print Lines Matching a Pattern
+grep is a powerful program used to find text patterns within files, like this:
+grep pattern [file...]
+When grep encounters a “pattern” in the file, it prints out the lines containing it. The patterns that grep can match can be very complex, but for
+now we will concentrate on simple text matches. We’ll cover the advanced
+patterns, called regular expressions, in Chapter 19.
+Let’s say we want to find all the files in our list of programs that have the
+word zip in the name. Such a search might give us an idea of which programs
+on our system have something to do with file compression. We would do this:
+ls /bin /usr/bin | sort | uniq | grep zip
+# bunzip2
+bzip2
+gunzip
+gzip
+unzip
+zip
+zipcloak
+zipgrep
+zipinfo
+zipnote
+zipsplit
+---------------------------------
+head and tail:
+# for text files, and also for ls, so:
+ls /usr/bin | tail -n 5
+# give us last 5 files names returned by (ls /usr/bin)
+---------------------------------
+tee:
+Read from Stdin and Output to Stdout and Files
+In keeping with our plumbing analogy, Linux provides a command called
+tee which creates a “T” fitting on our pipe. The tee program reads standard
+input and copies it to both standard output (allowing the data to continue
+down the pipeline) and to one or more files. This is useful for capturing a
+pipeline’s contents at an intermediate stage of processing. Here we repeat
+one of our earlier examples, this time including tee to capture the entire
+directory listing to the file ls.txt before grep filters the pipeline’s contents:
+[me@linuxbox ~]$ ls /usr/bin | tee ls.txt | grep zip
+
+# bunzip2
+bzip2
+gunzip
+gzip
+unzip
+zip
+zipcloak
+zipgrep
+zipinfo
+zipnote
+zipsplit
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
+---------------------------------
+
