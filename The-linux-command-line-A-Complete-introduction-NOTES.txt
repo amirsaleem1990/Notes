@@ -1,3 +1,5 @@
+most of these notes are from the book (The-linux-command-line-A-Complete-introduction)
+---------------------------------
 in 1991, Linus Torvalds wrote the first version of the Linux kernel
 ---------------------------------
 Today, the world is very different. Computers are  verywhere, from tiny wristwatches to giant data centers to everything in between. In addition to ubiquitous computers, we also have a ubiquitous network connecting them together. This has created a wondrous new age of personal empowerment and creative freedom, but over the last couple of decades something else has been happening. A single giant corporation has been imposing its control over most of the world’s computers and deciding what you can and cannot do with them. Fortunately, people from all over the world are doing
@@ -258,13 +260,87 @@ info coreutils
 It’s possible to put more than one command on a line by separating each command with a semicolon character. It works like this:
 command1; command2; command3...
 ---------------------------------
-
+wc:
+Print Line, Word, and Byte Counts.
+eg:
+wc file.txt
+3 15 30 file.txt
+# this file contain 3 lines, 15 words, and 30 Bytes.
 ---------------------------------
+Filters:
+Pipelines are often used to perform complex operations on data. It is possible to put several commands together into a pipeline. Frequently, the commands used this way are referred to as filters. Filters take input, change it
+somehow, and then output it. The first one we will try is sort. Imagine we
+want to make a combined list of all of the executable programs in /bin and
+/usr/bin, put them in sorted order, and then view the list:
+ls /bin /usr/bin | sort | less
+Since we specified two directories (/bin and /usr/bin), the output of ls
+would have consisted of two sorted lists, one for each directory. By including
+sort in our pipeline, we changed the data to produce a single, sorted list.
 
+
+uniq:
+Report or Omit Repeated Lines
+The uniq command is often used in conjunction with sort. uniq accepts a
+sorted list of data from either standard input or a single filename argument
+(see the uniq man page for details) and, by default, removes any duplicates
+from the list. So, to make sure our list has no duplicates (that is, any programs of the same name that appear in both the /bin and /usr/bin directories) we will add uniq to our pipeline:
+ ls /bin /usr/bin | sort | uniq | less
+ In this example, we use uniq to remove any duplicates from the output
+of the sort command. If we want to see the list of duplicates instead, we add
+the -d option to uniq like so:
+ls /bin /usr/bin | sort | uniq -d | less
+
+
+grep:
+Print Lines Matching a Pattern
+grep is a powerful program used to find text patterns within files, like this:
+grep pattern [file...]
+When grep encounters a “pattern” in the file, it prints out the lines containing it. The patterns that grep can match can be very complex, but for
+now we will concentrate on simple text matches. We’ll cover the advanced
+patterns, called regular expressions, in Chapter 19.
+Let’s say we want to find all the files in our list of programs that have the
+word zip in the name. Such a search might give us an idea of which programs
+on our system have something to do with file compression. We would do this:
+ls /bin /usr/bin | sort | uniq | grep zip
+# bunzip2
+bzip2
+gunzip
+gzip
+unzip
+zip
+zipcloak
+zipgrep
+zipinfo
+zipnote
+zipsplit
 ---------------------------------
-
+head and tail:
+# for text files, and also for ls, so:
+ls /usr/bin | tail -n 5
+# give us last 5 files names returned by (ls /usr/bin)
 ---------------------------------
+tee:
+Read from Stdin and Output to Stdout and Files
+In keeping with our plumbing analogy, Linux provides a command called
+tee which creates a “T” fitting on our pipe. The tee program reads standard
+input and copies it to both standard output (allowing the data to continue
+down the pipeline) and to one or more files. This is useful for capturing a
+pipeline’s contents at an intermediate stage of processing. Here we repeat
+one of our earlier examples, this time including tee to capture the entire
+directory listing to the file ls.txt before grep filters the pipeline’s contents:
+[me@linuxbox ~]$ ls /usr/bin | tee ls.txt | grep zip
 
+# bunzip2
+bzip2
+gunzip
+gzip
+unzip
+zip
+zipcloak
+zipgrep
+zipinfo
+zipnote
+zipsplit
 ---------------------------------
 
 ---------------------------------
