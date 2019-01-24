@@ -449,7 +449,8 @@ tapply(df$over60, df$region, mean)
 # <tapply> splits the data by second argument, and the applies the third argument (which is function) to the first argument.
 # so here <tapply> splits the oberservations by <region> and the computes the mean of the variable <over60>.
 # -----------------------------------
-  
+factory vector variable to date format
+train$Date  <- as.Date(train$Date)  
 # -----------------------------------
 
 # -----------------------------------
