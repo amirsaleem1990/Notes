@@ -115,6 +115,8 @@ ggplot(data = mpg) +
 	facet_grid(drv ~ cyl)
 # -----------------------------------
 # seq <range>
+# The function seq() can be used to create a sequence of numbers. For instance, seq(a,b) makes a vector of integers between a and b. There are many other options: for instance, seq(0,1,length=10) makes a sequence of 10 numbers that are equally spaced between 0 and 1. Typing 3:11 is a shorthand for seq(3,11) for integer arguments.
+
 seq(1:10)
 # [1]  1  2  3  4  5  6  7  8  9 10
 seq(1, 10, length.out = 5)
@@ -432,6 +434,7 @@ subset(df, column_4 == 'Pakistan')
 hist(df$column_n)
 # values of the column_n are shown on the x-axis, and the frequency of these valuse on the y-axis
 # Note: A histrogram is useful for understand for the distribution of the variable.
+hist(mpg ,col =2, breaks =15)
 # -----------------------------------
 # boxplot
 boxplot(df$column_1 ~ df$column_n, xlab="", ylab="Y-axis", main="title")) 
@@ -449,38 +452,112 @@ tapply(df$over60, df$region, mean)
 # <tapply> splits the data by second argument, and the applies the third argument (which is function) to the first argument.
 # so here <tapply> splits the oberservations by <region> and the computes the mean of the variable <over60>.
 # -----------------------------------
-factory vector variable to date format
+# factory vector variable to date format
 train$Date  <- as.Date(train$Date)  
 # -----------------------------------
+# creating a matrix using vector
+x= matrix ( data=c(1 ,2 ,3 ,4) , nrow =2, ncol =2)
+# Note that we could just as well omit typing data=, nrow=, and ncol= in the matrix() command above: that is, we could just type
+x= matrix (c(1 ,2 ,3 ,4) ,2,2)
 
+# The (byrow) option can be used to populate the matrix in order of the rows.
+x= matrix ( data=c(1 ,2 ,3 ,4) , nrow =2, ncol =2, byrow =TRUE)
 # -----------------------------------
-
+# The rnorm() function generates a vector of random normal variables, with first argument n the sample size
+rnorm (50, mean =50, sd =.1)
+# By default, rnorm() creates standard normal random variables with a mean of 0 and a standard deviation of 1. However, the mean and standard deviation can be altered using the mean and sd arguments, as illustrated above.
 # -----------------------------------
-
+# save a plot 
+# We will often want to save the output of an R plot. The command that we use to do this will depend on the file type that we would like to create. For instance, to create a pdf, we use the pdf() function, and to create a jpeg, we use the jpeg() function.
+pdf (" Figure .pdf ")
+plot(x,y,col =" green ")
+dev . off ()
+# The function dev.off() indicates to R that we are done creating the plot. Alternatively, we can simply copy the plot window and paste it into an appropriate file type, such as a Word document
 # -----------------------------------
-
+# Three-dimensional Plots
+contour ()
+image ()
+persp ()
 # -----------------------------------
-
+contour()
+# The contour() function produces a contour plot in order to represent three-dimensional data; 
+# it is like a topographical map. It takes three arguments:
+# 1. A vector of the x values (the first dimension),
+# 2. A vector of the y values (the second dimension), and
+# 3. A matrix whose elements correspond to the z value (the third dimension) for each pair of (x,y) coordinates.
 # -----------------------------------
-
+image()
+# The image() function works the same way as contour(), except that it produces a color-coded plot whose colors depend on the z value. This is known as a heatmap.
 # -----------------------------------
-
+persp()
+# Alternatively, persp() can be used to produce a three-dimensional plot. The arguments theta and phi control the angles at which the plot is viewed.
 # -----------------------------------
+# matrix slicing
 
+A[c(1 ,3) ,c(2 ,4)]
+# only 1st and 3rd row, from only 2nd and 4rth column
+
+A [1:3 ,2:4]
+# only rows 1 till 3, from only 2 till 4 columns.
+
+A [1:5 ,]
+# only 1st till 5th rows and all columns
+
+A [ ,1:5]
+# all rows, only from 1st till 5th columns
+
+A[-c(1 ,3) ,]
+# all rows except 1st and 3rd and all columns
+
+A[-c(1 ,3) ,-c(1 ,3 ,4) ]
+# all rows except 1st and 3rd, and all columns except 1st, 3rd and 4rth
+
+A[,-1]
+# all rows, all columns except 1st column
 # -----------------------------------
-
+fix()
+# fix() function can be used to view it in a spreadsheet like window
+fix(metrix_name)
 # -----------------------------------
-
+read.table()
+ # Using the option header=T (or header=TRUE) in the read.table() function tells R that the first line of the file contains the variable names, and using the option na.strings tells R that any time it sees a particular character or set of characters (such as a question mark), it should be treated as a missing element of the data matrix.
+ Auto=read .table (" Auto .data", header =T,na. strings ="?")
 # -----------------------------------
+attach()
+# Note: (Auto) name of metrix
+# suppose we need a scatter plot, we cannot pass variables names directly as:
+plot(cylinders , mpg)
 
+# we have to join metrix names and column names seperated by ($), as:
+plot(Auto$cylinders, Auto$mpg)
+
+# if we need avoid metrix name we first use (attach). so:
+attach(Auto)
+plot(cylinders , mpg) # ok
 # -----------------------------------
-
+as.factor()
+# The as.factor() function converts quantitative variables into qualitative variables.
+a <- as.factor(numeric_vector)
+# now (a) is vector of factors.
 # -----------------------------------
-
+plot()
+# If the variable plotted on the x-axis is categorial, then boxplots will boxplot automatically be produced by the plot() function.
+plot(x_vaiable, y_variable, col = "red", varwidth = T, xlab = "cylinders", ylab ="MPG"
 # -----------------------------------
-
+pairs()
+# The pairs() function creates a scatterplot matrix i.e. a scatterplot for every scatterplot pair of variables for any given data set.
+pairs (df)
+ # We can also produce scatterplots matrix for just a subset of the variables.
+pairs(~mpg+disp+drat+wt,data=mtcars,   main="Simple Scatterplot Matrix")
 # -----------------------------------
-
+identify()
+# In conjunction with the plot() function, identify() provides a useful interactive method for identifying the value for a particular variable for points on a plot. We pass in three arguments to identify(): the x-axis variable, the y-axis variable, and the variable whose values we would like to see printed for each point. Then clicking on a given point in the plot will cause R to print the value of the variable of interest
+plot(df$horsepower, df$mpg); identify(df$horsepower, df$mpg)
+# -----------------------------------
+# save commads whet shutdown you R session:
+savehistory()
+loadhistory()
+# Before exiting R, we may want to save a record of all of the commands that we typed in the most recent session; this can be accomplished using the savehistory() function. Next time we enter R, we can load that history using the loadhistory() function.
 # -----------------------------------
 
 # -----------------------------------
