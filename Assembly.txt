@@ -1,0 +1,90 @@
+# we use Assembly language for 3 resions:
+1- Better/deep understanding of software and hardware interaction
+2- Optimization of processing time
+3- Embedded Programming (like telephone, k us me C wagera use nahi ho sakti, srif assambly hi use ho sakti h)
+--------------------------------
+There are 16,32 and 64 bit systems, it is actually size of register, if registers is contain 16 bits at a time then we call that system 16Bit System.. etc..
+--------------------------------
+x = Extended to 16 bits
+E = Extended to 32 bits
+R = Rich Register to 64 bits
+example
+a:		Accumulator 8  bit
+ax:		Accumulator 16 bit 
+Eax:	Accumulator 32 bit
+Rax:	Accumulator 64 bit
+--------------------------------
+there are 14 types of registers:
+firt 4 of them called General Purpose Registers, since we use them for deffirent types of tasks.
+diffrent tasks k lye diffrent registers hoty hen
+1- Accumulator
+is ka asal kam: input leta h or output deta h. magar is ko ksi logical ye arithmatic operation k lye bhi use kar sakty hen.
+
+2- Base
+working code me use hwy data k RAM k addresses ko save rakhta h
+
+3- Counter
+loop chalata h, counting karta h.
+
+4- Data
+sari processing ho kar is k pas output aata h, output ka data apny pas hold karta h. 
+
+
+
+
+
+5- Code Segment
+
+--------------------------------
+
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
+--------------------------------
+
