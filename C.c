@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 // gcc p1.c -o p
 // ./p
