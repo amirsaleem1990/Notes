@@ -105,3 +105,19 @@ pctl = quantile(x, p=c(0, 0.01, 0.05,0.1,0.25,0.5, 0.75,0.9,0.95,0.99,1), na.rm=
 return(c(N=n, Nmiss =nmiss, Nmiss_pct = nmiss_pct, sum=sum, avg=mean, meidan=median, std=std, cv=cv, var=var, pctl=pctl))
 }
 function(df$var)
+
+
+
+# exclude all rows that contain at least one NA.
+na.exclude(data_frame)
+
+# replace missing values with 0
+df$column <- ifelse(is.na(df$column), 0, df$column) 
+# or 
+df$column[is.na(df$column), ] <- 0
+
+
+# mode
+sort(table(df$column), decreasing = TRUE)[1]
+
+
