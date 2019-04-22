@@ -263,7 +263,10 @@ df = pd.read_csv('file.csv', usecols = [5]) # getting only 5th column from csv f
 # get only 5th column, and convert it to list
 lst = pd.read_csv('file.csv', usecols = [5], encoding = "ISO-8859-1", error_bad_lines=False).iloc[:, 0].tolist()
 -------------------------------------------------
-
+# histogram of all numerical variables from data set
+import matplotlib.pyplot as plt
+train[train.dtypes[(train.dtypes=="float64")|(train.dtypes=="int64")]
+                        .index.values].hist(figsize=[11,11])
 -------------------------------------------------
 
 -------------------------------------------------
