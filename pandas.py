@@ -268,7 +268,8 @@ import matplotlib.pyplot as plt
 train[train.dtypes[(train.dtypes=="float64")|(train.dtypes=="int64")]
                         .index.values].hist(figsize=[11,11])
 -------------------------------------------------
-
+# extract year from date column 
+df['year'] = pd.DatetimeIndex(df['birth_date']).year
 -------------------------------------------------
 
 -------------------------------------------------
