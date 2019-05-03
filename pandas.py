@@ -271,7 +271,14 @@ train[train.dtypes[(train.dtypes=="float64")|(train.dtypes=="int64")]
 # extract year from date column 
 df['year'] = pd.DatetimeIndex(df['birth_date']).year
 -------------------------------------------------
-
+# columns Standardization 
+scaler = StandardScaler() 
+column_names_to_normalize = list(final_df.drop("DPD30\", axis=1).dtypes[(final_df.dtypes == 'int64') | 
+                                       (final_df.dtypes == 'float64')].index) 
+x = final_df[column_names_to_normalize].values 
+x_scaled = scaler.fit_transform(x) 
+df_temp = pd.DataFrame(x_scaled, columns=column_names_to_normalize, index = final_df.index) 
+final_df[column_names_to_normalize] = df_temp 
 -------------------------------------------------
 -------------------------------------------------
 
