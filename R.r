@@ -570,7 +570,8 @@ str(df[ , nums])
 # replace / fill NA's with most frequent factor(for catagorical variables) 
 df[is.na(df[column_name]),]$column_name<- names(which.max(table(df[column_name])))
 # -----------------------------------
-
+# replace / fill NA's with mean 
+df$column_name[is.na(df$column_name)] <- mean(df$column_name, na.rm = TRUE)
 # -----------------------------------
 
 # -----------------------------------
