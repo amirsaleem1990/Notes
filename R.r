@@ -573,7 +573,8 @@ df[is.na(df[column_name]),]$column_name<- names(which.max(table(df[column_name])
 # replace / fill NA's with mean 
 df$column_name[is.na(df$column_name)] <- mean(df$column_name, na.rm = TRUE)
 # -----------------------------------
-
+# replace / fill NA's with particuler value 
+df$column_name <- ifelse(is.na(df$column_name), "replace_with_this_value", df$column_name)
 # -----------------------------------
 
 # -----------------------------------
