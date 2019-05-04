@@ -567,7 +567,8 @@ paste(movies$thtr_rel_day, movies$thtr_rel_month,movies$thtr_rel_year, sep="-")
 nums <- unlist(lapply(df, is.numeric))
 str(df[ , nums])
 # -----------------------------------
-
+# replace / fill NA's with most frequent factor(for catagorical variables) 
+df[is.na(df[column_name]),]$column_name<- names(which.max(table(df[column_name])))
 # -----------------------------------
 
 # -----------------------------------
