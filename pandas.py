@@ -280,6 +280,7 @@ x_scaled = scaler.fit_transform(x)
 df_temp = pd.DataFrame(x_scaled, columns=column_names_to_normalize, index = final_df.index) 
 final_df[column_names_to_normalize] = df_temp 
 -------------------------------------------------
+# new column based on existing column .................... data['Size_large'] = data.Size.map({'small':0, 'large':1})
 -------------------------------------------------
 
 -------------------------------------------------
