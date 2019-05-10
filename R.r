@@ -580,7 +580,10 @@ df$column_name <- ifelse(is.na(df$column_name), "replace_with_this_value", df$co
 system.time(
 +     res1.p <- mclapply(1:40000000,FUN = function(x) {x * x * x},mc.cores = 8))
 # -----------------------------------
-
+# fast read csv file
+system.time(
+	df <- vroom::vroom("Original_data_converted_to_csv_from_rds_file.csv", delim = ",")
+	)
 # -----------------------------------
 
 # -----------------------------------
