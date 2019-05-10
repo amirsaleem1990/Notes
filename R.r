@@ -576,7 +576,9 @@ df$column_name[is.na(df$column_name)] <- mean(df$column_name, na.rm = TRUE)
 # replace / fill NA's with particuler value 
 df$column_name <- ifelse(is.na(df$column_name), "replace_with_this_value", df$column_name)
 # -----------------------------------
-
+# paralel computing in R ..................... 
+system.time(
++     res1.p <- mclapply(1:40000000,FUN = function(x) {x * x * x},mc.cores = 8))
 # -----------------------------------
 
 # -----------------------------------
