@@ -602,7 +602,6 @@ data.frame(
   RMSE = RMSE(predictions, test.data$target),
   R2 = R2(predictions, test.data$target)
 )
-
 # -----------------------------------
 
 # -----------------------------------
