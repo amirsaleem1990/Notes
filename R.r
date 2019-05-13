@@ -585,7 +585,12 @@ system.time(
 	df <- vroom::vroom("Original_data_converted_to_csv_from_rds_file.csv", delim = ",")
 	)
 # -----------------------------------
-
+# split data into train and test
+library(caret)
+training.samples <- df$column_name %>%
+  createDataPartition(p = 0.8, list = FALSE)
+train  <- Boston[training.samples, ]
+test <- Boston[-training.samples, ]
 # -----------------------------------
 
 # -----------------------------------
