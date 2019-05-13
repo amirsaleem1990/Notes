@@ -592,6 +592,16 @@ training.samples <- df$column_name %>%
 train  <- Boston[training.samples, ]
 test <- Boston[-training.samples, ]
 # -----------------------------------
+# building regression model
+# Build the model
+model1 <- lm(target ~., data = train.data)
+# Make predictions
+predictions <- model1 %>% predict(test.data)
+# Model performance
+data.frame(
+  RMSE = RMSE(predictions, test.data$target),
+  R2 = R2(predictions, test.data$target)
+)
 
 # -----------------------------------
 
