@@ -282,7 +282,19 @@ final_df[column_names_to_normalize] = df_temp
 -------------------------------------------------
 # new column based on existing column .................... data['Size_large'] = data.Size.map({'small':0, 'large':1})
 -------------------------------------------------
-
+# add new row
+# ACCESS_METHOD_ID varibale me aksar values 2 dafa repeat hwi hen, magar kuch values 1 dafa i hen, jo 1 dafa hen un k lye 2nd line
+# add karni h, jis me access_method_id call to same ho, or IsWeekDay me oposite ho(agar exist me ho to new me 1 and vise versa)
+# or baqi columns me 0
+def add_row(row):
+    global df
+    df.loc[-1] = row
+    df.index = df.index + 1  
+    
+counts = df.ACCESS_METHOD_ID_.value_counts()
+for i in counts[counts == 1].index:
+    m = 0 if df[df.ACCESS_METHOD_ID_ == i].IsWeekDay_.values == 1 else 1
+    add_row([i, m, 0, 0, 0, 0, 0, 0, 0,  0])
 -------------------------------------------------
 
 -------------------------------------------------
