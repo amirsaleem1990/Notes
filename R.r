@@ -608,7 +608,9 @@ pi:10
 # -----------------------------------
 # The main difference, as you'll see, is that matrices can only contain a single class of data, while data frames can consist of many different classes of data.
 # -----------------------------------
-
+# vector to matrix by specifieng its dimension
+my_vector <- 1:20             # my_vector is a vector of length 20
+dim(my_vector) <- c(4, 5)	  # now my_vector is a matrix, with 4 rows and 5 columns
 # -----------------------------------
 
 # -----------------------------------
