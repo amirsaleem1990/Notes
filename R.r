@@ -628,7 +628,7 @@ matrix(1:20, byrow=F, nrow=4)
 # isTRUE()
 # The function isTRUE() takes one argument. If that argument evaluates to TRUE, the function will return TRUE. Otherwise, the function will return FALSE.
 # -----------------------------------
-
+# The function identical() will return TRUE if the two R objects passed to it as arguments are identical.
 # -----------------------------------
 
 # -----------------------------------
