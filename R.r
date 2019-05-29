@@ -634,7 +634,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # The which() function takes a logical vector as an argument and returns the indices of the vector that are TRUE. For example which(c(TRUE, FALSE, TRUE)) would return the vector c(1, 3)
 # -----------------------------------
-
+# the functions any() and all() take logical vectors as their argument. The any() function will return TRUE if one or more of the elements in the logical vector is TRUE. The all() function will return TRUE if every element in the logical vector is TRUE.
 # -----------------------------------
 
 # -----------------------------------
