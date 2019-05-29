@@ -606,7 +606,7 @@ data.frame(
 pi:10
 # [1] 3.141593 4.141593 5.141593 6.141593 7.141593 8.141593 9.141593
 # -----------------------------------
-
+# The main difference, as you'll see, is that matrices can only contain a single class of data, while data frames can consist of many different classes of data.
 # -----------------------------------
 
 # -----------------------------------
