@@ -632,7 +632,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # xor() function, which takes two arguments. The xor() function stands for exclusive OR. If one argument evaluates to TRUE and one argument evaluates to FALSE, then this function will return TRUE, otherwise it will return FALSE.
 # -----------------------------------
-
+# The which() function takes a logical vector as an argument and returns the indices of the vector that are TRUE. For example which(c(TRUE, FALSE, TRUE)) would return the vector c(1, 3)
 # -----------------------------------
 
 # -----------------------------------
