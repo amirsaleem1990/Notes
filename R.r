@@ -630,7 +630,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # The function identical() will return TRUE if the two R objects passed to it as arguments are identical.
 # -----------------------------------
-
+# xor() function, which takes two arguments. The xor() function stands for exclusive OR. If one argument evaluates to TRUE and one argument evaluates to FALSE, then this function will return TRUE, otherwise it will return FALSE.
 # -----------------------------------
 
 # -----------------------------------
