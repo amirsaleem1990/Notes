@@ -611,8 +611,11 @@ pi:10
 # vector to matrix by specifieng its dimension
 my_vector <- 1:20             # my_vector is a vector of length 20
 dim(my_vector) <- c(4, 5)	  # now my_vector is a matrix, with 4 rows and 5 columns
-# -----------------------------------
 
+# same as:
+matrix(1:20, byrow=F, nrow=4)
+# -----------------------------------
+# check if two objects are identical or not .................. identical(obj1, obj2)
 # -----------------------------------
 
 # -----------------------------------
