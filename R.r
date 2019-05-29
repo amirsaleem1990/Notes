@@ -636,7 +636,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # the functions any() and all() take logical vectors as their argument. The any() function will return TRUE if one or more of the elements in the logical vector is TRUE. The all() function will return TRUE if every element in the logical vector is TRUE.
 # -----------------------------------
-
+	
 # -----------------------------------
 
 # -----------------------------------
