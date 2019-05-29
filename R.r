@@ -625,7 +625,8 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # The OR operator follows a similar set of rules. The `|` version of OR evaluates OR across an entire vector, while the `||` version of OR only evaluates the first member of a vector.
 # -----------------------------------
-
+# isTRUE()
+# The function isTRUE() takes one argument. If that argument evaluates to TRUE, the function will return TRUE. Otherwise, the function will return FALSE.
 # -----------------------------------
 
 # -----------------------------------
