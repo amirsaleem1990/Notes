@@ -617,9 +617,10 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # check if two objects are identical or not .................. identical(obj1, obj2)
 # -----------------------------------
-
+# There are two AND operators in R, `&` and `&&`. Both operators work similarly, if the right and left operands of AND are both TRUE the entire expression is TRUE, otherwise it is FALSE.
+# The `&&` version of AND only evaluates the first member of a vector. In this case, the left operand is only evaluated with the first member of the right operand (the vector). The rest of the elements in the vector aren't evaluated at all in this expression.
 # -----------------------------------
-
+# The OR operator follows a similar set of rules. The `|` version of OR evaluates OR across an entire vector, while the `||` version of OR only evaluates the first member of a vector.
 # -----------------------------------
 
 # -----------------------------------
