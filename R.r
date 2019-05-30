@@ -450,7 +450,7 @@ table(df$Region)
 # -----------------------------------
 # you can get userull infromations for numerical variables by using <tapply>:
 tapply(df$over60, df$region, mean)
-# <tapply> splits the data by second argument, and the applies the third argument (which is function) to the first argument.
+# <tapply> splits the data by second argument, and then applies the third argument (which is function) to the first argument.
 # so here <tapply> splits the oberservations by <region> and the computes the mean of the variable <over60>.
 # -----------------------------------
 # factory vector variable to date format
@@ -665,7 +665,16 @@ if our expectation was correct in vapply (i.e. numeric(1)), the vapply() result 
 # -----------------------------------
 You might think of vapply() as being 'safer' than sapply(), since it requires you to specify the format of the output in advance, instead of just allowing R to 'guess' what you wanted. In addition, vapply() may perform faster than sapply() for large datasets. However, when doing data analysis interactively (at the prompt), sapply() saves you some typing and will often be good enough.
 # -----------------------------------
+The 'animate' variable in our dataset takes the value 1 if a country's flag
+| contains an animate image (e.g. an eagle, a tree, a human hand) and 0
+| otherwise.
+The 'landmass' variable in our dataset takes on integer values between 1 and
+| 6, each of which represents a different part of the world.
 
+tapply(flags$animate, flags$landmass, mean) to apply
+| the mean function to the 'animate' variable separately for each of the six
+| landmass groups, thus giving us the proportion of flags containing an animate
+| image WITHIN each landmass group.
 # -----------------------------------
 
 # -----------------------------------
