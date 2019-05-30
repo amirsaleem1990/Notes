@@ -680,5 +680,5 @@ size of object ............ object.size(r_object)
 # -----------------------------------
 By default, head() shows you the first six rows of the data. You can alter this behavior by passing as a second argument the number of rows you'd like to view.
 # -----------------------------------
-
+str() is actually a very general function that you can use on most objects in R. Any time you want to understand the structure of something (a dataset, function, etc.), str() is a good place to start.
 # -----------------------------------
