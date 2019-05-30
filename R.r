@@ -683,3 +683,4 @@ By default, head() shows you the first six rows of the data. You can alter this 
 str() is actually a very general function that you can use on most objects in R. Any time you want to understand the structure of something (a dataset, function, etc.), str() is a good place to start.
 # -----------------------------------
 sample(1:6, 4, replace = TRUE) instructs R to randomly select four numbers between 1 and 6, WITH replacement.
+When the 'size' argument to sample() is not specified, R takes a sample equal in size to the vector from which you are sampling.
