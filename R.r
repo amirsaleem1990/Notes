@@ -651,7 +651,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # The range() function returns the minimum and maximum of its first argument, which should be a numeric vector.
 # -----------------------------------
-
+# min and max for each column in dataframe ................ sapply(df, range)
 # -----------------------------------
 
 # -----------------------------------
