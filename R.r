@@ -661,6 +661,7 @@ lapply(unique_vals, function(elem) elem[2]) will return a list containing the se
 # -----------------------------------
 Whereas sapply() tries to 'guess' the correct format of the result, vapply()allows you to specify it explicitly. If the result doesn't match the formatyou specify, vapply() will throw an error, causing the operation to stop.This can prevent significant problems in your code that might be caused bygetting unexpected return values from sapply().
 vapply(flags, unique, numeric(1)), says that you expect each element of the result to be a numeric vector of length 1. if this is NOT actually the case, YOU WILL GET AN ERROR.
+if our expectation was correct in vapply (i.e. numeric(1)), the vapply() result is identical to the sapply()
 # -----------------------------------
 
 # -----------------------------------
