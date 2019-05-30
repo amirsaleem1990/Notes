@@ -645,7 +645,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # The 'l' in 'lapply' stands for 'list'. so lapply() return a list.
 # -----------------------------------
-
+# sapply() same as  lapply() behind the scenes, but then attempting to simplify (hence the 's' in 'sapply') the result for you.
 # -----------------------------------
 
 # -----------------------------------
