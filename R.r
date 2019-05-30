@@ -641,7 +641,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # The lapply() function takes a list as input, applies a function to each element of the list, then returns a list of the same length as the original one. Since a data frame is really just a list of vectors (you can see this with as.list(flags)), we can use lapply() to apply the class() function to each column of the flags dataset.
 # -----------------------------------
-
+# lists are most helpful for storing multiple classes of data.
 # -----------------------------------
 
 # -----------------------------------
