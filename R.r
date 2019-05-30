@@ -678,7 +678,7 @@ tapply(flags$animate, flags$landmass, mean) to apply
 # -----------------------------------
 size of object ............ object.size(r_object)
 # -----------------------------------
-
+By default, head() shows you the first six rows of the data. You can alter this behavior by passing as a second argument the number of rows you'd like to view.
 # -----------------------------------
 
 # -----------------------------------
