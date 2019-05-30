@@ -676,7 +676,7 @@ tapply(flags$animate, flags$landmass, mean) to apply
 | landmass groups, thus giving us the proportion of flags containing an animate
 | image WITHIN each landmass group.
 # -----------------------------------
-
+size of object ............ object.size(r_object)
 # -----------------------------------
 
 # -----------------------------------
