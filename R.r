@@ -647,7 +647,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # sapply() same as  lapply() behind the scenes, but then attempting to simplify (hence the 's' in 'sapply') the result for you.
 # -----------------------------------
-
+# In general, if the result is a list where every element is of length one, then sapply() returns a vector. If the result is a list where every element is a vector of the same length (> 1), sapply() returns a matrix. If sapply() can't figure things out, then it just returns a list, no different from what lapply() would give you.
 # -----------------------------------
 
 # -----------------------------------
