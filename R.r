@@ -654,7 +654,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # min and max for each column in dataframe ................ sapply(df, range)
 # -----------------------------------
-
+# har variable me kitni unique values hen .................... unique_vals <- lapply(df, unique); sapply(unique_vals, length)
 # -----------------------------------
 
 # -----------------------------------
