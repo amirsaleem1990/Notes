@@ -296,7 +296,9 @@ for i in counts[counts == 1].index:
     m = 0 if df[df.ACCESS_METHOD_ID_ == i].IsWeekDay_.values == 1 else 1
     add_row([i, m, 0, 0, 0, 0, 0, 0, 0,  0])
 -------------------------------------------------
-
+count and proportion of values in a column:
+import researchpy as rp
+rp.summary_cat(df)
 -------------------------------------------------
 
 -------------------------------------------------
