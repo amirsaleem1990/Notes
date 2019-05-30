@@ -639,7 +639,7 @@ matrix(1:20, byrow=F, nrow=4)
 # These powerful functions(sapply, lapply), along with their close relatives (vapply() and tapply(), among others) offer a concise and convenient means of implementing the Split-Apply-Combine strategy for data analysis.	
 # Each of the *apply functions will SPLIT up some data into smaller pieces, APPLY a function to each piece, then COMBINE the results.
 # -----------------------------------
-
+# The lapply() function takes a list as input, applies a function to each element of the list, then returns a list of the same length as the original one. Since a data frame is really just a list of vectors (you can see this with as.list(flags)), we can use lapply() to apply the class() function to each column of the flags dataset.
 # -----------------------------------
 
 # -----------------------------------
