@@ -643,7 +643,7 @@ matrix(1:20, byrow=F, nrow=4)
 # -----------------------------------
 # lists are most helpful for storing multiple classes of data.
 # -----------------------------------
-# The 'l' in 'lapply' stands for 'list'. so lapply() return a list.
+# The 'l' in 'lapply' stands for 'list'. so lapply() always return a list.
 # -----------------------------------
 # sapply() same as  lapply() behind the scenes, but then attempting to simplify (hence the 's' in 'sapply') the result for you.
 # -----------------------------------
