@@ -663,7 +663,7 @@ Whereas sapply() tries to 'guess' the correct format of the result, vapply()allo
 vapply(flags, unique, numeric(1)), says that you expect each element of the result to be a numeric vector of length 1. if this is NOT actually the case, YOU WILL GET AN ERROR.
 if our expectation was correct in vapply (i.e. numeric(1)), the vapply() result is identical to the sapply()
 # -----------------------------------
-
+You might think of vapply() as being 'safer' than sapply(), since it requires you to specify the format of the output in advance, instead of just allowing R to 'guess' what you wanted. In addition, vapply() may perform faster than sapply() for large datasets. However, when doing data analysis interactively (at the prompt), sapply() saves you some typing and will often be good enough.
 # -----------------------------------
 
 # -----------------------------------
