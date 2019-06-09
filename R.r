@@ -686,4 +686,4 @@ sample(1:6, 4, replace = TRUE) instructs R to randomly select four numbers betwe
 When the 'size' argument to sample() is not specified, R takes a sample equal in size to the vector from which you are sampling.
 simulate 100 flips of an unfair two-sided coin. with 0.3 probability of 0 and a 0.7 probability of 1 .................. flips <- sample(c(0,1), 100, prob = c(0.3, 0.7))
 #..........................................
-save list as text file in HDD ....................... capture.output(mylist, file = "My New File.txt")
+# save list as text file in HDD ....................... capture.output(mylist, file = "My New File.txt")
