@@ -712,8 +712,12 @@ dmy(25081985) ==> "1985-08-25"
 ymd("192012") is wrong, because it is unclear what is date, month and year, instead we use: ymd("1920-1-2") ==> "1920-01-02"
 ymd_hms("2014-08-23 17:23:02") ==> "2014-08-23 17:23:02 UTC"
 hms("03:22:14") ==> "3H 22M 14S"
+
 The update() function allows us to update one or more components of a
 | date-time. For example, let's say the current time is 08:34:55 (hh:mm:ss).
 | Update this_moment to the new time using the following command:
 | update(this_moment, hours = 8, minutes = 34, seconds = 55).
 update(this_moment, hours = 8, minutes = 34, seconds = 55) ==> "2019-06-13 08:34:55 PKT"
+It's important to recognize that the previous command does not alter
+| this_moment unless we reassign the result to this_moment.
+
