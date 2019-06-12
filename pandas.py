@@ -300,7 +300,10 @@ count and proportion of values in a column:
 import researchpy as rp
 rp.summary_cat(df)
 -------------------------------------------------
-
+Add a prefix to all of your column names:
+df.add_prefix('X_')
+Add a suffix to all of your column names:
+df.add_suffix('_Y')
 -------------------------------------------------
 
 -------------------------------------------------
