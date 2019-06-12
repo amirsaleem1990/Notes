@@ -722,3 +722,8 @@ It's important to recognize that the previous command does not alter
 | this_moment unless we reassign the result to this_moment.
 
 this_moment <- update(this_moment, hours = hour(now()), minutes = minute(now()), seconds = second(now()))
+
+One nice aspect of lubridate is that it allows you to use
+| arithmetic operators on dates and times. In this case, we'd like to add two
+| days to nyc, so we can use the following expression: now() + days(2).
+
