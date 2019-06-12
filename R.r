@@ -693,4 +693,14 @@ lubridate::day() # day
 lubridate::month() # month
 lubridate::year() # year
 lubridate::wday() # weekday # if we set argument <label=TRUE> we get day name like: friday
- 
+lubridate::hour() # hour
+lubridate::minute() # minute
+lubridate::second() # second
+lubridate::now() # current date-time
+lubridate::today() 
+lubridate offers a variety of functions for parsing date-times.
+| These functions take the form of ymd(), dmy(), hms(), ymd_hms(), etc., where
+| each letter in the name of the function stands for the location of years (y),
+| months (m), days (d), hours (h), minutes (m), and/or seconds (s) in the
+| date-time being read in
+
