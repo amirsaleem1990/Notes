@@ -721,3 +721,4 @@ update(this_moment, hours = 8, minutes = 34, seconds = 55) ==> "2019-06-13 08:34
 It's important to recognize that the previous command does not alter
 | this_moment unless we reassign the result to this_moment.
 
+this_moment <- update(this_moment, hours = hour(now()), minutes = minute(now()), seconds = second(now()))
