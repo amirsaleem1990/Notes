@@ -706,4 +706,6 @@ lubridate offers a variety of functions for parsing date-times.
 So ymd() took a character string as input and returned an object of class
 | POSIXct. It's not necessary that you understand what POSIXct is, but just
 | know that it is one way that R stores date-time information internally.
-
+ymd("1989 May 17") ==> "1989-05-17"
+mdy("March 12 1975") ==> "1975-03-12"
+dmy(25081985) ==> "1985-08-25"
