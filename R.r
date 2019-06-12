@@ -703,4 +703,7 @@ lubridate offers a variety of functions for parsing date-times.
 | each letter in the name of the function stands for the location of years (y),
 | months (m), days (d), hours (h), minutes (m), and/or seconds (s) in the
 | date-time being read in
+So ymd() took a character string as input and returned an object of class
+| POSIXct. It's not necessary that you understand what POSIXct is, but just
+| know that it is one way that R stores date-time information internally.
 
