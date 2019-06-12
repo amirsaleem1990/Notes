@@ -709,3 +709,4 @@ So ymd() took a character string as input and returned an object of class
 ymd("1989 May 17") ==> "1989-05-17"
 mdy("March 12 1975") ==> "1975-03-12"
 dmy(25081985) ==> "1985-08-25"
+ymd("192012") is wrong, because it is unclear what is date, month and year, instead we use: ymd("1920-1-2") ==> "1920-01-02"
