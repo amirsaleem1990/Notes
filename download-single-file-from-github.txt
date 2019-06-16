@@ -1,0 +1,1 @@
+wget https://raw.githubusercontent.com/amirsaleem1990/Linux/master/alias.txt
