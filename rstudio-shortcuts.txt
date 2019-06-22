@@ -1,0 +1,11 @@
+CTRL + SHIFT + 1: script full screen par ho jati h.
+CTRL + SHIFT + 2: console full screen par ho jata h.
+CTRL + SHIFT + 3: help portion full screen par ho jata h.
+CTRL + SHIFT + 4: history
+CTRL + SHIFT + 5: files 
+CTRL + SHIFT + 6: plot 
+CTRL + SHIFT + 7: packages
+CTRL + SHIFT + 8: Envoirment
+CTRL + SHIFT + 9: Viwer
+CTRL + 1: console sy script me jany k lye
+CTRL + 2: script sy console me aany k lye
