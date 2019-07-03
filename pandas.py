@@ -305,7 +305,8 @@ df.add_prefix('X_')
 Add a suffix to all of your column names:
 df.add_suffix('_Y')
 -------------------------------------------------
-
+# continues variables to catagorical with bins...
+df['age_groups'] = pd.cut(df.age, bins=[0, 18, 65, 99], labels=['child', 'adult', 'elderly'])
 -------------------------------------------------
 
 -------------------------------------------------
