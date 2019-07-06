@@ -1,0 +1,2 @@
+pyinstaller --onefile a.py
+# type this line on bash-terminal, this will create a folder <dist>, type on terminal <dist/.a>
