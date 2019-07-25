@@ -314,7 +314,8 @@ df = df.replace(r'^\s*$', " ", regex=True)
 df1.fillna({"column_x":0.5,
 	"column_n":0})
 -------------------------------------------------
-
+# select only <object> type variables:
+ds_cat = dataset.select_dtypes(include = 'object').copy()
 -------------------------------------------------
 
 -------------------------------------------------
