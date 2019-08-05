@@ -1,0 +1,1 @@
+rstudio file ko open nahi kar raha tha .............................. sudo chmod a+rwx .rstudio-desktop/sources/s-*
