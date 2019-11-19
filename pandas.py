@@ -321,3 +321,12 @@ ds_cat = dataset.select_dtypes(include = 'object').copy()
 -------------------------------------------------
 
 -------------------------------------------------
+
+
+df.ix[::2,0] = np.nan # in column 0,     set elements with indices 0,2,4, ... to NaN
+df.ix[::4,1] = pd.NaT # in column 1,     set elements with indices 0,4, ... to np.NaT
+df.ix[:3,2] = 'nan'   # in column 2,     set elements with index from 0 to 3 to 'nan'
+df.ix[:,5] = None     # in column 5,     set all elements to None
+df.ix[5,:] = None     # in column row 5, set all elements to None
+df.ix[7,:] = np.nan   # in column row 7, set all elements to NaN
+
