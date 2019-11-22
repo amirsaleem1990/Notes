@@ -333,3 +333,4 @@ df.ix[7,:] = np.nan   # in column row 7, set all elements to NaN
 
 # select vars based on dtypes ................. features.select_dtypes('number')
 
+
