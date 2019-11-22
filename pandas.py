@@ -334,3 +334,10 @@ df.ix[7,:] = np.nan   # in column row 7, set all elements to NaN
 # select vars based on dtypes ................. features.select_dtypes('number')
 
 
+----------------------------------------------------------------
+# join two dataframes using <join>
+df1 = pd.DataFrame({"A" : list(range(10)), "B" : list('abcdefghij')})
+df2 = pd.DataFrame({"A" : list(range(10, 20)), "B" : list('klmnopqrst')})
+
+full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
+----------------------------------------------------------------
