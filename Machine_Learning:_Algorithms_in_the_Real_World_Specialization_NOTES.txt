@@ -1,0 +1,121 @@
+Dimensionality reduction:
+	Unsupervized learning / clustring technique, tries to reduce the number of features while losing as little information as possible.
+	One simple technique for doing dimensionality reduction is principal componenet analysis (PCA)
+		when we run PCA on data it can construct the n most infromative features. (these features are diffrent from existing data)
+
+
+in Dicision Tree:
+	restring the depth of the tree indirectly restricts the number of leaf nodes a tree can have. for example, having a maximum depth of three would allow at most 8 leaf nodes for that tree.
+
+	overfitting can also be avoided by pruning decision trees. pruning can be done while building the trees, and this is called pre-pruning. Pruning can also be done after the decision trees have been built. this is called post-pruning. Pruning usually uses the cross-validation of validation scores to idendify which portions of the trees can be pruned. Pre pruning is also known as early stopping. and it's a faster method, but there are chances a could underfit the data as it gives just an estimate of when it should stop. post-pruning methods are not based on estimates, but rather actual values, and thedecision tree is pruned once it's completely built. 
+
+	advantages of dicision tree:
+		1- it is easiear to interpret then other models.
+		2- can handle multi class classification
+	diadvantage of dicition tree:
+		they tend to be unstable. any little variation in the training data might result in totally diferent dicition tree. thus we use random forest. 
+
+in Random forest:
+	we train multiple dicision trees, eash with diffrest variables, (and bootstraping with replacement), then predict the most prediction. (eg: 50 trees, X ==> trees, 40 trees predict A, 5 predicts B, and 5 predicts C, we choose A as a prediction since it is most predicted)
+
+	in the prediction phase, the observation goes into all trees, and most commont prediction choosen as prediciton for thtat observation.
+
+	disadvantages:
+		more dificult to interpret the Random forest then dicision tree. 
+
+KNN:
+	widely applied in many domains
+	
+	it is ofter useful to use it as a baseline test, no matter what your application is. 
+
+	we need numerical representation for each variable (to campare distance, hence choose K closest)
+	similaritly between two feature vectors can be measured by distance function.
+
+	we don't need too larger K because that means listening to very distant neighbors. and lumping things together that are actually quite dissimilar. on the other hand, we don't want too smaller K, because then random meaningless local variations can have too much influence on our choice.
+
+	(we know nearest neighbourhow graphically, but) computers can't glance and guess the way humans can, even in the two-dimensional case. (so we use distance functions to know distance. and distance functions require a numeric vectors)
+
+	unlike most other classification methods, KNN is a type of lazy learning, Meaning that, there is no seperate training phase before classification. This does highlight one big downside ot thir algorithm, we have to keep the entire training data in memory. and as we get more examples it gets more and more expensive to computer which neighbors are nearest. for this reason, KNN usually works best on smaller data sets that don't have too many features. 
+
+	There are two important decisions that must be made before building KNN model:
+		1- value of K
+			You can choose K somewhat arbitrarily, or could try it cross-validation to compe up with an optimal value for K.
+
+			K should also be chosen such that there will be a clear majarity between classes.
+
+			The choice of K is essential in building the KNN.
+			in fact, k can be regarded as one of the most important factors influencing the KNN classification performance.
+
+			K is smoothing parameter: 
+				for any given problem a small value of K will lead to large variance in predictions. alternatively, setting K to a large vlaue, means you don't get a very customized answer, if k is the entire set of examples, you're going to always guess the majority class.
+
+				K should be set to a value large enough to minimize the probability of misclassification, and small enough that it's actually a meaningful subset of the total number of examples.
+
+
+		2- distance measure:
+			a distance function maps two elements to some real number , the distance between them.
+
+			There are 3 rules that must bold for valid distance measures. 
+				
+				1- only positive numbers
+					distance(a,b) >= 0 # if a = b then distance(a,b) = 0
+				2- order doesn't metter
+					distance(a,b) = distance (b,a)
+				3- the triangle inequality must hold (detouring from the staright line can only increase the distance)
+
+			Q: There are many differny valid distance measures, what's the best? 
+			Ans: as usual it depends on your problem
+
+			Euclidean distance.
+
+				Pythagorean theorem:
+					sqrt(
+						(x2- x1)^2 + (y2 - y1)^2
+						)
+
+					E(A,B) = sqrt(
+						sum(
+							for j in range(1, m+1) # in python we start from 0
+								(X(A,j) - X(B,J))^2
+						))
+
+				in Linear algebra:
+					finding the magnitude of the diffrence vector between two points.
+				
+				it is genrelize to M dimensional space.
+
+
+				it is also called (L2 NORM), L2 because we're squaring the values and norms is the technical term for the magnitude of a vector.
+
+				Pehaps the most commonly used distance for machine learning algorithms.
+
+				it's vary useful when our features are cotinuous, but there are some situations where Euclidean distance isn't quite right. As an example, if you're a taxi driver driving through the organized street blocks of a city then the straight line distance would
+				force you to pass through buildings to get to your destination. So it's more accurate to consider what path you can take along the city blocks rather than straight line. In fact, we call it Manhattan distance.
+
+			Manhattan distance:
+				if we need to calculate the distance between two data points in a grid-like space. That grid-like space can be represented by what we call a Cartesian coordinate system. Cartesian coordinates describe locations by their distance along different axes. 
+
+				For Manhattan distance, we take the differences along each of the axes and sum up those differences. This gives us the grid walking distances between two points, formally it's the sum of their absolute differences of their Cartesian coordinates. 
+
+				Manhattan distance is better when we're dealing with high dimensional data or when you know, you can't go straight from point a to point b, then you might as well use the more appropriate measure. And because we're not squaring the difference like we did for Euclidean distance, we're not magnifying distances. This helps deal with outliers. 
+
+				is also called L1 distance or L1 norm
+
+				Euclidean and Manhattan distance measures are standard and useful measures, but they're only valid for continuous variables. If you have categorical or non continuous variables, the Hamming distance might be most appropriate. 
+
+			Hamming distance only cares about differences, when the value's the same the distance is 0, if the values are at all different the distance is 1. It's easy to see that this works even for categorical features. The Hamming distance between two feature vectors is exactly the number of features that are different.
+
+
+
+
+	with the power and simplicity, KNN also comes with downside of requiring mem ory for the training dataset and a fair amount of computation.
+
+
+
+LOGISTIC REGRESSION:
+	it called <Logistic regression> because it's doing classification (using) a regression operation and a transfer function.
+		transfer function:
+			a function whose job it is to translate the output of one function into some other space. in this case the the trainsfer functions (which is logistic function here) takes the number reported by our regression model and transfer  it into a class label.
+	the value it finds via the regression step can be thought of as the probability that a data poing belongs to a particuler class.
+
+	The threshold can be adjusted based on the domint and whaterver bias you need for each class
