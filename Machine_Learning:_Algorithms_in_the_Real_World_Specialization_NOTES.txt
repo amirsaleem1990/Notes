@@ -156,6 +156,5 @@ in Linear regression:
 		require smooth function (so we don't use L1 loss function)
 
 	Across all loss functions, there's one crucial property that each must possess if you want to guarantee you're finding the global minimum. This property is convexity.
-
-	
+		The function is called convex if, for any two points on the graph of the function, the line segment connecting those two points lies above or on the graph. If you think of functions as describing some surface, you have to be able to attach the ends of a string anywhere along the surface and pull that string flat. If there's some way to attach the string where you can't make it absolutely flat without intersecting the surface, then it's not a convex surface. Why is convexity important? Convexity guarantees that our function has no more than one local minimum value.
 
