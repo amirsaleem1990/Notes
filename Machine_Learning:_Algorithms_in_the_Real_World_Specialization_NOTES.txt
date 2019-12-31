@@ -136,7 +136,7 @@ LOGISTIC REGRESSION:
 
 in Linear regression:
 
-	Linear functions have handy features like convexity and differentiability.
+	Linear functions have handy features like convexity and differentiability.  
 	Goal: 
 		find parameters (weights) that minimize the loss function.
 
@@ -169,4 +169,4 @@ in Linear regression:
 
 		When our graph is not convex, we don't know for sure we've found the absolute smallest minimum value unless we explore the entire space. Whereas, no matter where we drop that ball on a convex graph, we'll reach the same final point at the only local minimum. That's the key, convex functions have at most one minimum value. So regardless of whether or not you use derivatives, if your function is differentiable or some other iterative numerical solver, if your function is not differentiable, when your function is convex, you're guaranteed to find the optimal solution in that hypothesis space. So one local minimum means we're able to find the smallest penalty value for our loss function. And if our loss function is differentiable as well as convex, this means we may be able to find an optimal function by setting the derivative of our loss function to zero, as we did in the case of L2 loss. 
 
-  	
+
