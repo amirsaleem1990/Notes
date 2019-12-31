@@ -151,6 +151,8 @@ in Linear regression:
 
 
 	gradient descent:
+		an iterative method, we start fron any point then make small adjustments in our perameters to bring us closer to an approximate solution. 
 		we choose point where darivite is 0.
 		require smooth function (so we don't use L1 loss function)
 		
+
