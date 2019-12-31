@@ -145,5 +145,5 @@ in Linear regression:
 
 
 	gradian decent:
-		we choose poing where darivite is 0.
+		we choose point where darivite is 0.
 		
