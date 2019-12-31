@@ -73,11 +73,12 @@ KNN:
 						(x2- x1)^2 + (y2 - y1)^2
 						)
 
-					E(A,B) = sqrt(
-						sum(
-							for j in range(1, m+1) # in python we start from 0
-								(X(A,j) - X(B,J))^2
-						))
+
+					E(A,B):
+						SUM = 0
+						for j in range(1, m+1) # in python we start from 0
+							SUM += (X(A,j) - X(B,J))^2
+						sqrt(SUM)
 
 				in Linear algebra:
 					finding the magnitude of the diffrence vector between two points.
@@ -98,10 +99,9 @@ KNN:
 				For Manhattan distance, we take the differences along each of the axes and sum up those differences. This gives us the grid walking distances between two points, formally it's the sum of their absolute differences of their Cartesian coordinates. 
 
 				distanceManhattan(A,B):
+					SUM = 0
 					for j in range(1,m+1) # in python we start from 0
-						sum(
-							abs(  X(A,j) - X(B,j)  )
-							)
+						SUM += abs(  X(A,j) - X(B,j)  )
 				Manhattan distance is better when we're dealing with high dimensional data or when you know, you can't go straight from point a to point b, then you might as well use the more appropriate measure. And because we're not squaring the difference like we did for Euclidean distance, we're not magnifying distances. This helps deal with outliers. 
 
 				is also called L1 distance or L1 norm
@@ -109,6 +109,8 @@ KNN:
 				Euclidean and Manhattan distance measures are standard and useful measures, but they're only valid for continuous variables. If you have categorical or non continuous variables, the Hamming distance might be most appropriate. 
 
 			Hamming distance only cares about differences, when the value's the same the distance is 0, if the values are at all different the distance is 1. It's easy to see that this works even for categorical features. The Hamming distance between two feature vectors is exactly the number of features that are different.
+				distanceHamming(A,B):
+
 
 
 
