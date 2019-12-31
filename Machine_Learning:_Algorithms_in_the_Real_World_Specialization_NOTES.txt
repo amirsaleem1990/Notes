@@ -135,6 +135,8 @@ LOGISTIC REGRESSION:
 	The threshold can be adjusted based on the domint and whaterver bias you need for each class
 
 in Linear regression:
+
+	Linear functions have handy features like convexity and differentiability.
 	Goal: 
 		find parameters (weights) that minimize the loss function.
 
