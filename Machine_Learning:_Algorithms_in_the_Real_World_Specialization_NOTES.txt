@@ -147,7 +147,7 @@ in Linear regression:
 		A: NO.
 
 		Q: we could just take the absolute value of diffrence (y^i - yi) to get the actual magnitude, why not do that?
-		A: we do, and that is totally walid loss function, is is called <L1 loss>
+		A: we do, and that is totally walid loss function, is is called <L1 loss> or <least absolute error.
 
 
 	gradient descent:
