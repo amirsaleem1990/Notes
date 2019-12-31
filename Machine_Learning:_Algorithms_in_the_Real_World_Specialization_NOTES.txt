@@ -152,7 +152,9 @@ in Linear regression:
 
 	gradient descent:
 		very commonly use in machine learning
-		
+
+		in gradient descent we rely on the property that our graph (loss vs slop) is smooth and continuous, so that we can take tha derivative, and convex so thre is no more than one minimum value.
+
 		an iterative method, we start fron any point then make small adjustments in our perameters to bring us closer to an approximate solution. 
 		we choose point where darivite is 0.
 		require smooth function (so we don't use L1 loss function)
