@@ -137,14 +137,17 @@ LOGISTIC REGRESSION:
 in Linear regression:
 
 	Non Linear features and model complexity:
-		 Luckly, we can get complexity in Linear function through features enginearing.
-		 	polynomial, square root, log
-		 polynomial:
-		 	multiplies things together.
-		 	the order of polynomial tell you how many times you multiply then.
-		 	order2 polynomial = squared = X * X
-		we create non Linear functions by adding or changing features that are non Linear functions of the orignal features.
 		
+		Luckly, we can get complexity in Linear function through features enginearing.
+		 	polynomial, square root, log
+		
+		polynomial:
+		 	multiplies things together.
+		 	the order(degree) of polynomial tell you how many times you multiply then.
+		 	order2 polynomial = squared = X * X
+		
+		we create non Linear functions by adding or changing features that are non Linear functions of the orignal features.
+
 
 
 
