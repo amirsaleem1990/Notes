@@ -135,8 +135,9 @@ LOGISTIC REGRESSION:
 	The threshold can be adjusted based on the domint and whaterver bias you need for each class
 
 in Linear regression:
+	we defince out loss function to be both smooth and convex. which means it is going to have unique minimum point, we don't know what that minimum is, but using calcules we can find id.
+	 
 	least squares AKA L2 loss function.
 		this loss is useful because it is gives a shape that have a unique point for the minimum panalty(SSE).  	
 
 	gradian decent:
-		
