@@ -135,7 +135,9 @@ LOGISTIC REGRESSION:
 	The threshold can be adjusted based on the domint and whaterver bias you need for each class
 
 in Linear regression:
-
+	Goal: 
+		find parameters (weights) that minimize the loss function.
+		
 	least squares AKA L2 loss function.
 
 		this loss is useful because it is gives a shape that have a unique point for the minimum panalty(SSE).
@@ -146,4 +148,3 @@ in Linear regression:
 
 	gradient descent:
 		we choose point where darivite is 0.
-		
