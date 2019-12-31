@@ -137,7 +137,11 @@ LOGISTIC REGRESSION:
 in Linear regression:
 
 	Non Linear features and model complexity:
-		
+		 Luckly, we can get complexity in Linear function through features enginearing.
+		 	polynomial, square root, log
+		 polynomial:
+		 	multiplies things together.
+		 	the order of polynomial tell you how many times you multiply then.
 
 
 
