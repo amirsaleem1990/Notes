@@ -147,7 +147,7 @@ in Linear regression:
 		A: NO.
 
 		Q: we could just take the absolute value of diffrence (y^i - yi) to get the actual magnitude, why not do that?
-		A: we do, and that is totally walid loss function, is is called <L1 loss> or <least absolute error. when we use gradient descent bot L1 and L2 are convex, but L1 has sharp corver <V shape> at minimum value (thus this is not smooth, thus it is not differentiable> instead of smmoth curve like L2 <U shape>. 
+		A: we do, and that is totally walid loss function, is is called <L1 loss> or <least absolute error. when we use gradient descent bot L1 and L2 are convex, but L1 has sharp corver <V shape> at minimum value (thus this is not smooth, thus it is not differentiable, we can't take the darivite of the L1 loss to find which parameter gives us the minimum panalty like we did with L2 loss function.> instead of smmoth curve like L2 <U shape>. 
 
 
 	gradient descent:
