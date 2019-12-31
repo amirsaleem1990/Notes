@@ -136,6 +136,16 @@ LOGISTIC REGRESSION:
 
 in Linear regression:
 
+	Non Linear features and model complexity:
+		
+
+
+
+
+
+
+
+
 	Linear functions have handy features like convexity and differentiability.  
 	Goal: 
 		find parameters (weights) that minimize the loss function.
