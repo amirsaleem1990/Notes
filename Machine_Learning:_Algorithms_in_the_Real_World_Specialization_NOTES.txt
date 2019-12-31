@@ -144,6 +144,6 @@ in Linear regression:
 
 
 
-	gradian decent:
+	gradient descent:
 		we choose point where darivite is 0.
 		
