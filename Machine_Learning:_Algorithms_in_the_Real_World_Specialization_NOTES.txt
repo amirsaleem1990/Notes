@@ -109,13 +109,14 @@ KNN:
 				Euclidean and Manhattan distance measures are standard and useful measures, but they're only valid for continuous variables. If you have categorical or non continuous variables, the Hamming distance might be most appropriate. 
 
 			Hamming distance only cares about differences, when the value's the same the distance is 0, if the values are at all different the distance is 1. It's easy to see that this works even for categorical features. The Hamming distance between two feature vectors is exactly the number of features that are different.
-			
+
 				distanceHamming(A,B):
 					SUM = 0
 					for j in range(1, m+1): # since in python we start counting from 0
 						SUM += abs(  X(A,j) - X(B,j)  )
 
-
+				if X(A,j) = X(B,j) ==> distanceHamming<j> = 0
+				if X(A,j) != X(B,j) ==> distanceHamming<j> = 1
 
 
 
