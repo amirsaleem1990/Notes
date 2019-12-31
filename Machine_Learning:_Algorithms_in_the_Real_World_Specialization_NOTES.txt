@@ -133,3 +133,7 @@ LOGISTIC REGRESSION:
 	the value it finds via the regression step can be thought of as the probability that a data poing belongs to a particuler class.
 
 	The threshold can be adjusted based on the domint and whaterver bias you need for each class
+
+in Linear regression:
+	least squares AKA L2 loss function.
+	
