@@ -53,6 +53,8 @@ KNN:
 
 
 		2- distance measure:
+
+			(we have to scale our data before calculating the distance)
 			a distance function maps two elements to some real number , the distance between them.
 
 			There are 3 rules that must bold for valid distance measures. 
