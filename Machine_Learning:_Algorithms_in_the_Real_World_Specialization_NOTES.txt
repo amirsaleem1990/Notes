@@ -142,6 +142,8 @@ in Linear regression:
 
 		smooth and convex. which means it is going to have unique minimum point, we don't know what that minimum is, but using calcules we can find id.
 
-		
+
 
 	gradian decent:
+		we choose poing where darivite is 0.
+		
