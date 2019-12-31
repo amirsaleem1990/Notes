@@ -136,4 +136,4 @@ LOGISTIC REGRESSION:
 
 in Linear regression:
 	least squares AKA L2 loss function.
-	
+		this loss is useful because it is gives a shape that have a unique point for the minimum panalty(SSE). 
