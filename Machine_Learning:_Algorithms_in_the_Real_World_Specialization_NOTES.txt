@@ -207,5 +207,5 @@ bias variance tradeoff:
 
 	algorithms with high bias will underfit the trainig data as well as perform poorly on the test/validation data.
 
-	variance in the model is a bit hard to measure. you can look at how much you output cahnge is when you repeat the learning process under differen sample of the training data
+	variance in the model is a bit hard to measure. you can look at how much you output cahnge is when you repeat the learning process under differen sample of the training data. you can also take advantage of relationship between complexity and variance, and use tricks incurage simple models.
 	
