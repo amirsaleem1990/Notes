@@ -219,6 +219,7 @@ bias variance tradeoff:
 
 
 Reguralization:
+ 
 	A systamatic way of macking of tradeoff between bias and variance.
 	A way to avoid too complexity in the model.
 	
@@ -234,5 +235,3 @@ Reguralization:
 
 	Linear regression with an L2 regularizer is called ridge regression.
 	Linear regression with an L1 regularizer is also called Lasso regression.
-
-	
