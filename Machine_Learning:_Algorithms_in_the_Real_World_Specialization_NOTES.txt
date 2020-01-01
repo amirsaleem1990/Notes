@@ -205,3 +205,5 @@ bias variance tradeoff:
 
 	more complex the model: the los bias and heigh variance.
 
+	
+
