@@ -197,7 +197,7 @@ in Linear regression:
 bias variance tradeoff:
 
 	we need our model to be complex enough to capture the relevent patterns in the data but too complex menas heigh variance and it is not ganralized well. 
-	
+
 	as we complex our model; in some range of complexity the bias and variance both decrease, after that poing the bias still decrease and variance increase (means: we begin overfitting), we have to choose optimal model.
 
 	(very low bias: overfitting)
@@ -220,3 +220,5 @@ bias variance tradeoff:
 
 Reguralization:
 	A systamatic way of macking of tradeoff between bias and variance.
+	A way to avoid too complexity in the model.
+	
