@@ -205,5 +205,8 @@ bias variance tradeoff:
 
 	more complex the model: the los bias and heigh variance.
 
+	algorithms with high bias will underfit the trainig data as well as perform poorly on the test/validation data.
+
+	
 
 
