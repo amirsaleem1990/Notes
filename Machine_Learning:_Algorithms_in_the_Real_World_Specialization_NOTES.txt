@@ -139,7 +139,7 @@ in Linear regression:
 	Non Linear features and model complexity:
 		
 		to overcome underfitting we need to increase the complexity of the model. 
-		
+
 		Luckly, we can get complexity in Linear function through features enginearing.
 		 	polynomial, square root, log
 		
@@ -151,7 +151,8 @@ in Linear regression:
 		we create non Linear functions by adding or changing features that are non Linear functions of the orignal features.
 
 		non Linear features does increase the complexity of the model which has sight affects. thre are some issuse we have thing about when we use non Linear features to add complexity to the model. 
-
+			(much hight degree of polynomial feature causes overfitting, so be carefull)
+			
 
 
 
