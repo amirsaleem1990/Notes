@@ -222,3 +222,5 @@ Reguralization:
 	A systamatic way of macking of tradeoff between bias and variance.
 	A way to avoid too complexity in the model.
 	
+	when a learning algorithm has an objective function that only penalizes mistakes as with the loss functions we've already described, there's no reason for it to choose a simple model. So as usual, we need a mathematically precise way to measure simplicity if we're going to ask the computer to consider it. We want to modify our objective function with some criteria that rewards simplicity as well as accuracy. Just like we converted best line to least bad by penalizing mistakes, we can convert most simple to least complex and add a penalty for complexity. This is the idea behind regularizers. A regularizer is an extra mathematical term added to the objective function which penalizes complexity. Now the objective you want the learning algorithm to minimize is a combination of the penalty for making mistakes as well as the penalty for using a complex model.
+	
