@@ -199,5 +199,6 @@ bias variance tradeoff:
 
 	bias: overfitting
 
-	one way to ovoid overfitting is to refuse to allow complexity in the model.
+	one way to ovoid overfitting is to refuse to allow complex models.
 	
+
