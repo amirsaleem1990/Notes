@@ -197,7 +197,7 @@ in Linear regression:
 bias variance tradeoff:
 	as we complex our model; in some range of complexity the bias and variance both decrease, after that poing the bias still decrease and variance increase (means: we begin overfitting), we have to choose optimal model.
 
-	very low bias: overfitting
+	(very low bias: overfitting)
 
 	one way to ovoid overfitting is to refuse to allow complex models.
 
