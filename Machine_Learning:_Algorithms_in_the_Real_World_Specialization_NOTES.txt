@@ -203,10 +203,10 @@ bias variance tradeoff:
 
 	if we completely remove bias by adding complexity in the model, we have no bias but we are overfitting, means: the variance is too heigh. as we simple our model the bias is height, but variance is low.
 
-	more complex the model: the los bias and heigh variance.
+	more complex the model: the low bias and heigh variance.
 
 	algorithms with high bias will underfit the trainig data as well as perform poorly on the test/validation data.
 
-	
+
 
 
