@@ -149,9 +149,7 @@ in Linear regression:
 		we create non Linear functions by adding or changing features that are non Linear functions of the orignal features.
 
 		non Linear features does increase the complexity of the model which has sight affects. thre are some issuse we have thing about when we use non Linear features to add complexity to the model. 
-
-		start from 4:30
-		HERE
+		
 
 
 
