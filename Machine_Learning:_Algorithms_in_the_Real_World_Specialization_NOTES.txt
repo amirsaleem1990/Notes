@@ -209,6 +209,9 @@ bias variance tradeoff:
 
 	variance in the model is a bit hard to measure. you can look at how much you output cahnge is when you repeat the learning process under differen sample of the training data. you can also take advantage of relationship between complexity and variance, and use tricks incurage simple models.
 
+	Reguralization A systamatic way of macking of tradeoff between bias and variance.
+
+	learning curves can also be used dignose your model performance.  
 
 Reguralization:
 	A systamatic way of macking of tradeoff between bias and variance.
