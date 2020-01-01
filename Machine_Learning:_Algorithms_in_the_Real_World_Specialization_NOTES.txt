@@ -230,4 +230,4 @@ Reguralization:
 
 	Linear regression with an L1 regularizer is also called Lasso regression. Regularizers also provide other benefits when combined with different kinds of specific losses. For example, when you combine L2 regularizers with SVM classifiers, we get the ability to use kernels. Kernels let you classify data points in a complex and sometimes infinite-dimensional space of nonlinear features.
 
-	
+	The concept of regularization can be applied almost anywhere
