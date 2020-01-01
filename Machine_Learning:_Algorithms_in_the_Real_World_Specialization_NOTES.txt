@@ -202,5 +202,6 @@ bias variance tradeoff:
 	one way to ovoid overfitting is to refuse to allow complex models.
 
 	if we completely remove bias by adding complexity in the model, we have no bias but we are overfitting, means: the variance is too heigh. 
-	
+
+	more complex the model: the los bias and heigh variance.
 
