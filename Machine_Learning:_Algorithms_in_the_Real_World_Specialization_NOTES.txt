@@ -211,7 +211,9 @@ bias variance tradeoff:
 
 	Reguralization A systamatic way of macking of tradeoff between bias and variance.
 
-	learning curves can also be used dignose your model performance.  
+	learning curves can also be used dignose your model performance. 
+
+	 
 
 Reguralization:
 	A systamatic way of macking of tradeoff between bias and variance.
