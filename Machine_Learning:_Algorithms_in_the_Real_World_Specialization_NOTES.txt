@@ -136,7 +136,7 @@ LOGISTIC REGRESSION:
 
 	The logistic transfer function (or simply the logistic function) maps the entire real line and transform it into space 0 and 1.
 
-	
+	 
 in Linear regression:
 
 	Non Linear features and model complexity:
