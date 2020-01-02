@@ -294,4 +294,6 @@ Reguralization:
 
  	the huge hypothesis space explored by neuron networks created variance, this is why the lots of data is incredibly important.
 
- 	
+
+SVM (suport vecter machine):
+	
