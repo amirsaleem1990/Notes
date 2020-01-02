@@ -292,4 +292,6 @@ Reguralization:
 
  	Neural nets can't be used for everything, we can't explain the results. 
 
+ 	the huge hypothesis space explored by neuron networks created variance, this is why the lots of data is incredibly important.
+
  	
