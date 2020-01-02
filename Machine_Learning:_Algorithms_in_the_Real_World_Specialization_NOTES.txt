@@ -332,3 +332,5 @@ SVM (suport vecter machine):
 				this hinge loss in convex (oposite to misclassification loss). 
 				we are ready to use the hinge loss to choose good linear saparater for our classification task(SVM). 
 
+	SVM a powerfull techniques for classification. 
+	
