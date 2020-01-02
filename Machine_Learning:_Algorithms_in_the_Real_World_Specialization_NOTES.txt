@@ -297,7 +297,8 @@ Reguralization:
 
 SVM (suport vecter machine):
 	
-	the combenation of the loss and the transfer function has to be a convex surgate.
+	the combenation of the loss and the transfer function has to be a convex surgate. 
 	hing loss function:
 		this function solves some of the problem created by other loss functions, and can be used to turn the power of regression towards classification. 
 
+	
