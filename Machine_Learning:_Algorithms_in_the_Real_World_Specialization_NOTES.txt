@@ -329,4 +329,7 @@ SVM (suport vecter machine):
 					max{0, 1-y*z^}  
 
 				we sum this panalty over all training data, and that is our total loss. 
-				this hing loss in convex (oposite to misclassification loss)
+				this hing loss in convex (oposite to misclassification loss). 
+				we are ready to use the hing loss to choose good linear saparater for our classification task(SVM). 
+
+		
