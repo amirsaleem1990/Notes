@@ -244,3 +244,4 @@ Reguralization:
 
 	Linear regression with an L2 regularizer is called ridge regression.
 	Linear regression with an L1 regularizer is also called Lasso regression.
+	
