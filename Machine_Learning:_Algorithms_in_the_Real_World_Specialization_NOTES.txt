@@ -139,7 +139,7 @@ LOGISTIC REGRESSION:
 
 	The logistic transfer function (or simply the logistic function) maps the entire real line and transform it into space 0 and 1.
 
-	if we use square loss* to evaluate the parameters of our logistic function(as in linear regression) that is not convex 
+	if we use square loss* to evaluate the parameters of our logistic function(as in linear regression) that is not convex, since it is not convex we can't guarantee that we can get the botom of the hill it is actually the lowest possible point. 
 	*	squared error loss of the sigmoid function if the label is 0:
 			y = ( 1 / ( 1 + e-f(x))^2 )
 		squared error loss of the sigmoid function if then label is 1:
