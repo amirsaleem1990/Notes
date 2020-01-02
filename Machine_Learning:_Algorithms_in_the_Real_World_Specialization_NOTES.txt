@@ -127,6 +127,9 @@ KNN:
 
 
 LOGISTIC REGRESSION:
+	
+	predict the probabilities that a data point belongs to a particuler class.
+	
 	it called <Logistic regression> because it's doing classification using a regression operation and a transfer function.
 		transfer function:
 			a function whose job it is to translate the output of one function into some other space. in this case the the trainsfer functions (which is logistic function here) takes the number reported by our regression model and transfer  it into a class label.
