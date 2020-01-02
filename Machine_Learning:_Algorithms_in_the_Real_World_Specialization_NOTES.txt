@@ -307,7 +307,7 @@ SVM (suport vecter machine):
 			-1 * +1 = -1
 			+1 * +1 = +1
 			-1 * -1 = +1
-		with this classification we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. may be we can impose stronger panalties for samples found deeper in taratory of the other lass. in fact we wouldn't mind the margen for errors. so even correctly classified samples  but are really close to the line almost missclassified could increase the panalty. 
+		with this missclassification loss  we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. may be we can impose stronger panalties for samples found deeper in taratory of the other lass. in fact we wouldn't mind the margen for errors. so even correctly classified samples  but are really close to the line almost missclassified could increase the panalty. 
 
 		we compute the panalty:
 			z^i = xiT w
@@ -332,4 +332,3 @@ SVM (suport vecter machine):
 				this hinge loss in convex (oposite to misclassification loss). 
 				we are ready to use the hinge loss to choose good linear saparater for our classification task(SVM). 
 
-		
