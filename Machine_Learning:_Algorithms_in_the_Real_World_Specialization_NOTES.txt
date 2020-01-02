@@ -309,5 +309,6 @@ SVM (suport vecter machine):
 	with this classification we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. may be we can impose stronger panalties for samples found deeper in taratory of the other lass. in fact we wouldn't mind the margen for errors. so even correctly classified samples  but are really close to the line almost missclassified could increase the panalty. 
 
 	we compute the panalty:
-		z^i = xiT w = 0
+		z^i = xiT w
+		if z^1 = 0: then that example x is exactly on the decition boundry.
 		
