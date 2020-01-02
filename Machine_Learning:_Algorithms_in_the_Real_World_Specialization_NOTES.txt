@@ -270,4 +270,4 @@ Reguralization:
  	input layer , following by hidden layer/s , and the output layer(which is actualy a predictions)
  	in between the input layer and output layer can be ANY number of hidden layers. 
  	the layers can be loop back from themselves, but dafault is the feed forward Neural network; that feeds each hidden layer with the output of the layer before.
- 	
+ 	one we have multiplied hidden layers the Neural network is called deep Neural network. and the process of learning is Deep learning. 
