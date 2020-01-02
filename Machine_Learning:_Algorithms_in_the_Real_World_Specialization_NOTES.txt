@@ -127,7 +127,7 @@ KNN:
 
 
 LOGISTIC REGRESSION:
-	it called <Logistic regression> because it's doing classification (using) a regression operation and a transfer function.
+	it called <Logistic regression> because it's doing classification using a regression operation and a transfer function.
 		transfer function:
 			a function whose job it is to translate the output of one function into some other space. in this case the the trainsfer functions (which is logistic function here) takes the number reported by our regression model and transfer  it into a class label.
 	the value it finds via the regression step can be thought of as the probability that a data poing belongs to a particuler class.
@@ -244,4 +244,3 @@ Reguralization:
 
 	Linear regression with an L2 regularizer is called ridge regression.
 	Linear regression with an L1 regularizer is also called Lasso regression.
-	
