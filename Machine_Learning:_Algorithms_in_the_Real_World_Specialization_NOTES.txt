@@ -269,8 +269,7 @@ Reguralization:
  	typically each neuron actualy envolve two saparate simple functions. 
  		1- a linear function.
  			linear functions are differentiable and convex. 
- 		2- then a non linear transfermaton.
-
+ 		2- then a non linear transfermaton(AKA activation function).
  	output of on layer is a input of next layer.
  	input layer , following by hidden layer/s , and the output layer(which is actualy a predictions)
  	in between the input layer and output layer can be ANY number of hidden layers. 
