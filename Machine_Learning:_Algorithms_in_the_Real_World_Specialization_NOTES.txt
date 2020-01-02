@@ -323,5 +323,8 @@ SVM (suport vecter machine):
 			realy small when it is quit close to dicision boundry. 
 
 			we want to penalizes nearly wrong classification create some margen fro error arround the dicision boundry. we typically give ourselves margen of 1, we want to penalizes plasing the line less then 1 unit away from a point evan if it is correctly classified. for this we just need to subtract our y*z^ from 1 <1-y*z^>, this value will be posative for any point that encroaches on that margin, or is incorrectly classified by our line. 
-				this way not only incorrectly classified points get panalty but correctly classified points that are in that margin space around the dicision line will also recive small panalties.  
+				this way not only incorrectly classified points get panalty but correctly classified points that are in that margin space around the dicision line will also recive small panalties. 
+
+				how ever if use this <1-y*z^) as our loss  the correctly classified points will get a nagative panalty which is wrong. we can fix it by filtring losses less then 0, thir bring us the final formula for hing loss:
+					max{0, 1-y*z^}  
 			
