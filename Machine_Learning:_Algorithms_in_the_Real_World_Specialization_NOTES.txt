@@ -265,4 +265,6 @@ Reguralization:
 
  Neural network:
  	neuron is basic component of Neural network.
- 	each neuron take some numbers of input and give a (single) number as output. 
+ 	each neuron take some numbers of input and give a (single) number as output.
+ 	output of on lear is a input of next lear.
+ 	 
