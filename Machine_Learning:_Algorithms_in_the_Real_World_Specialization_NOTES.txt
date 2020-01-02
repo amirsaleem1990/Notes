@@ -298,37 +298,37 @@ Reguralization:
 SVM (suport vecter machine):
 	
 	the combenation of the loss and the transfer function has to be a convex surgate. 
-	
+	lossMisclassification(y^i, yi) =  1 if yi*y^i=-1, and 0 if yi*y^i=+1
+	+1 * -1 = -1
+	-1 * +1 = -1
+	+1 * +1 = +1
+	-1 * -1 = +1
+	with this missclassification loss  we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. may be we can impose stronger panalties for samples found deeper in taratory of the other lass. in fact we wouldn't mind the margen for errors. so even correctly classified samples  but are really close to the line almost missclassified could increase the panalty. 
+
 	hinge loss function:
+
 		this function solves some of the problem created by other loss functions, and can be used to turn the power of regression towards classification. 
+	
+		we compute the panalty:
+			z^i = xiT w
+			and then use sign function to determine which side of the line taht particular example falls on.
+			y^i = sign(z^i)		
 
-		lossMisclassification(y^i, yi) =  1 if yi*y^i=-1, and 0 if yi*y^i=+1
-			+1 * -1 = -1
-			-1 * +1 = -1
-			+1 * +1 = +1
-			-1 * -1 = +1
-		with this missclassification loss  we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. may be we can impose stronger panalties for samples found deeper in taratory of the other lass. in fact we wouldn't mind the margen for errors. so even correctly classified samples  but are really close to the line almost missclassified could increase the panalty. 
-		hinge loss:
-			we compute the panalty:
-				z^i = xiT w
-				and then use sign function to determine which side of the line taht particular example falls on.
-				y^i = sign(z^i)		
+			if z^1 = 0: 
+				then that example x is exactly on the decition boundry.
 
-				if z^1 = 0: 
-					then that example x is exactly on the decition boundry.
+			so in the linear part of our function the points further from the line will be mapped to increasingly positive or increasingly nagative numbers, depending on which side of the line they are on.  we can use that number (z^) as a notion for signed distance from the line. we can use it to create a panalty that magnified by distance from the linear sapareter, if we take this notion of signed distance (Z^) and multiply by the correct lable (y) we get that number that posative if the sample falls in currect side of the line. or nagative if the point falls in wrong side of the line. 
+			big positive: deeply on correct side.
+			big nagative: deeply on wrong side.
+			realy small when it is quit close to dicision boundry. 
 
-				so in the linear part of our function the points further from the line will be mapped to increasingly positive or increasingly nagative numbers, depending on which side of the line they are on.  we can use that number (z^) as a notion for signed distance from the line. we can use it to create a panalty that magnified by distance from the linear sapareter, if we take this notion of signed distance (Z^) and multiply by the correct lable (y) we get that number that posative if the sample falls in currect side of the line. or nagative if the point falls in wrong side of the line. 
-				big positive: deeply on correct side.
-				big nagative: deeply on wrong side.
-				realy small when it is quit close to dicision boundry. 
+			we want to penalizes nearly wrong classification create some margen fro error arround the dicision boundry. we typically give ourselves margen of 1, we want to penalizes plasing the line less then 1 unit away from a point evan if it is correctly classified. for this we just need to subtract our y*z^ from 1 <1-y*z^>, this value will be posative for any point that encroaches on that margin, or is incorrectly classified by our line. 
+				this way not only incorrectly classified points get panalty but correctly classified points that are in that margin space around the dicision line will also recive small panalties. 
 
-				we want to penalizes nearly wrong classification create some margen fro error arround the dicision boundry. we typically give ourselves margen of 1, we want to penalizes plasing the line less then 1 unit away from a point evan if it is correctly classified. for this we just need to subtract our y*z^ from 1 <1-y*z^>, this value will be posative for any point that encroaches on that margin, or is incorrectly classified by our line. 
-					this way not only incorrectly classified points get panalty but correctly classified points that are in that margin space around the dicision line will also recive small panalties. 
+				how ever if use this <1-y*z^) as our loss  the correctly classified points will get a nagative panalty which is wrong. we can fix it by filtring losses less then 0, thir bring us the final formula for hinge loss:
+					max{0, 1-y*z^}  
 
-					how ever if use this <1-y*z^) as our loss  the correctly classified points will get a nagative panalty which is wrong. we can fix it by filtring losses less then 0, thir bring us the final formula for hinge loss:
-						max{0, 1-y*z^}  
-
-					we sum this panalty over all training data, and that is our total loss. 
-					this hinge loss in convex (oposite to misclassification loss). 
-					we are ready to use the hinge loss to choose good linear saparater for our classification task(SVM). 
+				we sum this panalty over all training data, and that is our total loss. 
+				this hinge loss in convex (oposite to misclassification loss). 
+				we are ready to use the hinge loss to choose good linear saparater for our classification task(SVM). 
 
