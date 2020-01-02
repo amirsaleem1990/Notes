@@ -268,3 +268,5 @@ Reguralization:
  	each neuron take some numbers of input and give a (single) number as output.
  	output of on layer is a input of next layer.
  	input layer , following by hidden layer/s , and the output layer(which is actualy a predictions)
+ 	in between the input layer and output layer can be ANY number of hidden layers. 
+ 	
