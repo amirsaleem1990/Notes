@@ -324,3 +324,4 @@ SVM (suport vecter machine):
 
 			we want to penalizes nearly wrong classification create some margen fro error arround the dicision boundry. we typically give ourselves margen of 1, we want to penalizes plasing the line less then 1 unit away from a point evan if it is correctly classified. for this we just need to subtract our y*z^ from 1 <1-y*z^>, this value will be posative for any point that encroaches on that margin, or is incorrectly classified by our line. 
 				this way not only incorrectly classified points get panalty but correctly classified points that are in that margin space around the dicision line will also recive small panalties.  
+			
