@@ -302,23 +302,23 @@ SVM (suport vecter machine):
 	hing loss function:
 		this function solves some of the problem created by other loss functions, and can be used to turn the power of regression towards classification. 
 
-	lossMisclassification(y^i, yi) =  1 if yi*y^i=-1, and 0 if yi*y^i=+1
-		+1 * -1 = -1
-		-1 * +1 = -1
-		+1 * +1 = +1
-		-1 * -1 = +1
-	with this classification we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. may be we can impose stronger panalties for samples found deeper in taratory of the other lass. in fact we wouldn't mind the margen for errors. so even correctly classified samples  but are really close to the line almost missclassified could increase the panalty. 
+		lossMisclassification(y^i, yi) =  1 if yi*y^i=-1, and 0 if yi*y^i=+1
+			+1 * -1 = -1
+			-1 * +1 = -1
+			+1 * +1 = +1
+			-1 * -1 = +1
+		with this classification we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. may be we can impose stronger panalties for samples found deeper in taratory of the other lass. in fact we wouldn't mind the margen for errors. so even correctly classified samples  but are really close to the line almost missclassified could increase the panalty. 
 
-	we compute the panalty:
-		z^i = xiT w
-		and then use sign function to determine which side of the line taht particular example falls on.
-		y^i = sign(z^i)		
+		we compute the panalty:
+			z^i = xiT w
+			and then use sign function to determine which side of the line taht particular example falls on.
+			y^i = sign(z^i)		
 
-		if z^1 = 0: 
-			then that example x is exactly on the decition boundry.
+			if z^1 = 0: 
+				then that example x is exactly on the decition boundry.
 
-		so in the linear part of our function the points further from the line will be mapped to increasingly positive or increasingly nagative numbers, depending on which side of the line they are on.  we can use that number (z^) as a notion for signed distance from the line. we can use it to create a panalty that magnified by distance from the linear sapareter, if we take this notion of signed distance (Z^) and multiply by the correct lable (y) we get that number that posative if the sample falls in currect side of the line. or nagative if the point falls in wrong side of the line. 
-		big positive: deeply on wrong side.
-		big nagative: deeply on correct side.
-		realy small when it is quit close to dicision boundry. 
-		
+			so in the linear part of our function the points further from the line will be mapped to increasingly positive or increasingly nagative numbers, depending on which side of the line they are on.  we can use that number (z^) as a notion for signed distance from the line. we can use it to create a panalty that magnified by distance from the linear sapareter, if we take this notion of signed distance (Z^) and multiply by the correct lable (y) we get that number that posative if the sample falls in currect side of the line. or nagative if the point falls in wrong side of the line. 
+			big positive: deeply on wrong side.
+			big nagative: deeply on correct side.
+			realy small when it is quit close to dicision boundry. 
+			
