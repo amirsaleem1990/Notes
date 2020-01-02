@@ -310,7 +310,8 @@ SVM (suport vecter machine):
 
 	we compute the panalty:
 		z^i = xiT w
+		and then use sign function to determine which side of the line taht particular example falls on.
+
 		if z^1 = 0: 
 			then that example x is exactly on the decition boundry.
 		y^i = sign(z^i) = sign(xiT w)
-		
