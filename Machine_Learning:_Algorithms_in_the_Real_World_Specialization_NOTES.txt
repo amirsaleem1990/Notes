@@ -145,7 +145,7 @@ LOGISTIC REGRESSION:
 			y = -log( 1 / (1+e-f(x)))
 		squared error loss of the sigmoid function if the label is 1
 			y = -log( 1 - (1 / (1+e-f(x))))
-	
+	if you use this matching loss with a logistic transfer function you get a convex and smooth landscape. Now gradient decrease find your optimal model. 
 	*	squared error loss of the sigmoid function if the label is 0:
 			y = ( 1 / ( 1 + e-f(x))^2 )
 		squared error loss of the sigmoid function if then label is 1:
