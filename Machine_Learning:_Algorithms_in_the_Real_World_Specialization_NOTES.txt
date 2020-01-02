@@ -318,7 +318,6 @@ SVM (suport vecter machine):
 				then that example x is exactly on the decition boundry.
 
 			so in the linear part of our function the points further from the line will be mapped to increasingly positive or increasingly nagative numbers, depending on which side of the line they are on.  we can use that number (z^) as a notion for signed distance from the line. we can use it to create a panalty that magnified by distance from the linear sapareter, if we take this notion of signed distance (Z^) and multiply by the correct lable (y) we get that number that posative if the sample falls in currect side of the line. or nagative if the point falls in wrong side of the line. 
-			big positive: deeply on wrong side.
-			big nagative: deeply on correct side.
+			big positive: deeply on correct side.
+			big nagative: deeply on wrong side.
 			realy small when it is quit close to dicision boundry. 
-			
