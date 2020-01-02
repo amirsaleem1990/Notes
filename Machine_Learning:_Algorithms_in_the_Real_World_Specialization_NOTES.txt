@@ -320,3 +320,4 @@ SVM (suport vecter machine):
 		big positive: deeply on wrong side.
 		big nagative: deeply on correct side.
 		realy small when it is quit close to dicision boundry. 
+		
