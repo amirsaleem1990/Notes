@@ -132,7 +132,7 @@ LOGISTIC REGRESSION:
 			a function whose job it is to translate the output of one function into some other space. in this case the the trainsfer functions (which is logistic function here) takes the number reported by our regression model and transfer  it into a class label.
 	the value it finds via the regression step can be thought of as the probability that a data poing belongs to a particuler class.
 
-	The threshold can be adjusted based on the domint and whaterver bias you need for each class
+	The threshold can be adjusted based on the domin and whaterver bias you need for each class
 
 in Linear regression:
 
