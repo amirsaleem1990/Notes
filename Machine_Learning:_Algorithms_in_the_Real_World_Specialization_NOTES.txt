@@ -128,6 +128,10 @@ KNN:
 
 LOGISTIC REGRESSION:
 	
+	two steps:
+		1- first linear regression
+		2- logistic transfer function take linear function output and give some number(0,1)
+
 	predict the probabilities that a data point belongs to a particuler class.
 
 	it called <Logistic regression> because it's doing classification using a regression operation and a transfer function.
@@ -274,7 +278,7 @@ Reguralization:
  		multiplies its weights against the input values and returns the sum. then that value is passed to activation function, and outcome is some other number, this output is the final output from this neuron.
 
  	Neural network learning these weights using gradient decrease.
- 	
+
  	output of on layer is a input of next layer.
  	input layer , following by hidden layer/s , and the output layer(which is actualy a predictions)
  	in between the input layer and output layer can be ANY number of hidden layers. 
