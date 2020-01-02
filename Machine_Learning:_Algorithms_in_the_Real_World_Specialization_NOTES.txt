@@ -327,4 +327,6 @@ SVM (suport vecter machine):
 
 				how ever if use this <1-y*z^) as our loss  the correctly classified points will get a nagative panalty which is wrong. we can fix it by filtring losses less then 0, thir bring us the final formula for hing loss:
 					max{0, 1-y*z^}  
-			
+
+				we sum this panalty over all training data, and that is our total loss. 
+				this hing loss in convex (oposite to misclassification loss)
