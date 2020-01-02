@@ -288,4 +288,8 @@ Reguralization:
  	sigmoid function = logistic regression
  		take inputs from privious layer, run linear regression, the output of linear regression go into logistic function, and give some output(0,1)
 
- 	with then Neural network we don't need to optimize each neuron saparately, 	it isn't clear how we could optimize each neuron saparately. we know what we want the entire network to do.
+ 	with then Neural network we don't need to optimize each neuron saparately, 	it isn't clear how we could optimize each neuron saparately. we know what we want the entire network to do. but we DO know we need each layer to output values that ware makes the work of next layer easier. 
+
+ 	Neural nets can't be used for everything, we can't explain the results. 
+
+ 	
