@@ -342,3 +342,5 @@ df2 = pd.DataFrame({"A" : list(range(10, 20)), "B" : list('klmnopqrst')})
 full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
 ----------------------------------------------------------------
 
+# How do I subtract the previous row from the current row in a pandas dataframe and apply it to every row; without using a loop?
+
