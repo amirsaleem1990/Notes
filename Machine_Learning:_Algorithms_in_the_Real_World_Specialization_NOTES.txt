@@ -322,4 +322,4 @@ SVM (suport vecter machine):
 			big nagative: deeply on wrong side.
 			realy small when it is quit close to dicision boundry. 
 
-		
+			we want to penalizes nearly wrong classification create some margen fro error arround the dicision boundry.
