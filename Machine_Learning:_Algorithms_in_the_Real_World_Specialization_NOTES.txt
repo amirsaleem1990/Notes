@@ -306,4 +306,4 @@ SVM (suport vecter machine):
 		-1 * +1 = -1
 		+1 * +1 = +1
 		-1 * -1 = +1
-	
+	with this classification we treat every missclassification equqly bad, but may be some missclassifications are worse then others. remember we are trying to decide how bad a linear saperation of the two classes is. 	
