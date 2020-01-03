@@ -365,5 +365,6 @@ classification assessment:
 	confusion mutrix:
 		columns : actual claass
 		rows    : predicted class
-	Accuracy:
-		correct predictions / n
+
+	Accuracy
+	
