@@ -332,3 +332,4 @@ SVM (suport vecter machine):
 
 	SVM a powerfull techniques for classification. 
 	
+	
