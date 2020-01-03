@@ -341,3 +341,5 @@ SVM (suport vecter machine):
 	you can use SVMs for regression as well
 
 	
+Regression assesment:
+	
