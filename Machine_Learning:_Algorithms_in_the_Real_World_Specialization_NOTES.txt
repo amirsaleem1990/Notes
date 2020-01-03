@@ -347,5 +347,5 @@ Regression assesment:
 		if we want to convert the units back to orignal form; we can take the square root of MSE, and this known as RMSE (root mean squared error), we might want to report RMSE rather then MSE just so that we have some intuition about what that average error actually means. but is it unnecesery to do square root operetion if you mostly looking at comperison.
 
 		MSE is most common error measure.
-		
-	There is one side effect of squaring the errors, 
+
+	There is one side effect of squaring the errors, squaring big numbers even bigger, so while MAE penalizises each error equalantly, MSE in increasingly sensitive as the errors get bigger, 
