@@ -352,6 +352,6 @@ Regression assesment:
 
 	mean squared log error adds a log function to the calculation of the difference. This results in underestimates being penalized more than overestimates, and more importantly, evening out the effect of mistakes, not being as sensitive to outliers. It's useful when you care more about relative mistakes than the absolute magnitude of your mistakes. 
 	
-	R^2
+	R^2:
+		1 - SSE / SST 
 		R^2 looks at the variation or noisiness of the model labels. In particular, it modifies the same square error measure as MSE, but divides by the noisiness in the labels themselves. This means R^2 is normalized, and it lies between 0 and 1, with 1 being the best score. R^2 is usually used for interpretation without knowing the scale of the data and it explains how well the variation in the data itself explains the variation in the predicted values.
-	
