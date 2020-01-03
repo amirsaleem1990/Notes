@@ -388,5 +388,5 @@ learning curves:
 	two key	 factor effect the generalization ability of model:
 		1- model complexity
 		2- dataset size
-
-	
+			if you have more data for training the ability of your model to generalize almost always become batter.
+			 
