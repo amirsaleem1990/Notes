@@ -344,5 +344,5 @@ SVM (suport vecter machine):
 Regression assesment:
 	MAE (mean absolute error)
 	MSE (mean squared error):
-		if we want to convert the units back to orignal form; we can take the square root of MSE, and this known as RMSE (root mean squared error)
+		if we want to convert the units back to orignal form; we can take the square root of MSE, and this known as RMSE (root mean squared error), we might want to report RMSE rather then MSE just so that we have some intuition about what that average error actually means.
 	
