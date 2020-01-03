@@ -356,9 +356,14 @@ Regression assesment:
 		1 - SSE / SST 
 		R^2 looks at the variation or noisiness of the model labels. In particular, it modifies the same square error measure as MSE, but divides by the noisiness in the labels themselves. This means R^2 is normalized, and it lies between 0 and 1, with 1 being the best score. R^2 is usually used for interpretation without knowing the scale of the data and it explains how well the variation in the data itself explains the variation in the predicted values.
 
-type2 error = FN(false nagative)
-type1 error = FP(false positive)
 
 classification assessment:
+	type2 error = FN(false nagative)
+	type1 error = FP(false positive)
+
+
+	confusion mutrix:
+		columns : actual claass
+		rows    : predicted class
 	Accuracy:
 		correct predictions / n
