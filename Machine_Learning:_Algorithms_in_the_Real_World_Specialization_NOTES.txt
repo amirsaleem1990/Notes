@@ -416,7 +416,8 @@ I.I.D:
 		
 		there are 2 ways to deal with this:
 			1- get rid of dependencies.
+				you can't do it for any odd data. it depends on the data.
 			2- not split your data randomly.
-			
+
 splitting data into train and test:
 	(when we split our data into train and test, we make sure same distribution of outcome variable in bot tran and test set. eg: we have 100 observations, and label has 2 classes, 0:80%, 1:20%, we make sure after the split that the both train["target"] and test["target"] have the  0:80%, 1:20%)  
