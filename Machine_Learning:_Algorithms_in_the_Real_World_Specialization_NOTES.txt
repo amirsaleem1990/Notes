@@ -409,4 +409,6 @@ I.I.D:
 
 	Not I.I.D:
 		eg: time series data.
-		  
+
+splitting data into train and test:
+	(when we split our data into train and test, we make sure same distribution of outcome variable in bot tran and test set. eg: we have 100 observations, and label has 2 classes, 0:80%, 1:20%, we make sure after the split that the both train["target"] and test["target"] have the  0:80%, 1:20%)  
