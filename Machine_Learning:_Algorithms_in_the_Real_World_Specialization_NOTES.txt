@@ -422,6 +422,12 @@ I.I.D:
 splitting data into train and test:
 	(when we split our data into train and test, we make sure same distribution of outcome variable in bot tran and test set. eg: we have 100 observations, and label has 2 classes, 0:80%, 1:20%, we make sure after the split that the both train["target"] and test["target"] have the  0:80%, 1:20%)  
 
-	we NEVER use test data to improve our model. (eg: it is wrong to split data into train and test, then train your model; then test on test data; after testing you go to tune your model. this is wrong. the test data should use ONE TIME ONLY, after you all tuning using validation set.)
-
+	we NEVER use test data to improve our model. (eg: it is wrong to split data into train and test, then train your model; then test on test data; after testing you go to tune your model. this is wrong. the test data should use ONE TIME ONLY, after you all tuning using validation set.). so the right way: 
+		1- split into train, validation, and test chunks. 
+		2- train on train set
+		3- validate on validation set
+		4- tune your model
+		5- repeat 2,3,4 until the model is final.
+		6- test on test set ONCE. and the results SHOULD NOT be used to tune the model.
+		7- deploy the model.
 	
