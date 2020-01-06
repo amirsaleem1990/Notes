@@ -388,10 +388,13 @@ learning curves:
 	two key	 factor effect the generalization ability of model:
 		1- model complexity
 			as model complexity increases; decrease training AND test errors. after cirtien point the model begin overfitting.
-			  
+
 		2- dataset size
 			if you have more data for training; the ability of your model to generalize almost always become batter.
-			
+				
+			(givin the model complexityi is fixed) as increases our data size the training error increases and test error decrease.
+				training error increases because the variance of the training data increased where the model complexity will fixed.
+				
 			If we were to plot the learning curves of the training test data for different training data set sizes for fixed model complexity; The model will have low training error when we use a small training data set. However test error will be really high because it hasn't learned much about the variations in the data distribution to be able to predict for out-of-sample instances. In other words, the data points the model hasn't seen before. However, when more training data instances are used, training error increases. This is because the variance in training data has increased while the model complexity was fixed. However, test error goes down because the model can now generalize better.Another type of learning curve that specifically measures the performance of classification models is the: 
 
 	ROC (or Receiver Operating Characteristics curve)
