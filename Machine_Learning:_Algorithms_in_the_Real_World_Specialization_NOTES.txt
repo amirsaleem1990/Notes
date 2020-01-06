@@ -405,4 +405,8 @@ learning curves:
 I.I.D:
 	independent identical distributed data.
 
-	None of the observations (spacially None of the lables) depends on each other in a probablistic sence. this whill  mean you can shuffle the order and your label for one example doesn't change the probablity of the correct label for the next.  
+	None of the observations (spacially None of the lables) depends on each other in a probablistic sence. this whill  mean you can shuffle the order and your label for one example doesn't change the probablity of the correct label for the next.	
+
+	Not I.I.D:
+		eg: time series data.
+		  
