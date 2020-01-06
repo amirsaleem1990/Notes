@@ -410,5 +410,13 @@ I.I.D:
 	Not I.I.D:
 		eg: time series data.
 
+		randomely split NOT IID data into train and test causing two problems:
+			1- you just lost the ordering; which is importand here.
+			2- you don't actually have a cleaned test set. 
+		
+		there are 2 ways to deal with this:
+			1- get rid of dependencies.
+			2- not split your data randomly.
+			
 splitting data into train and test:
 	(when we split our data into train and test, we make sure same distribution of outcome variable in bot tran and test set. eg: we have 100 observations, and label has 2 classes, 0:80%, 1:20%, we make sure after the split that the both train["target"] and test["target"] have the  0:80%, 1:20%)  
