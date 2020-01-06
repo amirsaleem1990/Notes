@@ -404,4 +404,6 @@ learning curves:
 	
 I.I.D:
 	independent identical distributed data.
+
+	None of the observations (spacially None of the lables) depends on each other in a probablistic sence.
 	
