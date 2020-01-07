@@ -448,6 +448,9 @@ hyper parameters tuning:
 		cp
 		threshold (in classification)
 		num trees (random forest)
+		replace   (random forest)
+		sample.fraction (random forest)
+		minimum_improvement (if at any point; spliting the space <= this value then don't split it)
 		pruning (after or before)
 		MSE or MAE
 		weights
