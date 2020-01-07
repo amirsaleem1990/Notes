@@ -467,6 +467,7 @@ hyper parameters tuning:
 			alpha (if Reguralizers are used)
 		in SVM:
 			c
+			kernal
 			weights
 			distance function
 		in KNN:
