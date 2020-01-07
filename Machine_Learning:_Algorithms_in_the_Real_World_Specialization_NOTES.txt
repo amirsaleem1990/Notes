@@ -483,4 +483,10 @@ hyper parameters tuning:
 			systematic aproach,  you are give the list os pre determined combinations. the model trained on each combination, and you pick bech of them.
 		
 		2- random search 
-		
+			you provide a range of values for each hyper parameter. the system select random values within these ranges, and try diffrent combinations.
+
+			it is usually finds optimal parameters or close to the optimal parameters when the data is small and the number of features is relatively few. 
+
+			Researches shown that the random search actually does a batter job of finding optimal parameters then grid search. 
+
+		 
