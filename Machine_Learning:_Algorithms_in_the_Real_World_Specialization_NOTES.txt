@@ -442,4 +442,5 @@ CV (cross validation):
 
 
 hyper parameters tuning:
-	
+	paremters of model that we have to put in the model. eg: max_depth and min_node in trees, and threshold in logistic regression, and alpha in regularizers, and learning rate in gradient descent, and so on...
+	  
