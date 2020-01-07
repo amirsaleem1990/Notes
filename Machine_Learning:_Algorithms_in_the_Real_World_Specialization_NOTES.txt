@@ -491,4 +491,6 @@ hyper parameters tuning:
 		
 			instead of list of which value explicitily to try for each hyper paramter, we have two options:
 				1- list
+					the functions will randomly sample value without replacement from the list. 
 				2- distribution  
+					you have also to supply the sampling method. 
