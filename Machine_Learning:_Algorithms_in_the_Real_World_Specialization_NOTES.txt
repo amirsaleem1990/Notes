@@ -431,6 +431,5 @@ splitting data into train and test:
 		6- test on test set. and the results SHOULD NOT be used to tune the model.
 		7- deploy the model.
 
-	Cross validation is mainly used when the dataset is relatively small. 
-
-
+	Cross validation is mainly used when the dataset is relatively small. results of cross validation will be a good approximation of the result we wol'd have gotten if have used the full data set.
+	
