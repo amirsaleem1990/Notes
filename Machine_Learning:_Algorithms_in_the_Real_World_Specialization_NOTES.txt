@@ -447,6 +447,7 @@ hyper parameters tuning:
 	(in dicision Tree:
 			max depth
 			min depth
+			criteria for quality of splist (gini index, entropy)
 			cp
 			threshold (in classification)
 			num trees (random forest)
@@ -495,4 +496,3 @@ hyper parameters tuning:
 				2- distribution  
 					you have also to supply the sampling method. 
 
-					
