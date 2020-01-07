@@ -489,8 +489,10 @@ hyper parameters tuning:
 
 			Researches shown that the random search actually does a batter job of finding optimal parameters then grid search. 
 		
-			instead of list of which value explicitily to try for each hyper paramter, we have two options:
+			instead of list of which value explicitily to try for each hyper paramter(as in Grid search), we have two options:
 				1- list
 					the functions will randomly sample value without replacement from the list. 
 				2- distribution  
 					you have also to supply the sampling method. 
+
+					
