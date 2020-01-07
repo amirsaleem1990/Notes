@@ -438,4 +438,6 @@ CV (cross validation):
 
 	we use CV to tune for hyper	parameters in general. 
 
-	
+	when you have lot of data make a validation set; the same you make a test set. (but) when you don't have data to spare use the appropiate cross-validation techniques. 
+
+	 
