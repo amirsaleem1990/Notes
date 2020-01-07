@@ -432,3 +432,6 @@ splitting data into train and test:
 		7- deploy the model.
 
 	Cross validation is mainly used when the dataset is relatively small. 
+
+
+	
