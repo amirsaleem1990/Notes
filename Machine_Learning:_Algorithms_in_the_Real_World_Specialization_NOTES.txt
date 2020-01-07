@@ -428,10 +428,9 @@ splitting data into train and test:
 		3- validate on validation set
 		4- tune your model
 		5- repeat 2,3,4 until the model is final.
-		6- test on test set ONCE. and the results SHOULD NOT be used to tune the model.
+		6- test on test set. and the results SHOULD NOT be used to tune the model.
 		7- deploy the model.
 
 	Cross validation is mainly used when the dataset is relatively small. 
 
 
-	
