@@ -442,7 +442,8 @@ CV (cross validation):
 
 
 hyper parameters tuning:
-
+	finding a best hyper parameters set is called Metalearning.
+	
 	(in dicision Tree:
 			max depth
 			min depth
