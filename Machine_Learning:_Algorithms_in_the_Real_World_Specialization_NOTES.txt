@@ -466,6 +466,7 @@ hyper parameters tuning:
 		in linear regression:
 			alpha (if Reguralizers are used)
 		in SVM:
+			c
 			weights
 			distance function
 		in KNN:
