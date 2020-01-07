@@ -477,7 +477,10 @@ hyper parameters tuning:
 	on the other hand <model parameters> that the model is care about, eg: weights in the Neural network nodes and the split point in the dicision tree.
 
 	thre are couple of techniques to identify best combination of hypter parameters:
+
 		1- Grid search 
 			computationally expansive
 			systematic aproach,  you are give the list os pre determined combinations. the model trained on each combination, and you pick bech of them.
+		
 		2- random search 
+		
