@@ -467,7 +467,7 @@ hyper parameters tuning:
 			alpha (if Reguralizers are used)
 		in SVM:
 			c
-			kernal (some of the kernals require their own perameters, eg: polynomial kernal require it is degree of the polynomial)
+			kernal (some of the kernals require their own perameters, eg: polynomial kernal require it is degree of the polynomial, gamma for non linear kernal)
 			weights
 			distance function
 		in KNN:
