@@ -54,6 +54,7 @@ KNN:
 
 		2- distance measure:
 
+			(in KNN) do wee need always calculating all the  distances? NO, 
 			(we have to scale our data before calculating the distance)
 			a distance function maps two elements to some real number , the distance between them.
 
