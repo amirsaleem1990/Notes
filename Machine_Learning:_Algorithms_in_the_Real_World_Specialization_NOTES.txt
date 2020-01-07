@@ -446,7 +446,8 @@ hyper parameters tuning:
 
 	(in dicision Tree:
 			max depth
-			min depth
+			min samples split (dont split further if node have less then this vlaue observations(amir)) 
+			min samples leaf  (dont split further if one of the resulting nodes have less then thin value observations(amir))
 			criteria for quality of splist (gini index, entropy)
 			cp
 			threshold (in classification)
