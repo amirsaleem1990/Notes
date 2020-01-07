@@ -431,4 +431,11 @@ splitting data into train and test:
 		6- test on test set. and the results SHOULD NOT be used to tune the model.
 		7- deploy the model.
 
+
+CV (cross validation):
+
 	Cross validation is mainly used when the dataset is relatively small. results of cross validation will be a good approximation of the result we wol'd have gotten if have used the full data set. This can help alleviate the problem with small datasets able to represent the true distribution at least to some degree. 
+
+	we use CV to tune for hyper	parameters in general. 
+
+	
