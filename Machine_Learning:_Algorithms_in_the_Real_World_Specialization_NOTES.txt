@@ -442,33 +442,34 @@ CV (cross validation):
 
 
 hyper parameters tuning:
-	in dicision Tree:
-		max depth
-		min depth
-		cp
-		threshold (in classification)
-		num trees (random forest)
-		replace   (random forest)
-		sample.fraction (random forest)
-		minimum_improvement (if at any point; spliting the space <= this value then don't split it)
-		pruning (after or before)
-		MSE or MAE
-		weights
-	in logistic regression:
-		threshold
-		weights
-	in linear regression:
-		alpha (if Reguralizers are used)
-	in SVM:
-		weights
-		distance function
-	in KNN:
-		k
-		distance function
-		weights
-	in clustring:
-		K (in k-mean)
-		distance function
+
+	(in dicision Tree:
+			max depth
+			min depth
+			cp
+			threshold (in classification)
+			num trees (random forest)
+			replace   (random forest)
+			sample.fraction (random forest)
+			minimum_improvement (if at any point; spliting the space <= this value then don't split it)
+			pruning (after or before)
+			MSE or MAE
+			weights
+		in logistic regression:
+			threshold
+			weights
+		in linear regression:
+			alpha (if Reguralizers are used)
+		in SVM:
+			weights
+			distance function
+		in KNN:
+			k
+			distance function
+			weights
+		in clustring:
+			K (in k-mean)
+			distance function)
 
 	paremters of model that we have to put in the model. eg: max_depth and min_node in dicision trees, and threshold in logistic regression, and alpha in regularizers, and learning rate in gradient descent, and so on...
 
