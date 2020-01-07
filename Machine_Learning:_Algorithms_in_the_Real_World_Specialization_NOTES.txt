@@ -488,5 +488,7 @@ hyper parameters tuning:
 			it is usually finds optimal parameters or close to the optimal parameters when the data is small and the number of features is relatively few. 
 
 			Researches shown that the random search actually does a batter job of finding optimal parameters then grid search. 
-
-		 
+		
+			instead of list of which value explicitily to try for each hyper paramter, we have two options:
+				1- list
+				2- distribution  
