@@ -514,7 +514,8 @@ different algorithms put different constraints on your data, so you end up needi
 		binary	(diffrens thresholds) (for one or more columns, example of two_columns binary: 0 if age > 20 & sex == "Male" else 1)
 		intrection
 		scaling (standrization, minmax)
-		
 	catagorical:
 		merge rearly accoured into opprepreate class
 		if fine ordinal, use as numerical variable
+	temporal(time serires)
+		
