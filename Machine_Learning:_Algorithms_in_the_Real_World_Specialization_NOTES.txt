@@ -528,8 +528,7 @@ usefull / ununsefull features:
 	natagive correlation: the one variable increase the other decrease.
 
 	in linear regression multicolinearity makes the algorithm numericly unstable and unable to find optimal model.
-	to avoid multicolinearity transforming features using PCA or performing feachure selection or just using dicision trees is helpfull.
+	to avoid multicolinearity transforming features using PCA or performing feachure selection or just using dicision trees could be  helpfull.
 
 	if the % of missing value in an variable is heigh it is unlikely to be usefull even with the best data imputation techniques.
 
-	
