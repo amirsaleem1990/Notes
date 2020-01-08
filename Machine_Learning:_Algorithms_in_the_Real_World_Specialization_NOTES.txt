@@ -531,4 +531,7 @@ usefull / ununsefull features:
 	to avoid multicolinearity transforming features using PCA or performing feachure selection or just using dicision trees could be  helpfull.
 
 	if the % of missing value in an variable is heigh it is unlikely to be usefull even with the best data imputation techniques.
+	
+	linear algorithms want to have correlation with the label You might be tempted to do a univariate assessment and throw away individual features that have low correlation with our Target but it's important to understand that the features are going to be used in a multivariate setting a feature might not have good univariate correlation with the label but still be useful for the model interactions between it and other features may have a significant impact on the prediction power of the final model. So it's a good idea to test the usefulness of a feature in a multivariate setting if possible in the same setting as to how the features will be used finally with the learning algorithm. But of course complex nonlinear models that can exploit multivariate correlations are not always very explainable.
 
+	
