@@ -504,3 +504,13 @@ hyper parameters tuning:
 
 different algorithms put different constraints on your data, so you end up needing to look at what algorithms are available given the data you have and how to adjust the data given the algorithms you most want to try. Of course how much data you need depends quite a bit on what algorithm you're using. For example, decision trees can be effective with a relatively small dataset, but neural nets need a very large amount. KNN can work well with a fairly small amount of data, but you need to keep that data in memory and accessible whereas other algorithms don't need further access to the training dataset once the training phase is done.
 
+
+(some possible new feachures)(amir):
+	numeric:
+		logs
+		sqrt
+		polynomial (diffrent df's)
+		bins (diffrens qty of bins)
+		binary	(diffrens thresholds)
+		intrection
+		
