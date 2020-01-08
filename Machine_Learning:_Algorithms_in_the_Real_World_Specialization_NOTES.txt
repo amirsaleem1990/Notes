@@ -523,10 +523,13 @@ usefull / ununsefull features:
 	0 variance means 1 unique value. so the feachures is useless.
 	near 0 variance variables should be more investigated. (eg check moest frequent value ratio against 2nd most frequent value ratio)
 
-posetive correlation: the two variables increase or decrease together.
-natagive correlation: the one variable increase the other decrease.
 
-in linear regression multicolinearity makes the algorithm numericly unstable and unable to find optimal model.
-to avoid multicolinearity transforming features using PCA or performing feachure selection or just using dicision trees is helpfull.
+	posetive correlation: the two variables increase or decrease together.
+	natagive correlation: the one variable increase the other decrease.
 
-if the % of missing value in an variable is heigh it is unlikely to be usefull even with the best data imputation techniques.
+	in linear regression multicolinearity makes the algorithm numericly unstable and unable to find optimal model.
+	to avoid multicolinearity transforming features using PCA or performing feachure selection or just using dicision trees is helpfull.
+
+	if the % of missing value in an variable is heigh it is unlikely to be usefull even with the best data imputation techniques.
+
+	
