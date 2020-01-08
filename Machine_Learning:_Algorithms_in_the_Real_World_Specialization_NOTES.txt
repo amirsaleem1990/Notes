@@ -513,7 +513,7 @@ different algorithms put different constraints on your data, so you end up needi
 		bins (diffrens qty of bins) 
 		binary	(diffrens thresholds) (for one or more columns, example of two_columns binary: 0 if age > 20 & sex == "Male" else 1)
 		intrection
-		scaling
+		scaling (standrization, minmax)
 		
 	catagorical:
 		merge rearly accoured into opprepreate class
