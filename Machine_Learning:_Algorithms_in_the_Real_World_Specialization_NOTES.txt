@@ -510,7 +510,11 @@ different algorithms put different constraints on your data, so you end up needi
 		logs
 		sqrt
 		polynomial (diffrent df's)
-		bins (diffrens qty of bins)
-		binary	(diffrens thresholds)
+		bins (diffrens qty of bins) 
+		binary	(diffrens thresholds) (for one or more columns, example of two_columns binary: 0 if age > 20 & sex == "Male" else 1)
 		intrection
+		scaling
 		
+	catagorical:
+		merge rearly accoured into opprepreate class
+		if fine ordinal, use as numerical variable
