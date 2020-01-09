@@ -550,3 +550,4 @@ since there is no universal learner(universal learner: one algorithm that perfor
 
 make sure the selected algorithm is the best for the task at hand we need a large enough dataset to represent the data ganareting distribution of that task. if you dont have enough data to represent tha task there is the good chance we can pick the wrong learning algorithm. and not ONLY that; it has to be quality data. 
 
+when a business build a database system 
