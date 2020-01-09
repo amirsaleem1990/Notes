@@ -542,3 +542,4 @@ How many variables?:
 	When working on day-to-day problems, domain knowledge is one of the most important factors in finding critical features that are most likely to impact the model performance. It's one of the reasons we stress the importance of advice from domain experts on the data features, and awareness of the business process overall. By just looking at the data you can consider things like correlation between features, it's not always bad to have correlated features, but it's also not always good. Of course, it really depends on the specifics of the problem and the learning algorithm, in terms of the number of features and the degree of correlation, and, of course, curse of dimensionality.
 
 	
+	
