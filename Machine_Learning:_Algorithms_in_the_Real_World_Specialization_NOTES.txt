@@ -546,3 +546,7 @@ if we do know (population) probability that's ganerating our data; that's our (m
 
 the critical piece is that the machine learning prediction task ware trying to solve is dependent on the specific data ganareting distribution that underlies the task; that was gives us the training data; that was the learning algorithm trying to model. 
 
+since there is no universal learner(universal learner: one algorithm that perform best in all situations / data sets) we have to try diffrent learning algorithms to identify the best one for givin task. 
+
+make sure the selected algorithm is the best for the task at hand we need a large enough dataset to represent the data ganareting distribution of that task. if you dont have enough data to represent tha task there is the good chance we can pick the wrong learning algorithm. and not ONLY that; it has to be quality data. 
+
