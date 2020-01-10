@@ -570,4 +570,10 @@ DAU (data acquisition and understanding phase):
 
 		A major component of the DAU phase, especially the understanding aspect is exploratory data analysis or EDA. On its own, exploratory data analysis can be several months work. By definition, EDA is exploratory and there's no limit to the amount of exploration you might want to do (but) it's very important to have some way of limiting how much time you spend doing EDA. There's a lot of value in EDA and so its easy to spend a lot of time here but be careful. It's easy to push EDA well beyond the needs of the machine learning algorithm without even realizing it. Of course, it's important to do good exploration but you should have a rough time limit to EDA so that you can actually start on the machine learning itself. EDA will teach you about different characteristics of the data as well as different anomalies in the data. Associated with this, is feature engineering in which you identify the features in the data that are irrelevant and don't add any information.
 
+		After refining your raw data, the volume of data will be smaller than the original raw dataset. Your cleaning and processing phases generally mean throwing away a lot of useless, we hope, data.
+
+
+		The DAU stage might inform you that the original problem you are trying to solve is wrong or that, you can't solve it.
+
+
 		
