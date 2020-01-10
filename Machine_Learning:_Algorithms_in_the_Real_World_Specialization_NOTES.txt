@@ -566,4 +566,6 @@ DAU (data acquisition and understanding phase):
 
 		This is where you convert data into an appropriate form for modeling.
 
+		It's important to start with identifiable steps and reusable code in the DAU phase because you're going to keep coming back to it.
+
 		
