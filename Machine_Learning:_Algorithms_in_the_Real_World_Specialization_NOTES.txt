@@ -564,4 +564,6 @@ DAU (data acquisition and understanding phase):
 
 		So to start making sense of your data, you'll very likely have to align different datasets or at least multiple tables. When a business builds a database system, they usually normalize the databases so that they have unique small sub tables that are easier to program and store. But for data analysis and data science, you want to denormalize these tables to aggregate and create one big table where all the data is in one place for your queries. In addition to aligning multiple tables, part of your data cleaning will also include filtering out certain values. Errors need to be filtered out and null values need to be removed. During this cleaning stage, you want to get a feel for what's going on in the data with the help of the domain expert.
 
+		This is where you convert data into an appropriate form for modeling.
+
 		
