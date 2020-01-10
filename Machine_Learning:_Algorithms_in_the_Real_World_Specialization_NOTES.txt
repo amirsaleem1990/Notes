@@ -575,3 +575,7 @@ DAU (data acquisition and understanding phase):
 	The DAU stage might inform you that the original problem you are trying to solve is wrong or that, you can't solve it.
 
 
+Metadata:
+	Metadata is simply data about data. This means a description and context for the data. Metadata helps organize, find, and understand data. It turns out that the data alone without the context of how it was collected, stored, processed, and monitored isn't nearly sufficient for responsible Machine Learning.
+
+	
