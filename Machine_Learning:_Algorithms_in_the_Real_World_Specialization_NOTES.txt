@@ -593,4 +593,5 @@ Metadata:
 
 	The identification and curation of metadata is an important process. It's not really possible to have the one right answer for what data about data you need to keep. The most important thing to keep in mind when collecting data is, what additional contexts can I provide? How will it keep it with the data itself? When you're looking at different data sources, pay attention to the metadata as well as the raw material. Well curated metadata can be crucial for machine learning success.
 
-	
+We can manually identify a bunch of features that are appropriate for the question we care about, but we can also use various machine learning techniques to automatically find features. This process of transforming raw data into a more useful form is sometimes known as representation learning, and there are lots of standard feature extraction practices. For example, turning a document into a list of numbers representing the count of every possible word. feature selection and engineering since it's often the key to machine learning success. Remember that when determining features, you can manipulate the data in many ways. You can scale, discretized, combine the data. You can also filter out data that you know is irrelevant to your problem. Feature engineering is often a key to success and the best way to provide the machine learning process with a boost.
+
