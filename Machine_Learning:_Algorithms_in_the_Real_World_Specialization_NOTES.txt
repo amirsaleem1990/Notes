@@ -550,4 +550,16 @@ since there is no universal learner(universal learner: one algorithm that perfor
 
 make sure the selected algorithm is the best for the task at hand we need a large enough dataset to represent the data ganareting distribution of that task. if you dont have enough data to represent tha task there is the good chance we can pick the wrong learning algorithm. and not ONLY that; it has to be quality data. 
 
+
+DAU (data acquisition and understanding phase):
+	the DAU phase is the time when you're actually going to get into data and start investigating what you have.
+
+	The DAU phase is where all of your prior assumptions are going to be tested. If we made a wrong assumption or have done a bad job in the BUPD phase, it will now be revealed, and of course, if we do a bad job in this phase, it will also trickle onward. So we'll be careful. We have a clearly defined problem to start working on. 
+
+	Step 1, get the data from your client, hence data acquisition. But it's not just about getting one big file, we're usually going to have multiple data sources that help tackle our problem. You'll need to address all data engineering and data platform aspects at this point. After all, the moment you get the data you have to put it somewhere.
+
+
+	
+
+
 when a business build a database system 
