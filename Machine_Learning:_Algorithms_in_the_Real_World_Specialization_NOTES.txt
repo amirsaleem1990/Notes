@@ -595,3 +595,6 @@ Metadata:
 
 We can manually identify a bunch of features that are appropriate for the question we care about, but we can also use various machine learning techniques to automatically find features. This process of transforming raw data into a more useful form is sometimes known as representation learning, and there are lots of standard feature extraction practices. For example, turning a document into a list of numbers representing the count of every possible word. feature selection and engineering since it's often the key to machine learning success. Remember that when determining features, you can manipulate the data in many ways. You can scale, discretized, combine the data. You can also filter out data that you know is irrelevant to your problem. Feature engineering is often a key to success and the best way to provide the machine learning process with a boost.
 
+
+decision trees can be effective with a relatively small dataset, but neural nets need a very large amount. KNN can work well with a fairly small amount of data, but you need to keep that data in memory and accessible whereas other algorithms don't need further access to the training dataset once the training phase is done.
+
