@@ -343,3 +343,6 @@ full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
 ----------------------------------------------------------------
 
 # How do I subtract the previous row from the current row in a pandas dataframe and apply it to every row; without using a loop? ........................... df["variable"].diff()
+
+
+# display all rows .................. from IPython.display import display ; pd.set_option('display.max_rows', 10000); display(df)
