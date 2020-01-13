@@ -521,7 +521,7 @@ different algorithms put different constraints on your data, so you end up needi
 	temporal(time serires)
 		moving average:
 			particular statistic for some previour observarions (eg: mean of last 7 days) 
-		
+	
 usefull / ununsefull features:
 	0 variance means 1 unique value. so the feachures is useless.
 	near 0 variance variables should be more investigated. (eg check moest frequent value ratio against 2nd most frequent value ratio)
