@@ -523,6 +523,7 @@ different algorithms put different constraints on your data, so you end up needi
 			particular statistic for some previour observarions (eg: mean of last 7 days) 
 	image:
 		SIFT (scale invariant feature transformation)
+		describe local features in image
 		
 usefull / ununsefull features:
 	0 variance means 1 unique value. so the feachures is useless.
