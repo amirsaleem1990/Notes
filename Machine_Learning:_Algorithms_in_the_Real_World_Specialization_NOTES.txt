@@ -613,6 +613,9 @@ decision trees can be effective with a relatively small dataset, but neural nets
 Quality Data:
 	check in your data:
 		missing data (data imputation)
+
+		If we are not completely sure if missing values in a feature like "column_n" are MCAR, then there might be some information hidden in the missing-ness itself. So, it would be a good idea to add a feature to the DataFrame which indicates whether the value for a feature ("column_n" here) was missing prior to impting the missing values for that feature.
+
 			1- MCAR (missing completely at random)
 				there's no correlation between those missing values and the observed data.
 				it is uncomman.
