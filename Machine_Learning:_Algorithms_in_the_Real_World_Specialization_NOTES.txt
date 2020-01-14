@@ -681,4 +681,5 @@ Correct and high quality labels, whether class labels or real number targets, ar
 
 imbalanced data:
 	having imbalanced classes in your learning data impacts the QuAM that results.
+	One way you can handle the imbalanced classes problem is to change your evaluation metric (Precision, Recall, F1).
 	
