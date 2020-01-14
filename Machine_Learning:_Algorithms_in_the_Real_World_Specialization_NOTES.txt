@@ -626,7 +626,7 @@ Quality Data:
 
 			imputation:
 
-				(Actually, imputed numbers are inaccurate information and will not help but sometimes hurt our discrimination power. In the case of numerical features, we have no way but to provide a number but this is not the case with categorical feature.) (from wee3 programming assingment)
+				(Now, let's handle the missing values for "Mode". This is, however, a categorical feature and we cannot do a mean, median, mode, ... imputation. What we can do is impute with things like the majority category (there are other options as well, depending on the situation). However, we may not need do that since we are encoding the categorical variable into one-hot encoding. If we add another feature, treating the missing-ness as a category in itself, we can have a dataset that has all its values in numbers and we don't have to provide an imputed number. Actually, imputed numbers are inaccurate information and will not help but sometimes hurt our discrimination power. In the case of numerical features, we have no way but to provide a number but this is not the case with categorical feature. The binary missing-ness feature we add is sufficient) (from wee3 programming assingment)
 
 				1- imputation by constant:
 					That means that all of the missing values of a feature will be filled in with the same value (0, mean, median, trimmed mean, mode .. etc) and it won't be dependent on any other feature.
