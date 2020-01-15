@@ -13,3 +13,6 @@ extra.1=df$extra[df$group==1]
 extra.2=df$extra[df$group==2]
 t.test(extra.1, extra.2, paired=TRUE, alternative="two.sided")
 
+alpha in confidence interve:
+	P(Type 1 error ) ; usually 0.05
+	
