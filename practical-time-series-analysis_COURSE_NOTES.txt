@@ -5,4 +5,5 @@ Linear regression erros assumptions:
 	4- unrelated to each orhter (they are independent across observations) (we could not predict sign of next error given previous error sign(amir))
 
 residuals = resid(lm_model)
- 
+
+When we look at a set of plots here on the residuals, we'll be able to assess normality.
