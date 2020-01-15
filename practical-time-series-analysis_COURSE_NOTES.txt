@@ -26,6 +26,7 @@ COR:
 		((x1 - mean(x)) / sd(x)) * ((y1 - mean(y)) / sd(y))
 		)
 
-	mean(z_score(x) * z_score(y))
+	mean(z_score(x) * z_score(y)) # here; we might use stand error for z score Instead of sd of sample
 
 	
+
