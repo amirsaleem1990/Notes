@@ -6,4 +6,4 @@ Linear regression erros assumptions:
 
 residuals = resid(lm_model)
 
-When we look at a set of plots here on the residuals, we'll be able to assess normality.
+When we look at a set of plots here on the residuals, we'll be able to assess normality. if you have an abundance of data, you have hundreds of data points. A histogram is a valid approach for looking at structure your data. If you only have 10 or 15 data points, a histogram not the best way to go, we could we could probably do better. In particular if we're assessing normality, we can do what's called a normal probability plot (qqnorm(resid(lm_model)); 	qqline(resid(lm_model)))
