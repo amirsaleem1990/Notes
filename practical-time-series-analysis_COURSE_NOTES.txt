@@ -15,4 +15,17 @@ t.test(extra.1, extra.2, paired=TRUE, alternative="two.sided")
 
 alpha in confidence interve:
 	P(Type 1 error ) ; usually 0.05
+
+COV :
+	mean(
+		(xi - mean(x)) * (yi - mean(y)) 
+		)
+
+COR:
+	mean(
+		((x1 - mean(x)) / sd(x)) * ((y1 - mean(y)) / sd(y))
+		)
+
+	mean(z_score(x) * z_score(y))
+
 	
