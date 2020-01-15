@@ -1,5 +1,4 @@
 Linear regression erros assumptions:
 	1- normaly distributed
 	2- all errors have same variance (they are homoscedastic)
-	3- unrelated to each orhter (we could not predict sign of next error given previous error sign(amir))
-	
+	3- unrelated to each orhter (they are independent across observations) (we could not predict sign of next error given previous error sign(amir))
