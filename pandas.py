@@ -348,3 +348,5 @@ full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
 # display all rows .................. from IPython.display import display ; pd.set_option('display.max_rows', 10000); display(df)
 
 # Convert a column of datetimes to epoch .................. (df['date'] - dt.datetime(1970,1,1)).dt.total_seconds()
+# append in existing csv file .............. df.to_csv(f, mode='a', header=False)^C
+
