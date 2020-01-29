@@ -350,3 +350,5 @@ full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
 # Convert a column of datetimes to epoch .................. (df['date'] - dt.datetime(1970,1,1)).dt.total_seconds()
 # append in existing csv file .............. df.to_csv(existing_file_name.csv, mode='a', header=False)
 
+# drop duplicates excluding column .................... https://stackoverflow.com/questions/38445416/dropping-duplicates-in-pandas-excluding-one-column .................. df.drop_duplicates(subset=['City', 'State', 'Zip', 'Date'])  ............................. df.drop_duplicates(subset=df.columns.difference(['Description']))
+
