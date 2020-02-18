@@ -1,3 +1,4 @@
 open Downloads HD Lite(v4.3.1) app
 go to <setting>
 click on Wi-fi Transfer
+transfer file to ipad from computer using ip address
