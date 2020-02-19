@@ -1,3 +1,6 @@
 MB = million  bytes
 GB = billion  bytes
 TP = trillion bytes
+
+255 		is the largest number 8  bin can represent
+4.3 billion is the largest number 32 bin can represent
