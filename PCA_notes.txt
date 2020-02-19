@@ -1,0 +1,120 @@
+principal component analysis (PCA) and singular value  decomposition (SVD), two important and related techniques of dimension reduction. This last  entails processes which finding subsets of variables in datasets that contain their  essences.
+
+
+As data scientists, we'd like to find a smaller set of multivariate variables that are  uncorrelated AND explain as much variance (or variability) of the data as possible. This is  a statistical approach. 
+
+Two related solutions to these problems are PCA which stands for Principal Component  Analysis and SVD, Singular Value Decomposition. This latter simply means that we express a  matrix X of observations (rows) and variables (columns) as the product of 3 other matrices,  i.e., X=UDV^t. This last term (V^t) represents the transpose of the matrix V. 
+
+svd <- function (x, nu = min(n, p), nv = min(n, p), LINPACK = FALSE) 
+{
+    x <- as.matrix(x)
+    if (any(!is.finite(x))) 
+        stop("infinite or missing values in 'x'")
+    dx <- dim(x)
+    n <- dx[1L]
+    p <- dx[2L]
+    if (!n  !p) 
+        stop("a dimension is zero")
+    La.res <- La.svd(x, nu, nv)
+    res <- list(d = La.res$d)
+    if (nu) 
+        res$u <- La.res$u
+    if (nv) {
+        if (is.complex(x)) 
+            res$v <- Conj(t(La.res$vt))
+        else res$v <- t(La.res$vt)
+    }
+    res
+}
+
+> mat
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    2    5    7
+
+
+> svd(mat)
+$d
+[1] 9.5899624 0.1806108
+
+$u
+           [,1]       [,2]
+[1,] -0.3897782 -0.9209087
+[2,] -0.9209087  0.3897782
+
+$v
+           [,1]       [,2]
+[1,] -0.2327012 -0.7826345
+[2,] -0.5614308  0.5928424
+[3,] -0.7941320 -0.1897921
+
+
+We see that the function returns 3 components, d which holds 2 diagonal elements, u, a 2 by  2 matrix, and v, a 3 by 2 matrix. We stored the diagonal entries in a diagonal matrix for  you, diag, and we also stored u and v in the variables matu and matv respectively. 
+
+> matu %*% diag %*% t(matv)
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    2    5    7
+
+So we did in fact get mat back.
+
+
+PCA (Principal Component Analysis):
+	a simple, non-parametric method for extracting relevant information from confusing data sets
+
+
+
+Basically, PCA is a method to reduce a high-dimensional data set to its essential elements  (not lose information) and explain the variability in the data. you should know that SVD  and PCA are closely related.
+
+
+
+cov = mean(x-mean(x) * y-mean(y))
+covariance proparties:
+	1- cov(x,x) = var(x) # is lye k phir covariance = mean(x-mean(x) * x-mean(x)) = mean( (x-mean(x))^2 ) = var(x)
+	2- cov(x,i) = cov(i,x) # order dose not metter
+
+	if X and J are standrised then the covariance:
+		mean(X * y)
+
+
+covariance matrix:
+	1- it is square matirx
+		d * d (<d> here is columns qty)
+	2- it is symetric.
+		Sij = Sji (S12 = S21, S24 = S42 .... )
+
+	if X (dataframe) have been columns standrised:
+		cov_matrix = tanspose(X) * X
+
+    if Xi and Xj (columns) have been standrised:
+        cov_matrix(Xi,Xj) = mean(Xi * Xj)
+
+    diognal elements are variances
+    non-diognal elements are co-variances
+PCA:
+	agar 2 variables hon or dimension reduction karni ho to least variance variable ko drop kar den.
+	or agar linear treand ho (yani var(x) ~ var(y)) to projuction karen (graph ko rotate karen. or least variace ko deop kar den.)
+
+
+for each column-row pair in our covariance matrix (since the matrix is square) we have eigen value and eigen vector for that pair.
+    lambda_I * eigen_vector_I = covariance_matrix * eigen_vector_I
+    eigen value:
+        which we call lambda.
+            lambda : 
+                give a relative percantage of variance
+            lambda1 > lambda2 > lambda3 > lambda3 > lambdaD
+            lambda_I / sum(all_lambda) = what % of variance explained by lambda_I
+    eigen vector:
+        d * 1 vector
+        proparties of eigen vectors:
+            product(vector_I, vector_J) = 0 # each product of any combination of eigen vectors is equal to 0
+
+
+how to know direction (u)?
+Ans:
+    in 4 steps.
+    1- standrize X
+    2- computer covariance matrix  (S)
+    3- computer eigen values and eigen vectors
+    4- your u1 is just vector1
+
