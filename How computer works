@@ -2,7 +2,7 @@ MB = million  bytes
 GB = billion  bytes
 TP = trillion bytes
 
-255 		is the largest number 8  bin can represent (unsigned)
-4.3 billion is the largest number 32 bin can represent (unsigned)
-
+255 		    is the largest number 8  bit can represent (unsigned)
+4.3 billion     is the largest number 32 bit can represent (unsigned)
+9.2 quintallion is the largest number 64 bit can represent (with sighn, so in both direction +-)
 1st bit is for sighn, 0 for positive and 1 for nagative.
