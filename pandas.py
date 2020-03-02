@@ -353,3 +353,6 @@ full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
 # drop duplicates excluding column .................... https://stackoverflow.com/questions/38445416/dropping-duplicates-in-pandas-excluding-one-column .................. df.drop_duplicates(subset=['City', 'State', 'Zip', 'Date'])  ............................. df.drop_duplicates(subset=df.columns.difference(['Description']))
 
 # line plot for all variables in dataframe vs one variable in x-axis ................ df.set_index('x_axis_column').plot(figsize=(17,10), grid=True)
+# week number (from date columns) .............. df['Date'].dt.week
+# month (from date columns) .............. df['Date'].dt.month
+# year  (from date columns) .............. df['Date'].dt.year
