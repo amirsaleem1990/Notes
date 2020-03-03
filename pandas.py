@@ -355,4 +355,4 @@ full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
 # line plot for all variables in dataframe vs one variable in x-axis ................ df.set_index('x_axis_column').plot(figsize=(17,10), grid=True)
 # week number (from date columns) .............. df['Date'].dt.week
 # month (from date columns) .............. df['Date'].dt.month
-# year  (from date columns) .............. df['Date'].dt.year
+# year  (from date columns) .............. df['Date'].dt.year# convert daily data to weekly ................ df.resample('M', on='week_starting').mean() # week_starting is column name 
