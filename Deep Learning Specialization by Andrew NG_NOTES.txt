@@ -34,3 +34,7 @@ sparce matrix:
 Logistic regression:
 	we interpret the output of logistic regression as follows:
 		probability of y=1 given this observation
+
+	sigmoid function:
+		1 / (i- e - (linear_equation))
+	
