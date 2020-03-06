@@ -23,4 +23,5 @@ relu    = linear regression (except that nagative predictions replaced with 0)
 
 relu Vs sigmoid (as activation function):
 	in relu the gradian descent run much faster compaired to sigmoid
-	
+	in sigmoid there is  nearly flat line in bot tails (upper and lower), so gradiant is nearly 0, so learning become very slow. on the other hand the gradiant is equal to 1 for all positve values of input
+	  
