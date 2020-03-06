@@ -27,4 +27,6 @@ relu Vs sigmoid (as activation function):
 
 	on the other hand the gradiant is equal to 1 for all positve values of input, so gradiant descent is much faster  
 
+sparce matrix:
+	matrix with lot of zeros
 	
