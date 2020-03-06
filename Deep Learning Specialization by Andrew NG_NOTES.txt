@@ -36,5 +36,6 @@ Logistic regression:
 		probability of y=1 given this observation
 
 	sigmoid function:
-		1 / (i- e - (linear_equation))
-	
+		1 / (i- e - linear_equation output)
+
+	if linear_equation output is very large then the this part (e- linear_equation output) will be close to 0, so sigmoid (linear_equation output) will be approximately = 1/1+someting_very_close_to_zero, and thus the output is aproximately 1. 
