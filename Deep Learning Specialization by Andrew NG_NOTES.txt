@@ -3,3 +3,5 @@ RNN (recurrent 	 neural networks) and LSTM(Long short-term memory) for sequance 
 
 RELU:
 	rectified linear unit
+	rectified: if the prediction from linear function is nagative then the prediction is chaneged to 0, so using RELU we get all predictions >= 0
+	
