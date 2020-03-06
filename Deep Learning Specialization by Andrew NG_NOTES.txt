@@ -29,4 +29,8 @@ relu Vs sigmoid (as activation function):
 
 sparce matrix:
 	matrix with lot of zeros
+
+Logistic regression:
+	we interpret the output of logistic regression as follows:
+		probability of y=1 given this observation
 	
