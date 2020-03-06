@@ -1,0 +1,2 @@
+CNN (convolution neural networks) for vision
+RNN and LSTM for sequance data (temporal or NLP)
