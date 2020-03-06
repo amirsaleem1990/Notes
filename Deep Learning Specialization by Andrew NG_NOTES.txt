@@ -1,2 +1,5 @@
 CNN (convolution neural networks) for vision
-RNN and LSTM for sequance data (temporal or NLP)
+RNN (recurrent 	 neural networks) and LSTM(Long short-term memory) for sequance data (temporal or NLP)
+
+RELU:
+	rectified linear unit
