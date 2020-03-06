@@ -11,3 +11,6 @@ text, audio, and images are unstructred data.
 
 much harder for computers to make scence of unstructred data compared to structered data.
   
+
+agar data kafi zyada na ho to ML use karty hen, jahan par koi improvement lany k lye zaroori h k feature enginearing aap khud karen. or agar aap k pas data bohot zyada h to aap us ko DL model me fit kar sakty hen, jahan aap ko feature enginearing ki zaroorat nahi h.
+
