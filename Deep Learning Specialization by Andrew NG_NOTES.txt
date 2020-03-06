@@ -18,8 +18,9 @@ DL k lye zaroori cheezen:
 	very large data
 	high level hardware (eg: ram and GPU)
 
-sigmoid = logistic regression
-relu    = linear regression (except that nagative predictions replaced with 0)
+
+logistic regression = sigmoid(linear regression)
+relu = linear regression (except that nagative predictions replaced with 0)
 
 relu Vs sigmoid (as activation function):
 	in relu the gradian descent run much faster compaired to sigmoid
@@ -33,4 +34,3 @@ sparce matrix:
 Logistic regression:
 	we interpret the output of logistic regression as follows:
 		probability of y=1 given this observation
-	
