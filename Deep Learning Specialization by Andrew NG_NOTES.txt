@@ -41,3 +41,5 @@ Logistic regression:
 	if linear_equation output is very large then the this part (e- linear_equation output) will be close to 0, so sigmoid (linear_equation output) will be approximately = 1/1+someting_very_close_to_zero, and thus the output is aproximately 1.  on the other hand if linear_equation output is very small or very large nagative number then sigmoid(linear_equation output) will be approximately = 1/1+someting_very_large, and thus the output is aproximately 0
 
 	when you implement logistic regression your job is to try to learn parameters w and b so that y_hat becomes a good estimate of y
+
+	
