@@ -20,3 +20,7 @@ DL k lye zaroori cheezen:
 
 sigmoid = logistic regression
 relu    = linear regression (except that nagative predictions replaced with 0)
+
+relu Vs sigmoid (as activation function):
+	in relu the gradian descent run much faster compaired to sigmoid
+	
