@@ -356,3 +356,19 @@ full_df = df.join(df1, lsuffix='_caller', rsuffix='_other')
 # week number (from date columns) .............. df['Date'].dt.week
 # month (from date columns) .............. df['Date'].dt.month
 # year  (from date columns) .............. df['Date'].dt.year# convert daily data to weekly ................ df.resample('M', on='week_starting').mean() # week_starting is column name 
+----------------------------------------------------
+# plot multiple plots in one graph
+plt.figure(figsize=(15, 7))  # make separate figure
+plt.subplot(2, 1, 1)
+plt.plot(dF["3"])
+plt.xlabel('t')
+plt.ylabel('y')
+plt.title('Top figure')
+
+plt.subplot(2, 1, 2)
+plt.plot(dF["MAPE"])
+plt.xlabel('t')
+plt.ylabel('y')
+plt.show()
+
+---------------------------------------------------
