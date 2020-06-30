@@ -13,3 +13,10 @@ SHOW INDEX FROM table_name FROM data_base_name;
 
 -- change maximum size of query to 500MB
 SET GLOBAL max_allowed_packet=512000000;
+
+# get tables sizes in MB
+SELECT table_name AS "Table",
+ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Size (MB)"
+FROM information_schema.TABLES
+WHERE table_schema = "kashat"
+ORDER BY (data_length + index_length) DESC;
