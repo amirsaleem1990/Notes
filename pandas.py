@@ -372,3 +372,4 @@ plt.ylabel('y')
 plt.show()
 
 ---------------------------------------------------
+# standrize all numeric variables in df ............. df[df.select_dtypes("number").columns] = df.select_dtypes("number").apply(lambda x:(x - x.mean()) / x.std())
