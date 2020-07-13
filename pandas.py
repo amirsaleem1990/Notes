@@ -375,3 +375,4 @@ plt.show()
 # standrize all numeric variables in df ............. df[df.select_dtypes("number").columns] = df.select_dtypes("number").apply(lambda x:(x - x.mean()) / x.std())
 # jab ham matplotlib sy plotting kar rahy hoty hen to kafi unnecessory sheezen print ho rahi hoti hen; like: <matplotlib.lines.Line2D at 0xXXXXXXXX>. is ko remove karny k lye plot ki command k end me semi-colon laga den; eg: df.select_dtypes("number").plot();
 # drop columns range by start and end names ......... df.drop(df.loc[:, "2019":"Unnamed: 61"].columns, axis = 1) 
+# display at max 999 rows ...... pd.options.display.max_rows = 999
