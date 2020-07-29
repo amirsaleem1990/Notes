@@ -822,3 +822,4 @@ Let's reconstruct your itinerary from what you can remember, starting with
 
 > stopwatch()
 [1] "40M 14.0395445823669S"
+# select only numerical variables ........... dplyr::select_if(df, is.numeric)
