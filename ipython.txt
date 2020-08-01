@@ -1,0 +1,1 @@
+# location of ipython history DB in linxu ........... ~/.ipython/profile_default/history.sqlite
