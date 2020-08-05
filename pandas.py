@@ -377,3 +377,5 @@ plt.show()
 # drop columns range by start and end names ......... df.drop(df.loc[:, "2019":"Unnamed: 61"].columns, axis = 1) 
 # display at max 999 rows ...... pd.options.display.max_rows = 999
 # drop duplicated columns ............. df = df.loc[:,~df.columns.duplicated()]
+
+# todays date ........ pd.to_datetime("today")
