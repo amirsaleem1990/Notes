@@ -1,0 +1,69 @@
+Ubuntu: they release two distributions every year, so they release a version in October, and they release a version in April. So for this year, for example, 2017 they'll come out with 17.04 and 17.10. So in the even number of years, they release long term support distributions, meaning that, whatever they develop for that operating system and integrate the packages that work with it, will be supported for many years. So the off... the odd years or the off schedule ones. So like 16.04 for example was a long term support or LTS version of Ubuntu. 
+
+Packages are used to package software for linux, like an installer
+Some package formats:
+    Ubuntu – deb/dpkg
+    Red Hat – RPM and YUM
+    Solaris – pkgadd
+
+
+What is a package management system?
+    Set of tools/utilities to make it easier to install, upgrade, remove and configure software packages.
+    Typically connect to the internet and download packages from remote servers
+
+Why are some better than others?
+    Package managers that do not recursively get dependencies are more difficult to use.
+
+
+Ubuntu uses APT (Advanced Packaging Tool)
+    Synaptic and aptitude are Front End interfaces
+    Synaptic has GUI
+    aptitude has text based GUI
+
+APT uses /etc/apt/sources.list to list which servers to download the packages from
+    Can add more servers and more packages
+    Can setup your own repositories (repos) for package distribution - this is a must in high security environments
+
+Red Hat uses YUM
+YUM uses /etc/yum.repos.d/ to list which servers to download the packages from
+    Can add more servers and more packages
+    Can setup your own repositories (repos) for package distribution - this is a must in high security environments
+
+
+2 primary distributions:
+    CentOS - It's the binary equivalent of Red Hat and runs great for servers in the enterprise
+    Ubuntu - Runs great as a desktop. There are many flavors of Ubuntu however depending on what GUI you want.
+
+
+change your ip address:
+	# Note ye setting srif restart/shutdown sy pehly tak h.
+	# pehly ifconfig sy apna netmask and interface name (here: wlp3s0) dekh len.
+	sudo ifconfig wlp3s0 192.168.100.240 netmask 255.255.255.0
+
+
+In order to see if things are working correctly, we're going to ping resources. So I'll type in ping and then a name. I should receive a response back which means that both my route is working and my DNS is working. If my DNS is not working, I can try just pinging the gateway and see if I get a response. If I don't get a response from the gateway, then I know there is something wrong with my system. 
+
+
+defaul ssh port 22 hoti h, agar hame is port ko change karna h to </etc/ssh/sshd_config> ko open karen, wahan par 1 line commented ho gi <Port 22>, is ko uncomment kar den, or <22> ko ksi bhi number sy replace kar den (let say, is ko 2237 sy change kar den), phir Terminal par ye commmand run karen: semanage port -a -t ss_port_t -p tcp 2237; systemctl restart sshd.service; now open the port in firewall: firewall-cmd --zone=public --add-port=2237/tcp
+
+Gnome-schedule is a GUI for cron
+
+interact with the sudo file, grant sudo privileges to certain users, and allow them to execute privileged commands with or without a password. Sudo is a program that allows users to run programs, on behalf of another user, typically, the super user or root. And it can be configured by the sudo file that specifies how sudo access is granted for a given user. In order to view or modify the sudoers file, you must have super user or root privileges. 
+>> su root
+The sudoers file is located at etsy/sudoers. The sudoers file should not be edited with a normal file editor, so we're going to use visudo. 
+>> visudo
+This line right here <root ALL = (ALL)>  means that any user with the username of root has access to execute all commands If the root password is entered. Obviously the root user should have these privileges already. 
+
+Each line should have the following elements. First, the user the line applies to here. Is called the root. 
+Next, the host, which the line can be applied to. In this case, all. This is useful if you're copying the file from system to system. 
+Next, the =All specifies. The users which the person running the sudo command must be in this case ALL users. 
+And finally the commands which the specified user can run in this case, ALL commands. 
+
+Let's add a user here. So I'm going to press i for insert, because I'm in VI. Then I type in greg_test. I'm going to hit the Tab button, not the Space button. Tabs must be used here instead of spaces in order for the file to work correctly. So I'm going to execute the same commands. ALL=ALL in parenthesis. Tab ALL. Okay. So let's write :wq (to quit).
+
+
+
+Type in greg_test2
+ALL=NO PASSWD Tab remember the ALL,
+this third string here is for commands,
+type in sbin/fdisk, Now let's switch users. 
