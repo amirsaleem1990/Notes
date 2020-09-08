@@ -115,4 +115,4 @@ The way file permissions work inside of Linux is in powers of 2. So the read is 
 
 
 With acl, we can add permissions to other groups or users that typically do not have access to certain files. 
-for example we need to give user_1 purmission for my/file.txt, so: setfacl -m u:user_1:rwx my/file.txt
+for example we need to give user_1 purmission for my/file.txt, so: setfacl -m u:user_1:rwx my/file.txt, now ls -l my/file.txt return as follows: -rw-r--r--+ , so there is extra <+> in the last, and this is tell as that this file has extra purmitions.
