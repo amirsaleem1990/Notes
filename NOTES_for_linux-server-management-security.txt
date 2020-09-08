@@ -63,4 +63,4 @@ Let's add a user here. So I'm going to press i for insert, because I'm in VI. Th
 
 
 
-now let's modify greg_test2 in order to run fdisk without a password.  Type in /etc/sudoers greg_test2 ALL=NO PASSWD Tab remember the ALL, this third string here is for commands, type in sbin/fdisk. (greg_test2  ALL=NO PASSWD   ALL     sbin/fdisk)
+now let's modify greg_test2 in order to run fdisk without a password.  Type in /etc/sudoers greg_test2 ALL=NOPASSWD Tab remember the ALL, this third string here is for commands, type in sbin/fdisk. (greg_test2  ALL=NOPASSWD   ALL     /sbin/fdisk)
