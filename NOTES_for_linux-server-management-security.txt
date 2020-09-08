@@ -68,7 +68,7 @@ now let's modify greg_test2 in order to run fdisk without a password.  Type in /
 
 su user_name  .................. swith to user_name user.
 
-create user ................. sudo adduser user_name
+create user ................. sudo adduser user_name .......... this will create not only the user but its /home directory and permitions.
 
 chance/create anohter user's password ............. sudo passwd 
 
