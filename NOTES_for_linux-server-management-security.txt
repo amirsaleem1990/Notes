@@ -113,3 +113,6 @@ Let's also make sure that we don't have any lingering files for the user. In ord
 The way file permissions work inside of Linux is in powers of 2. So the read is worth 4, the write is worth 2, and the execute is worth 1, totaling 7 bits. So if I wanted to change all seven bits, for read, write, execute, for the entire file, I would type in sudo chmod 777 file_name.
 
 
+
+With acl, we can add permissions to other groups or users that typically do not have access to certain files. 
+for example we need to give user_1 purmission for my/file.txt, so: setfacl -m u:user_1:rwx my/file.txt
