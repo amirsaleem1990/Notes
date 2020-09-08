@@ -118,3 +118,6 @@ With acl, we can add permissions to other groups or users that typically do not 
 for example we need to give user_1 purmission for my/file.txt, so: setfacl -m u:user_1:rwx my/file.txt, now ls -l my/file.txt return as follows: -rw-r--r--+ , so there is extra <+> in the last, and this is tell as that this file has extra purmitions.
 
 if we create empty /etc/nologin no anyone else mine  can login into same user. .......... sudo touch /etc/login ; ssh 127.0.0.1 (try to login to localhost), but you'll get an error, if we remove this file now you can login to localhost.
+
+ksi bhi user k 1 waqt me kitny login ho sakty is ko limit kar k lye /etc/security/limits.conf file ko open karen, or wahan par ye line add kar den ......... user_name        -       maxlogins       number_you_want(eg: 4)
+
