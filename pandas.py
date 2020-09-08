@@ -379,3 +379,5 @@ plt.show()
 # drop duplicated columns ............. df = df.loc[:,~df.columns.duplicated()]
 
 # todays date ........ pd.to_datetime("today")
+
+# total number of cells in dataframe: df.size
