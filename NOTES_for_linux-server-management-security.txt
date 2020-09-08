@@ -105,5 +105,7 @@ sudo vipw ........... change here
 when we have a user that has left the company, we also need to make sure of a couple other things. We need to remove their access for many local databases, remove any alias files that they have, remove any cron jobs. We need to remove the user's home directory or their mail queue and any other files that they may have had on the system. So let's check to see if we have any other files out there. Let's type in ll /home. You'll notice that not only is greg_test3 still here, but now it has no user or group associated with it. However, it still has the security ID, so we need to remove that directory.
 
 
-Let's also make sure that we don't have any lingering files for the user. In order to do this, we're gonna type in sudo find / -xdev -nouser. What this does is it looks for any files out there without any user associated with it. 
+Let's also make sure that we don't have any lingering files for the user. In order to do this, <sudo find / -xdev -nouser>. What this does is it looks for any files out there without any user associated with it.  if any file appear delete it.
+
+
 
