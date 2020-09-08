@@ -91,3 +91,10 @@ This (nologin) means that we're going to use an account which is basically a ser
 
 in the /etc/default/useradd we can specify muliptle atributes of user, such as SHELL, HOME, INACTIVE, EXPIRE, CREATE_MAIL_SPOOL and more.
 
+...............................................Securing users ...............................................
+if we need to chane home directory for user:
+mkdir new_folder
+sudo chown user:user new_folder
+sudo vipw ........... change here 
+<user:x:1000:1000:user:/home/user:/bin/bash> to 
+<user:x:1000:1000:user:/home/new_folder:/bin/bash>
