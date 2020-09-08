@@ -72,6 +72,7 @@ create user ................. sudo adduser user_name .......... this will create
 
 chance/create anohter user's password ............. sudo passwd 
 
+#...............................................
 #/etc/passwd
 >> sudo cat /etc/passwd
 ...
@@ -82,4 +83,8 @@ so here <amir> is a user name.
 <1000> user id
 </home/amir> home directory
 </bin/bash> shell the user have.
+#...............................................
 
+#...............................................
+/etc/default/useradd
+in this file we can specify muliptle atributes of user, such as SHELL, HOME, INACTIVE, EXPIRE, CREATE_MAIL_SPOOL and more.
