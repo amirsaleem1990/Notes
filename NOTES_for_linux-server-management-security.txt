@@ -83,6 +83,10 @@ so here <amir> is a user name.
 <1000> user id
 </home/amir> home directory
 </bin/bash> shell the user have.
+
+in this file we also find lines that ends with <nologin> eg: 
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin 
+This (nologin) means that we're going to use an account which is basically a service account that allows us just to use the service and execute commands, but it doesn't allow the user that we create to login anywhere. If we want to lock a user out, this is the quickest way to lock somebody out of their account. This would be in `the cases, if we wanted to, if somebody was leaving the organization 
 #...............................................
 
 in the /etc/default/useradd we can specify muliptle atributes of user, such as SHELL, HOME, INACTIVE, EXPIRE, CREATE_MAIL_SPOOL and more.
