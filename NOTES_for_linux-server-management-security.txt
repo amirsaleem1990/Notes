@@ -72,3 +72,14 @@ create user ................. sudo adduser user_name .......... this will create
 
 chance/create anohter user's password ............. sudo passwd 
 
+#/etc/passwd
+>> sudo cat /etc/passwd
+...
+amir:x:1000:1000:amir:/home/amir:/bin/bash
+...
+so here <amir> is a user name.
+<x> means this user has a password
+<1000> user id
+</home/amir> home directory
+</bin/bash> shell the user have.
+
