@@ -108,4 +108,8 @@ when we have a user that has left the company, we also need to make sure of a co
 Let's also make sure that we don't have any lingering files for the user. In order to do this, <sudo find / -xdev -nouser>. What this does is it looks for any files out there without any user associated with it.  if any file appear delete it.
 
 
+# change file/folder permitions 
+The way file permissions work inside of Linux is in powers of 2. So the read is worth 4, the write is worth 2, and the execute is worth 1, totaling 7 bits. So if I wanted to change all seven bits, for read, write, execute, for the entire file, I would type in sudo chmod 777 file_name.
+
+
 
