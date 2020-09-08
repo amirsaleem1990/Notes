@@ -101,7 +101,8 @@ sudo vipw ........... change here
 
 
 
-# removing users. This is a common occurrence with organizations. If somebody leaves, we not only have to remove the file, but we also need to search for anything that the user may have left behind. When we delete a user, we're gonna type in the command userdel. userdel remove user from /etc/passwd file. 
+# removing users. This is a common occurrence with organizations. If somebody leaves, we not only have to remove the file, but we also need to search for anything that the user may have left behind. When we delete a user, we're gonna type in the command <userdel>. userdel remove user from /etc/passwd file. 
+
 when we have a user that has left the company, we also need to make sure of a couple other things. We need to remove their access for many local databases, remove any alias files that they have, remove any cron jobs. We need to remove the user's home directory or their mail queue and any other files that they may have had on the system. So let's check to see if we have any other files out there. Let's type in ll /home. You'll notice that not only is greg_test3 still here, but now it has no user or group associated with it. However, it still has the security ID, so we need to remove that directory.
 
 
@@ -110,6 +111,5 @@ Let's also make sure that we don't have any lingering files for the user. In ord
 
 # change file/folder permitions 
 The way file permissions work inside of Linux is in powers of 2. So the read is worth 4, the write is worth 2, and the execute is worth 1, totaling 7 bits. So if I wanted to change all seven bits, for read, write, execute, for the entire file, I would type in sudo chmod 777 file_name.
-
 
 
