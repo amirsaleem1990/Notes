@@ -85,6 +85,5 @@ so here <amir> is a user name.
 </bin/bash> shell the user have.
 #...............................................
 
-#...............................................
-/etc/default/useradd
-in this file we can specify muliptle atributes of user, such as SHELL, HOME, INACTIVE, EXPIRE, CREATE_MAIL_SPOOL and more.
+in the /etc/default/useradd we can specify muliptle atributes of user, such as SHELL, HOME, INACTIVE, EXPIRE, CREATE_MAIL_SPOOL and more.
+
