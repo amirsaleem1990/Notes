@@ -50,7 +50,7 @@ Gnome-schedule is a GUI for cron
 
 interact with the sudo file, grant sudo privileges to certain users, and allow them to execute privileged commands with or without a password. Sudo is a program that allows users to run programs, on behalf of another user, typically, the super user or root. And it can be configured by the sudo file that specifies how sudo access is granted for a given user. In order to view or modify the sudoers file, you must have super user or root privileges. 
 >> su root
-The sudoers file is located at etsy/sudoers. The sudoers file should not be edited with a normal file editor, so we're going to use visudo. 
+The sudoers file is located at /etc/sudoers. The sudoers file should not be edited with a normal file editor, so we're going to use visudo. 
 >> visudo
 This line right here <root ALL = (ALL)>  means that any user with the username of root has access to execute all commands If the root password is entered. Obviously the root user should have these privileges already. 
 
@@ -63,7 +63,4 @@ Let's add a user here. So I'm going to press i for insert, because I'm in VI. Th
 
 
 
-Type in greg_test2
-ALL=NO PASSWD Tab remember the ALL,
-this third string here is for commands,
-type in sbin/fdisk, Now let's switch users. 
+now let's modify greg_test2 in order to run fdisk without a password.  Type in /etc/sudoers greg_test2 ALL=NO PASSWD Tab remember the ALL, this third string here is for commands, type in sbin/fdisk. (greg_test2  ALL=NO PASSWD   ALL     sbin/fdisk)
