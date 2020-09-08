@@ -143,3 +143,4 @@ Now let's say that we want to look at these firewall rules again. We're gonna ty
 
 
 <systemctl> gives us what services are currently loaded and running in the kernel.
+to desable a service: sudo pkill bluetooth ; sudo systemctl disable bluetooth
