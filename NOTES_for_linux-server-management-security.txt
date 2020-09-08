@@ -121,3 +121,54 @@ if we create empty /etc/nologin no anyone else mine  can login into same user. .
 
 ksi bhi user k 1 waqt me kitny login ho sakty is ko limit kar k lye /etc/security/limits.conf file ko open karen, or wahan par ye line add kar den ......... user_name        -       maxlogins       number_you_want(eg: 4)
 
+Firewall: 
+Firewalls are extremely important to understanding where our attacks come from and limiting those attacks. We can also log information that comes in from these attacks
+
+There are several software-based firewalls within Linux. two of them:
+    1- UFW (for ubuntu) (UFW stands for Uncomplicated Firewall)
+    2- firewalld (new firewall within CentOS and Red Hat-type systems)
+
+So let's start out with UFW.
+Now where we came from was what we called IPFilter. IPFilter is a packet-filtering software that can be configured for a variety of different platforms. So we also then had iptables which introduced a stateful firewall ruleset into Linux systems. However, IPFilter is still around and is still being manipulated. It's still a loadable kernel module and can be implemented statically within the kernel. However, there have been problems with trying to configure IPFilter and iptables. They're very complicated to understand. They have many intricacies that it makes difficult for a normal user to try to configure. So, the later firewall versions, UFW and firewalld, allow us to really easily configure firewalls within our Linux systems. In UFW (Ubuntu) is enabled and disabled by default on Ubuntu systems, but it also has packages for Debian systems and Arch. It is still a way that we can manage iptables, just with more ease. 
+UFW commands:
+ufw status ....... return status of firewall
+ufw show raw .......... rules that it already has created. Notice this is a huge amount. This is what UFW creates when we easily type in and allow or deny port or IP address, and it just keeps on going on and on.
+ufw allow 53/udp ......... (53 is DNS and udp is protocol).
+Let's say that we also want to allow SSH, ufw allow ssh.
+And let's say that we also want to allow communications from a different system. So let's say <ufw allow from 192.168.18.131
+to any port 22>.
+We can also do the exact same thing for denying rules. However, instead of where we say allow, we're going to say deny. So if we wanted to deny port 80, for example, ufw deny 80. 
+
+Now let's say that we want to look at these firewall rules again. We're gonna type in ufw status numbered. This shows us the status of our firewall and any rules that we have set up. If we look at the firewall rules, the raw firewall rules again for iptables, it's gonna shows us a lot more rules than what we currently had. Let's say that we want to look at what we just created – ufw status numbered. Very simply, we have this information. However, let's look to see what changed in the background for iptables. So ufw show raw, and we're gonna grep for port 22. Quite a few more commands, and that's in a lot of different chains, what we call change inside of iptables. So, UFW allows us to not only add services and ports, but it looks at IP addresses as well. Now, UFW still manages iptables.
+This is not the case in the new firewalld for Red Hat-type systems.
+So let's switch over there,
+and let's look at firewalld.
+If we type in firewall -cmd state,
+we'll see that it's running,
+just like we did on UFW.
+We also have the concept of zones which is similar to chains inside iptables.
+In order to look at the zones,
+we can type in firewall -cmd --get -zones.
+These are our standard zones.
+The only one that is actually populated, however, is public.
+If we want to look at services,
+we can look at firewall -command --get -services.
+There are many different type services,
+and let's actually list this out here.
+So it looks like there's 54 words overall – 1 line,
+54 words, 471 characters.
+Now let's say that I wanted to add a service.
+In order to add a service,
+I'm just gonna type in firewall -command --zone=public.
+And let's say on this server,
+I wanted to add a web server --add -service=http.
+Success.
+Now within Red Hat-type systems,
+I can still enable iptables if I want to,
+if I wanted to get really,
+really granular with trying to put a firewall into my system.
+However, with the new firewalld,
+there is no need;
+and with firewalld, we're less prone to make mistakes.
+Firewalls within Linux should always be
+used to stop services and decrease our attack surface.  
