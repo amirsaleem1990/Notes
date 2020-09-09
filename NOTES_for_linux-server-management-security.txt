@@ -144,3 +144,16 @@ Now let's say that we want to look at these firewall rules again. We're gonna ty
 
 <systemctl> gives us what services are currently loaded and running in the kernel.
 to desable a service: sudo pkill bluetooth ; sudo systemctl disable bluetooth
+
+# Services within Linux
+Software or services that are not used should be able to decrease the attack surface of the system. As with any operating system installation, the system is already installed with general packages that may or may not be used. One example of this is Bluetooth. 
+
+
+Typically, on an enterprise server, you're not gonna have a GUI. Again, it's just another way to increase the attack surface, and it also increases the amount of memory. We need to disable that. The GUI is, in Linux, is called X server. So, we may want to remove the X Window System from our server. So we would type in <yum groupremove "X Window System">. That'll just disable that. There are things that we should disable are things that we're not gonna use, things like IPv6. If you don't use IPv6, you should definitely turn that off. The reason why is it's, again, another attack surface. It's a big attack surface if you're not using it.
+
+
+One of the other commands is finding permissions that may be turned on. Some processes need to run with elevated privileges. So think about how you change your passwords, so <passwd? for example root-only process. So in order for a normal user to access or run <passwd> or some of the other functions which we'll see here in a second, we need to turn on what we call <sticky bits>, and that allows the process to run as the system account or root. So what I'm gonna do is I'm gonna look for those processes that have sticky bits turned on for both the process running as a root or the group root. So in order to do that:
+>> find / \{ -perm -4000 -o -perm -2000 \} -print 
+And as you notice, all these commands that have our sticky bits turned on. So su or password, group password, sudo, these are processes that you run all the time. And the reason why we have the sticky bit turned on is so that we can run them as root, as a normal user. So you should consider disabling some of those. So in order to change or remove the sticky bits, we're gonna type in chmod -s and then the filename. So if we wanted to disable locate, for example, which we're not gonna do but let's say that we wanted to do that, we're just gonna type in 
+>> chmod -s user_name /sbin/locate
+There are some other processes that you may want to consider disabling as well and have been known to be not harmful to disable to the system. 
