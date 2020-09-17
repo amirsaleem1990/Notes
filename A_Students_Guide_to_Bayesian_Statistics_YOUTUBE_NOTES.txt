@@ -60,4 +60,10 @@ sum([pr(gf==1, gym==_gym_) for _gym_ in [0,1]])
 continues marginal probability distribution:
 	x and y are random continues variables.
 	Q: let us say we are interested in what the distribution of population levels of x  and we dont care about y. how can we obtain that quantity?
-	
+	p(x) = integral_0_to_infinity(
+									p(y,x)dy
+								 )
+	p(y) = integral_0_to_infinity(
+									p(y,x)dx
+								 )
+
