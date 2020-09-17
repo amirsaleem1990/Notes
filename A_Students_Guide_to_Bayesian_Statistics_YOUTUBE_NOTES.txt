@@ -1,0 +1,57 @@
+random variable:
+	numeric value, it can be:
+	1- discrete
+	2- continues
+
+
+
+for discrete:
+	probability mass function
+	must be verify one continues:
+		p(random_var == x) => 0
+
+for continues:
+	see: /home/amir/github/Notes/image_1.png
+	probability density function
+	must be verify two continues:
+		p(random_var == x) => 0
+		sum([p(random_var == i) for i in x]) == 1 , eg: one of the possible outcomes must accur.
+	The probability of any individual number is 0.
+	the outcomes of probability density function are not interprentable as probabilities.
+	instead of working on probability on any individual value we are working for probability of set. eg: pr(x<17<20) (the max possibie value is 20)
+
+
+Two-dimensional probability distributions:
+we have 2 random continues variables, and we need to estimate both at same time, eg: p(x==1, y==0).
+must be verify two continues:
+	1- each of paired probabilites must be >= 0.
+	2- summtion of all possible pairs probabilites (integral, in the case of continues (see: /home/amir/github/Notes/image_3.png)) must be equal to 1. (see: /home/amir/github/Notes/image_2.png)
+
+
+discrete marginal probability distribution:
+converting N dimensional probability distribution  to N-1 dimensional probability distribution.
+in marginal distribution:
+	we marginalizing over 1 of the variables
+	what of the distribution of the variables disregarding whatever values of the other ones. 
+in marginalizing weed to do is the average over the uncertainty in the other variable. we do that in the form by summing the probability distributions values over all possible values of the random variable which we not intrested in.
+
+example:
+		gym
+        0	1
+gf	0 0.1 0.4
+    1 0.3 0.2
+Q: what is the probability of randomly chosen person goes to gym?
+Ans: 
+pr(gym=1,gf=0) + pr(gym=1, gf=1) = 
+0.1+0.2 = 
+0.3
+
+p(gym=1) =
+pr(gym=1) =
+sum([pr(gym==1, gf==g_f) for g_f in [0,1]])
+
+
+p(gf=1) =
+pr(gf=1) =
+sum([pr(gf==1, gym==_gym_) for _gym_ in [0,1]])
+
