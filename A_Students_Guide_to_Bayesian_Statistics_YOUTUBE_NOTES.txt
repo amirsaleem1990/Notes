@@ -55,3 +55,6 @@ p(gf=1) =
 pr(gf=1) =
 sum([pr(gf==1, gym==_gym_) for _gym_ in [0,1]])
 
+
+
+continues marginal probability distribution:
