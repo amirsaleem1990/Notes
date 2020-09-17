@@ -69,3 +69,11 @@ continues marginal probability distribution:
 	this integral also can be aproximated by sampling.
 
 
+
+conditional probability distribution:
+	pr(x=1 | y=1)
+	= pr(x=1,y=1) / pr(y=1)
+	= pr(joint_distribution) / pr(variable_given)
+
+	Exactly the same in continues and discrete distributions.
+	
