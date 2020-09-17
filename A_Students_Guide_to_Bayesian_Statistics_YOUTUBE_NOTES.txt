@@ -66,4 +66,6 @@ continues marginal probability distribution:
 	p(y) = integral_0_to_infinity(
 									p(y,x)dx
 								 )
+	this integral also can be aproximated by sampling.
+
 
