@@ -6,4 +6,5 @@ docker run .............. run docker from an image on the docker host if the ima
 docker ps  .............. list all running containers, and some basic information about them.
 docker ps -a ...........  to see all containers running or not, all running as well as previously stoped or exited containers.
 docker stop <container_ID|container_Name> ............ to stop a container.
+docker rm <container_Name> ............ to remove a container permanently
 
