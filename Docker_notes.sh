@@ -16,5 +16,6 @@ docker pull image_Name  ............... download an image
 dockder exec container_Name command ... executing a command on a running container
 
 # Run - attach and detach
+docker run image_name ................. runs in the foreground (attachded mode), you will be attaced to the console or the standard out of the docker container and you will see the output of the application on your screen. you won't be able to do anything else in this console until this docker container stops. 
 
 
