@@ -27,5 +27,8 @@ docker attach container_Name | container_ID ... attach back to the running conta
 docker run -i image_Name ............ can take an input from terminal.
 docker run -t image_Name ............ can print on terminal.
 
+# every docker container get an IP assigned by default.
 # port mapping
-
+> docker run myApp 
+Running on http://0.0.0.0:5000/
+# we know that our application is listining on port 5000, so within docker i could access my application on port 5000, but what if i need to access myApp from outside of cantainer? A: 
