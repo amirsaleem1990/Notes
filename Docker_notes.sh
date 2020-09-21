@@ -17,5 +17,8 @@ dockder exec container_Name command ... executing a command on a running contain
 
 # Run - attach and detach
 docker run image_name ................. runs in the foreground (attachded mode), you will be attaced to the console or the standard out of the docker container and you will see the output of the application on your screen. you won't be able to do anything else in this console until this docker container stops. 
-docker run -d image_name .............. runs in the backgroud  (detached  mode), and you will be back to your prompt immediately, the container will continue to run in the backend, 
+docker run -d image_name .............. runs in the backgroud  (detached  mode), and you will be back to your prompt immediately, the container will continue to run in the backend.
+docker attach container_Name | container_ID ... attach back to the running container.
+
+
 
