@@ -43,3 +43,5 @@ Running on http://0.0.0.0:5000/
 # jab ham docker container ko stop karty hen yar wo crash ho jata h to us ka sara data destroy ho jata h, ab hame agar koi esa kaam karna h jis me hame data ko zaya nahi hony dena to local par koi folder bana kar docker sy us folder ko mount karwa den, phir docker k andar us mounted folder me jo bhi save karen gy wo local waly folder me hi aa raha ho ga, or docker destroy hony k bad bhi data zaya nahi ho ga.
 > docker run -v your/local/directory:/var/lib/mysql
 # ab ye ho ga k docker me jo /var/lib/mysql ho ga wo darasal mery your/local/directory ka alias ho ga.
+
+docker inspect image_Name .......... detailed info about specific cantainer
