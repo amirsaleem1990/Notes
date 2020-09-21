@@ -7,4 +7,5 @@ docker ps  .............. list all running containers, and some basic informatio
 docker ps -a ...........  to see all containers running or not, all running as well as previously stoped or exited containers.
 docker stop <container_ID|container_Name> ............ to stop a container.
 docker rm <container_Name> ............ to remove a stoped/exited container permanently
+docker images .............. list all images present on our host.
 
