@@ -7,7 +7,8 @@ docker ps  .............. list all running containers, and some basic informatio
 docker ps -a ...........  to see all containers running or not, all running as well as previously stoped or exited containers. Note: not list deleted containers.
 docker stop <container_ID|container_Name> ............ to stop a container.
 docker rm <container_Name> ............ to remove a stoped/exited container permenantily. Note: remove multiple containers in one command ............. docker rm cont1_Name cont2_Name 
-docker rmi <image_Name> ........... to remove an image perminently. Note: you must ensure that no containers are running of that image before attempting to remove the image. you must stop and delet all dependent containers to be able to delete an image.
+docker rmi <image_Name> ........... to remove an image perminently. Note: you must ensure that no containers are running of that image before attempting to remove the image. you must stop and delet all dependent containers to be able to delete an image. Note: docker run ubuntu, now ubuntu container started and immeditely stoped, now of i try to remove ubuntu image <docker rmi ubuntu>; i can not. first i should delete containers dependent on ubuntu (there is only one container that is dependent on ubuntu image, and that contains in exited, and we can not find it in <docker ps>), and then i can remove ubuntu image.
+
 docker images ......................... list all images present on our host.
 docker pull image_Name  ............... download an image
 
