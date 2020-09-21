@@ -10,3 +10,5 @@ docker rm <container_Name> ............ to remove a stoped/exited container perm
 docker rmi <container_Name> ........... to remove a stoped/exited container permenantily. Note: you must ensure that no containers are running of that image before attempting to remove the image. you must stop and delet all dependent containers to be able to delete an image.
 docker images ......................... list all images present on our host.
 docker pull image_Name  ............... download an image
+
+# if we run <docker run ubuntu> we would'nt see container running, it is started and then exited. so what is that? A: 
