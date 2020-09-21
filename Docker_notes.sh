@@ -15,4 +15,6 @@ docker pull image_Name  ............... download an image
 
 dockder exec container_Name command ... executing a command on a running container
 
+# Run - attach and detach
+
 
