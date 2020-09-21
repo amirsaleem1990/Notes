@@ -7,6 +7,6 @@ docker ps  .............. list all running containers, and some basic informatio
 docker ps -a ...........  to see all containers running or not, all running as well as previously stoped or exited containers.
 docker stop <container_ID|container_Name> ............ to stop a container.
 docker rm <container_Name> ............ to remove a stoped/exited container permenantily.
-docker rmi <container_Name> ........... to remove a stoped/exited container permenantily.
+docker rmi <container_Name> ........... to remove a stoped/exited container permenantily. Note: you must ensure that no containers are running of that image before attempting to remove the image. you must stop and delet all dependent containers to be able to delete an image.
 docker images .............. list all images present on our host.
 
