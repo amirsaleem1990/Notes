@@ -45,3 +45,8 @@ Running on http://0.0.0.0:5000/
 # ab ye ho ga k docker me jo /var/lib/mysql ho ga wo darasal mery your/local/directory ka alias ho ga.
 
 docker inspect image_Name .......... detailed info about specific cantainer
+
+
+# logs
+... logs(what should print in the terminal in the atteched mode) of the cantainer running in the backgroud.
+
