@@ -39,3 +39,5 @@ Running on http://0.0.0.0:5000/
 > docker run -p 82:5000 myApp
 
 
+# The docker container has it's own isolated file system
+
