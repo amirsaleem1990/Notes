@@ -31,4 +31,6 @@ docker run -t image_Name ............ can print on terminal.
 # port mapping
 > docker run myApp 
 Running on http://0.0.0.0:5000/
-# we know that our application is listining on port 5000, so within docker i could access my application on port 5000, but what if i need to access myApp from outside of cantainer? A: 
+# we know that our application is listining on port 5000, so within docker i could access my application on port 5000, but what if i need to access myApp from outside of cantainer? A: we could use the IP of docker host <eg: 192.168.1.5>, but for that to work you must have mapped the port inside the docker container to a free port on the docker host. for example if i want to users to access myApp through port 80  on my docker host, i could map port 80 of local host to port 5000 on the docker cantainer using <-p> perameter. 
+> docker run -p 80:5000 myApp
+
