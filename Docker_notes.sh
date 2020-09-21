@@ -39,6 +39,7 @@ Running on http://0.0.0.0:5000/
 > docker run -p 82:5000 myApp
 
 
+
 # The docker container has it's own isolated file system
 # jab ham docker container ko stop karty hen yar wo crash ho jata h to us ka sara data destroy ho jata h, ab hame agar koi esa kaam karna h jis me hame data ko zaya nahi hony dena to local par koi folder bana kar docker sy us folder ko mount karwa den, phir docker k andar us mounted folder me jo bhi save karen gy wo local waly folder me hi aa raha ho ga, or docker destroy hony k bad bhi data zaya nahi ho ga.
 > docker run -v your/local/directory:/var/lib/mysql
@@ -51,3 +52,4 @@ docker inspect image_Name .......... detailed info about specific cantainer
 docker logs cantainer_Name | container_ID ... logs(what should print in the terminal in the atteched mode) of the cantainer running in the backgroud.
 
 docker inspect cantainer_Name | cantainer_ID | grep -i ipaddress ........ get cantainer ipaddress
+
