@@ -48,5 +48,5 @@ docker inspect image_Name .......... detailed info about specific cantainer
 
 
 # logs
-... logs(what should print in the terminal in the atteched mode) of the cantainer running in the backgroud.
+docker logs cantainer_Name | container_ID ... logs(what should print in the terminal in the atteched mode) of the cantainer running in the backgroud.
 
