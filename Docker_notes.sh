@@ -22,4 +22,8 @@ docker run -d image_name .............. runs in the backgroud  (detached  mode),
 docker attach container_Name | container_ID ... attach back to the running container.
 # if you run <docker run image_Name> and image_Name not present in host docker try to download images from docker hub, and download latest version of image_Name, so how we can specify the old version if we need so? A: docker run image_Name:version_Number, this specification is called tag, the default tag is <latest>
 
+# user input
+# by default docker container is not listen to user input, even though you are attached to console it is not able to read input from you, it does not have a terminal to read inputs from, it runs in non-interctive mode, if you like to provide your input you must map the standard input of your host to the docker container using <-i> paremerter, the <-i> perameter is for interective mode.
+docker run -i image_Name ............. run docker container in interctive mode, so your cantainer CAN take an input from terminal.
+
 
