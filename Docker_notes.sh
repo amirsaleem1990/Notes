@@ -22,13 +22,13 @@ docker run -d image_name .............. runs in the backgroud  (detached  mode),
 docker attach container_Name | container_ID ... attach back to the running container.
 # if you run <docker run image_Name> and image_Name not present in host docker try to download images from docker hub, and download latest version of image_Name, so how we can specify the old version if we need so? A: docker run image_Name:version_Number, this specification is called tag, the default tag is <latest>
 
-# user input
+#------------- user input
 # by default docker container is not listen to user input, even though you are attached to console it is not able to read input from you, it does not have a terminal to read inputs from, it runs in non-interctive mode, if you like to provide your input you must map the standard input of your host to the docker container using <-i> paremerter, the <-i> perameter is for interective mode.
 docker run -i image_Name ............ can take an input from terminal.
 docker run -t image_Name ............ can print on terminal.
 
 # every docker container get an IP assigned by default.
-# port mapping
+# ------------ port mapping
 > docker run myApp 
 Running on http://0.0.0.0:5000/
 # we know that our application is listining on port 5000, so within docker i could access my application on port 5000, but what if i need to access myApp from outside of cantainer? A: we could use the IP of docker host <eg: 192.168.1.5>, but for that to work you must have mapped the port inside the docker container to a free port on the docker host. for example if i want to users to access myApp through port 80  on my docker host, i could map port 80 of local host to port 5000 on the docker cantainer using <-p> perameter. 
@@ -37,6 +37,5 @@ Running on http://0.0.0.0:5000/
 > docker run -p 80:5000 myApp
 > docker run -p 81:5000 myApp
 > docker run -p 82:5000 myApp
-
 
 
