@@ -24,6 +24,8 @@ docker attach container_Name | container_ID ... attach back to the running conta
 
 # user input
 # by default docker container is not listen to user input, even though you are attached to console it is not able to read input from you, it does not have a terminal to read inputs from, it runs in non-interctive mode, if you like to provide your input you must map the standard input of your host to the docker container using <-i> paremerter, the <-i> perameter is for interective mode.
-docker run -i image_Name ............. run docker container in interctive mode, so your cantainer CAN take an input from terminal.
+docker run -i image_Name ............ can take an input from terminal.
+docker run -t image_Name ............ can print on terminal.
 
+# port mapping
 
