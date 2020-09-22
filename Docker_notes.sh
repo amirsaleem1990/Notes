@@ -130,3 +130,10 @@ networks:
 	back-end:
 # likhen gy, or phir har cantainer me 1 pair add karen gy, us ki key <networks> ho gi, and value/s front-end ya back-end ye dono alag alag line me ho ga. see /home/amir/github/Notes/PNG_Notes/image_5.png
 #------------------------------------------------ 
+
+
+#----------------- Docker Engine
+# when you install Docker on a linux host you're actually installing three diffrent compenents:
+1- Docker Deamon
+2- Rest application
+3- Docker CLI
