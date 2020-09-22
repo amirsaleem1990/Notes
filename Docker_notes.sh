@@ -83,3 +83,26 @@ docker run -it ubuntu bash ............... start an ubuntu container and make it
 docker run -d --name=db mysql
 docker run -d --name=ubuntu --link db:db ubuntu
 
+docker-compose
+# see /home/amir/github/Notes/image_4.png
+# jab hamary pas more than one containers hoty hen jo 1 dusry par dependent hoty hen, to ham aasani k lye un sary cantainers ki info 1 docker-compose.yml file me likh kar us file ko run kar dety hen.
+cat > docker compose.yml
+cantainer_1_Name:
+	image:
+		image_1_Name:
+    links:
+    	- cantainer_3_Name # is cantainer ka link container_3 sy hen
+cantainer_2_Name:
+	image:
+		image_2_Name:
+	ports:
+		- 5000:8080
+    links:
+    	- cantainer_3_Name # is cantainer ka link container_3 sy hen
+cantainer_3_Name:
+	image:
+		image_3_Name:
+	ports:
+		- 5010:8878
+and then run this file by:
+docker-compose up
