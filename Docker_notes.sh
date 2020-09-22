@@ -158,4 +158,4 @@ networks:
 	image
 	volumes
 
-# when docker build images it build these in a layered architecture. 
+# when docker build images it build these in a layered architecture. each line of instruction in the Dockerfile creates a new layer in th Docker image with just the changes from the previous layer. 
