@@ -144,4 +144,4 @@ networks:
 	> docker -H=10.123.2.1:2375 run nginx
 #-----------------
 
-# by default there is no restriction as to how mush of a resource a container can use and hence a cantainer may end up utilize all of the resource on the underlying host.
+# by default there is no restriction as to how mush of a resource a container can use and hence a cantainer may end up utilize all of the resource on the underlying host. but there is a way to restrice the amount of CPU or Memory a cantainer can use. 
