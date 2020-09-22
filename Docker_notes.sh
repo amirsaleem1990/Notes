@@ -121,5 +121,4 @@ after > build: ./my_app_directory
 # v1 me dependency nahi configure ho sakti k jab tak falan cantainer na chaly tab tak falan cantainer na chalao. v2, and v3 me ye configer kar sakty hen. (jo cantainer depended ho us k andar 1 pair likh len: depends_on: - x_container_name)
 # v2 or v3 ki start line ye ho gi : <version: version_number>
 # v2 or V3 ki second line ye ho gi: <services:> , or jo kuch version one me tha wo sara k block k andar aa jata h.
-
 #------------------------------------------------ 
