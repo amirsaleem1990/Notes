@@ -66,5 +66,6 @@ docker build Docker_File -t Amir/my_App
 
 docker run -it ubuntu bash ............... start an ubuntu container and make it live (agar ham <bash> nahi run karen gy to ubuntu ka container on ho ga, or immediately off ho jay ga)
 
-#CMD in docker file
+# CMD in docker file
 # jab ham image banaty hen to CMD option ko use karty hwy ham wo command  define karty hen jo cantainer start hony k baad  chalay ga. eg: CMD sleep 10. CMD me ham ya to command likhty hen (CMD sleep 5), ye lsit fort me likhty hen (CMD ["sleep", "5"]). Note: agar ham list use karen to us ka pehly element hamesha executable ho ga, eg(ls)
+# NOTE: jab ham docker run k aagy command specify kar dety hen (eg: docker run ubuntu_image sleep 10), to wo CMD optiojn ko override kar deti h. is ka falsafa ye h k docker container ksi 1 kaam k lye banta h, ab ya to us kaam ko CMD me likh len ya docker run karty waqt manutally specify kar den.
