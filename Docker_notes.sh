@@ -145,3 +145,5 @@ networks:
 #-----------------
 
 # by default there is no restriction as to how mush of a resource a container can use and hence a cantainer may end up utilize all of the resource on the underlying host. but there is a way to restrice the amount of CPU or Memory a cantainer can use. 
+> docker run --cpu=.5 cantainer_Name # this cantainer using at most 50% of total CPU.
+> docker rum --memory=1000m cantainer_Name # this cantainer using at most 1000MB of memory.
