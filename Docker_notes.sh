@@ -157,3 +157,5 @@ networks:
 	containars
 	image
 	volumes
+
+# when docker build images it build these in a layered architecture. 
