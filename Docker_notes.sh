@@ -52,6 +52,3 @@ docker inspect image_Name .......... detailed info about specific cantainer
 docker logs cantainer_Name | container_ID ... logs(what should print in the terminal in the atteched mode) of the cantainer running in the backgroud.
 
 docker inspect cantainer_Name | cantainer_ID | grep -i ipaddress ........ get cantainer ipaddres
-
-
-
