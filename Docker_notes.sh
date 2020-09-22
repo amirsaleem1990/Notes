@@ -117,7 +117,7 @@ after > build: ./my_app_directory
 
 
 # docker-compose.yml k abhi tak 3 versions aa chuky hen, jo oopar ham nydekha wo verions1 tha, version 2 or version 1 me ye diffrences hen:
-# v2 me <links> ki zaroorat nahi h. (in v1 docker-compose attaches all the cantainers to the default bridged network, and then use links to enable compunication between the cantainers.)
+# v2 me <links> ki zaroorat nahi h. (in v1 docker-compose attaches all the cantainers to the default bridged network, and then use links to enable compunication between the cantainers. in V2 docker-compose automaticaly creates dedicated bridged network for this application, and then attaches all cantainers to that new network, all cantainers are then able to compunicate to each other using each others services names, so we dont need to use <-link> in V2.)
 # v1 me dependency nahi configure ho sakti k jab tak falan cantainer na chaly tab tak falan cantainer na chalao. v2, and v3 me ye configer kar sakty hen.
 # v2 or v3 ki start line ye ho gi : <version: version_number>
 # v2 or V3 ki second line ye ho gi: <services:> , or jo kuch version one me tha wo sara k block k andar aa jata h.
