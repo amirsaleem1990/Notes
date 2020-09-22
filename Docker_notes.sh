@@ -31,9 +31,9 @@ docker run -t image_Name ............ can print on terminal.
 # ------------ port mapping
 > docker run myApp 
 Running on http://0.0.0.0:5000/
-# we know that our application is listining on port 5000, so within docker i could access my application on port 5000, but what if i need to access myApp from outside of cantainer? A: we could use the IP of docker host <eg: 192.168.1.5>, but for that to work you must have mapped the port inside the docker container to a free port on the docker host. for example if i want to users to access myApp through port 80  on my docker host, i could map port 80 of local host to port 5000 on the docker cantainer using <-p> perameter. 
+# we know that our application is listining on port 5000, so within docker i could access my application on port 5000, but what if i need to access myApp from outside of container? A: we could use the IP of docker host <eg: 192.168.1.5>, but for that to work you must have mapped the port inside the docker container to a free port on the docker host. for example if i want to users to access myApp through port 80  on my docker host, i could map port 80 of local host to port 5000 on the docker container using <-p> perameter. 
 > docker run -p 80:5000 myApp
-# so the user can access myApp by going to http://192.168.1.5:80, and all trafic on port 80 on docker host will get routed to port 5000 inside the docker cantainer. this way you can run multiple instances of your application and map them to diffrent ports on the docker host, or run instancess if diffrens applications on diffrent ports
+# so the user can access myApp by going to http://192.168.1.5:80, and all trafic on port 80 on docker host will get routed to port 5000 inside the docker container. this way you can run multiple instances of your application and map them to diffrent ports on the docker host, or run instancess if diffrens applications on diffrent ports
 > docker run -p 80:5000 myApp
 > docker run -p 81:5000 myApp
 > docker run -p 82:5000 myApp
@@ -45,12 +45,12 @@ Running on http://0.0.0.0:5000/
 > docker run -v your/local/directory:/var/lib/mysql
 # ab ye ho ga k docker me jo /var/lib/mysql ho ga wo darasal mery your/local/directory ka alias ho ga.
 
-docker inspect image_Name .......... detailed info about specific cantainer
+docker inspect image_Name .......... detailed info about specific container
 
 
 # logs
-docker logs cantainer_Name | container_ID ... logs(what should print in the terminal in the atteched mode) of the cantainer running in the backgroud.
-docker inspect cantainer_Name | cantainer_ID | grep -i ipaddress ........ get cantainer ipaddres
+docker logs container_Name | container_ID ... logs(what should print in the terminal in the atteched mode) of the container running in the backgroud.
+docker inspect container_Name | container_ID | grep -i ipaddress ........ get container ipaddres
 
 
 # Build an Image
@@ -67,7 +67,7 @@ docker build Docker_File -t Amir/my_App
 docker run -it ubuntu bash ............... start an ubuntu container and make it live (agar ham <bash> nahi run karen gy to ubuntu ka container on ho ga, or immediately off ho jay ga)
 
 # CMD in docker file
-# jab ham image banaty hen to CMD option ko use karty hwy ham wo command  define karty hen jo cantainer start hony k baad  chalay ga. eg: CMD sleep 10. CMD me ham ya to command likhty hen (CMD sleep 5), ye lsit fort me likhty hen (CMD ["sleep", "5"]). Note: agar ham list use karen to us ka pehly element hamesha executable ho ga, eg(ls)
+# jab ham image banaty hen to CMD option ko use karty hwy ham wo command  define karty hen jo container start hony k baad  chalay ga. eg: CMD sleep 10. CMD me ham ya to command likhty hen (CMD sleep 5), ye lsit fort me likhty hen (CMD ["sleep", "5"]). Note: agar ham list use karen to us ka pehly element hamesha executable ho ga, eg(ls)
 # NOTE: jab ham docker run k aagy command specify kar dety hen (eg: docker run ubuntu_image sleep 10), to wo CMD optiojn ko override kar deti h. is ka falsafa ye h k docker container ksi 1 kaam k lye banta h, ab ya to us kaam ko CMD me likh len ya docker run karty waqt manutally specify kar den.
 
 # ENTRYPOINT
@@ -79,29 +79,29 @@ docker run -it ubuntu bash ............... start an ubuntu container and make it
 # A: docker run --entrypoint command image_name perameter(n)
 
 --link 
-# create a link between two cantainers. so one of them access data of other
+# create a link between two containers. so one of them access data of other
 docker run -d --name=db mysql
 docker run -d --name=ubuntu --link db:db ubuntu
 # Note: in --link the <db:db> is equal to <db>, so type whatever you want.
 
 #------------------------------------------------ docker-compose
 # see /home/amir/github/Notes/PNG_Notes/image_4.png
-# jab hamary pas more than one containers hoty hen jo 1 dusry par dependent hoty hen, to ham aasani k lye un sary cantainers ki info 1 docker-compose.yml file me likh kar us file ko run kar dety hen.
+# jab hamary pas more than one containers hoty hen jo 1 dusry par dependent hoty hen, to ham aasani k lye un sary containers ki info 1 docker-compose.yml file me likh kar us file ko run kar dety hen.
 cat > docker-compose.yml
 
-cantainer_1_Name:
+container_1_Name:
 	image:
 		image_1_Name:
     links:
-    	- cantainer_3_Name # is cantainer ka link container_3 sy hen
-cantainer_2_Name:
+    	- container_3_Name # is container ka link container_3 sy hen
+container_2_Name:
 	image:
 		image_2_Name:
  	ports:
 		- 5000:8080
     links:
-    	- cantainer_3_Name # is cantainer ka link container_3 sy hen
-cantainer_3_Name:
+    	- container_3_Name # is container ka link container_3 sy hen
+container_3_Name:
 	image:
 		image_3_Name:
 	ports:
@@ -110,15 +110,15 @@ cantainer_3_Name:
 and then run this file by:
 > docker-compose up
 
-# Note: zaroori nahi h k docker-compose me likhy hwy sary cantainers hamary pas pehly sy bany hwy hon, agar esa ho k hamary pas 1 folder me app rakhi hwi h magar abhi tak ham ny us app ka cantainer nahi banaya h to zaroori nahi ham pehly manually us ka cantainer banaen or phir usy docker-compose.yml me likhen, instead ham ye kar sakty hen k <image> line ko <build> line sy replace kar den gy, or us directory ka path de den gy jahan hamari app and Dockerfile rakhi hwi h, eg:
+# Note: zaroori nahi h k docker-compose me likhy hwy sary containers hamary pas pehly sy bany hwy hon, agar esa ho k hamary pas 1 folder me app rakhi hwi h magar abhi tak ham ny us app ka container nahi banaya h to zaroori nahi ham pehly manually us ka container banaen or phir usy docker-compose.yml me likhen, instead ham ye kar sakty hen k <image> line ko <build> line sy replace kar den gy, or us directory ka path de den gy jahan hamari app and Dockerfile rakhi hwi h, eg:
 before> image: image_name
 after > build: ./my_app_directory
 
 
 
 # docker-compose.yml k abhi tak 3 versions aa chuky hen, jo oopar ham nydekha wo verions1 tha, version 2 or version 1 me ye diffrences hen:
-# v2 me <links> ki zaroorat nahi h. (in v1 docker-compose attaches all the cantainers to the default bridged network, and then use links to enable compunication between the cantainers. in V2 docker-compose automaticaly creates dedicated bridged network for this application, and then attaches all cantainers to that new network, all cantainers are then able to compunicate to each other using each others services names, so we dont need to use <-links> in V2.)
-# v1 me dependency nahi configure ho sakti k jab tak falan cantainer na chaly tab tak falan cantainer na chalao. v2, and v3 me ye configer kar sakty hen. (jo cantainer depended ho us k andar 1 pair likh len: depends_on: - x_container_name)
+# v2 me <links> ki zaroorat nahi h. (in v1 docker-compose attaches all the containers to the default bridged network, and then use links to enable compunication between the containers. in V2 docker-compose automaticaly creates dedicated bridged network for this application, and then attaches all containers to that new network, all containers are then able to compunicate to each other using each others services names, so we dont need to use <-links> in V2.)
+# v1 me dependency nahi configure ho sakti k jab tak falan container na chaly tab tak falan container na chalao. v2, and v3 me ye configer kar sakty hen. (jo container depended ho us k andar 1 pair likh len: depends_on: - x_container_name)
 # v2 or v3 ki start line ye ho gi : <version: version_number>
 # v2 or V3 ki second line ye ho gi: <services:> , or jo kuch version one me tha wo sara k block k andar aa jata h.
 
@@ -128,7 +128,7 @@ after > build: ./my_app_directory
 networks:
 	font-end:
 	back-end:
-# likhen gy, or phir har cantainer me 1 pair add karen gy, us ki key <networks> ho gi, and value/s front-end ya back-end ye dono alag alag line me ho ga. see /home/amir/github/Notes/PNG_Notes/image_5.png
+# likhen gy, or phir har container me 1 pair add karen gy, us ki key <networks> ho gi, and value/s front-end ya back-end ye dono alag alag line me ho ga. see /home/amir/github/Notes/PNG_Notes/image_5.png
 #------------------------------------------------ 
 
 
@@ -140,13 +140,13 @@ networks:
 	# The API interface that programs can use to talk to the Deamon and provide instructions.
 3- Docker CLI
 	# it uses the rest API to interect with the docker demon. 
-	# NOTE: not necessarily be on the same host. it could be on another system like a laptop and can still work with a remote Docker Engine. if we neet to run a cantainer based on nginx on a remote docker host run the command: 
+	# NOTE: not necessarily be on the same host. it could be on another system like a laptop and can still work with a remote Docker Engine. if we neet to run a container based on nginx on a remote docker host run the command: 
 	> docker -H=10.123.2.1:2375 run nginx
 #-----------------
 
-# by default there is no restriction as to how mush of a resource a container can use and hence a cantainer may end up utilize all of the resource on the underlying host. but there is a way to restrice the amount of CPU or Memory a cantainer can use. 
-> docker run --cpu=.5 cantainer_Name # this cantainer using at most 50% of total CPU.
-> docker rum --memory=1000m cantainer_Name # this cantainer using at most 1000MB of memory.
+# by default there is no restriction as to how mush of a resource a container can use and hence a container may end up utilize all of the resource on the underlying host. but there is a way to restrice the amount of CPU or Memory a container can use. 
+> docker run --cpu=.5 container_Name # this container using at most 50% of total CPU.
+> docker rum --memory=1000m container_Name # this container using at most 1000MB of memory.
 
 
 
@@ -165,3 +165,4 @@ networks:
 
 # images read-only hoti hen, agar us me koi changing karni ho to poori image dubara banani hoti hy, docker me achi baat ye h k maslan mery pas 12 layers ki image h, or me ny layer 8 ka code update karna h, or is lye mujhy image rebuild karni hy, to jab docker is ko rebuild kary ga to first 6 layers rebuild nahi kary ga balky unhe cache sy ly ly ga, or updated or us k bad wali layers rebuild kary ga.
 
+# when you run a container based on image (whish is read-only) docker creates a new writable layer on top of the image layers. this writeable layer is used to store data by the container such as log files by the applications, logs, any temporary files generated by the container or just any file modeified by the user on that container. the life of this writeable layer is only as long as the container is alive. 
