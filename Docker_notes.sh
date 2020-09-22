@@ -97,7 +97,7 @@ cantainer_1_Name:
 cantainer_2_Name:
 	image:
 		image_2_Name:
-	ports:
+ 	ports:
 		- 5000:8080
     links:
     	- cantainer_3_Name # is cantainer ka link container_3 sy hen
