@@ -63,4 +63,4 @@ docker build Docker_File -t Amir/my_App
 # your can containarize every thing (eg: curl, chrome), (me ny suna tha k GUI waly applications containarize nahi ho sakti like web browser)
 
 
-docker run -it ubuntu bash ............... start an ubuntu container and make it live (agar ham <bash> nahi run karen gy to ubuntu ka container on ho ga, or immediately off ho jay ga.)
+docker run -it ubuntu bash ............... start an ubuntu container and make it live (agar ham <bash> nahi run karen gy to ubuntu ka container on ho ga, or immediately off ho jay ga)
