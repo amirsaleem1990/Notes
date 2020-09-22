@@ -77,3 +77,9 @@ docker run -it ubuntu bash ............... start an ubuntu container and make it
 # NOTE: ENTRYPOINT and CMD ko 1 sath specify karny k lye zaroori h k wo dono list(list ko yahan wo json bol raha h) form me hon.
 # Q: agar ham ny ENTRYPOINT define kar dya h, or runtime par hame ENTRYPOINT bhi change karna h to kya karen?
 # A: docker run --entrypoint command image_name perameter(n)
+
+--link 
+# create a link between two cantainers. so one of them access data of other
+docker run -d --name=db mysql
+docker run -d --name=ubuntu --link db:db ubuntu
+
