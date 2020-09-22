@@ -136,8 +136,10 @@ networks:
 # when you install Docker on a linux host you're actually installing three diffrent compenents:
 1- Docker Deamon
 	# it is a backgroud process that manages docker objects such as the images, containers, volumes and networks.
-2- Rest application
+2- Rest API
 	# The API interface that programs can use to talk to the Deamon and provide instructions.
 3- Docker CLI
-	# Docker Command line interface.
+	# it uses the rest API to interect with the docker demon. 
+	# NOTE: not necessarily be on the same host. it could be on another system like a laptop and can still work with a remote Docker Engine. if we neet to run a cantainer based on nginx on a remote docker host run the command: 
+	> docker -H=10.123.2.1:2375 run nginx
 	
