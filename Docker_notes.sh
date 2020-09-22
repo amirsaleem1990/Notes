@@ -56,6 +56,6 @@ docker inspect cantainer_Name | cantainer_ID | grep -i ipaddress ........ get ca
 # Build an Image
 docker build Docker_File -t Amir/my_App
 
-All the layeser built are cached by docker, so in case of particuler step was to failed you have to fix the issue, and rerun ;
+# All the layeser built are cached by docker, so in case of particuler step was to failed you have to fix the issue, and rerun ;
 > docker build Docker_File -t Amir/my_App
-it will reuse the previous layeser from cache and continue to  build the remaining layeser.
+# it will reuse the previous layeser from cache and continue to  build the remaining layeser.
