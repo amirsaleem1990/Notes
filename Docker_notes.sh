@@ -69,3 +69,6 @@ docker run -it ubuntu bash ............... start an ubuntu container and make it
 # CMD in docker file
 # jab ham image banaty hen to CMD option ko use karty hwy ham wo command  define karty hen jo cantainer start hony k baad  chalay ga. eg: CMD sleep 10. CMD me ham ya to command likhty hen (CMD sleep 5), ye lsit fort me likhty hen (CMD ["sleep", "5"]). Note: agar ham list use karen to us ka pehly element hamesha executable ho ga, eg(ls)
 # NOTE: jab ham docker run k aagy command specify kar dety hen (eg: docker run ubuntu_image sleep 10), to wo CMD optiojn ko override kar deti h. is ka falsafa ye h k docker container ksi 1 kaam k lye banta h, ab ya to us kaam ko CMD me likh len ya docker run karty waqt manutally specify kar den.
+
+# ENTRYPOINT
+# opar wali misal me ham ubuntu ki image ko sleep n karna chahte hen, or ye n har dafa change ho sakta h, kabhi hame 5 seconds sleep kartna or kabhi 7 ..., to is ko ham CMD me nahi likh sakty q k wo to hard coded ho jay ga, jab k hamar n to change ho raha h, or agar ham isy docker run k sath likhen gy to har dafa sleep bhi type karna pary ga jo k constant h, to ham ENTRYPOINT use karty hen, eg(ENTRYPOINT["SLEEP"]), or phir container run karen gy: docer run ubuntu 10
