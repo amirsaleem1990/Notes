@@ -82,7 +82,7 @@ docker run -it ubuntu bash ............... start an ubuntu container and make it
 # create a link between two cantainers. so one of them access data of other
 docker run -d --name=db mysql
 docker run -d --name=ubuntu --link db:db ubuntu
-# Note: in --link the db:db is equal to db, so type whatever you want.
+# Note: in --link the <db:db> is equal to <db>, so type whatever you want.
 
 docker-compose
 # see /home/amir/github/Notes/image_4.png
