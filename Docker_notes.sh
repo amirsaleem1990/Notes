@@ -160,4 +160,4 @@ networks:
 
 # when docker build images it build these in a layered architecture. each line of instruction in the Dockerfile creates a new layer in th Docker image with just the changes from the previous layer. 
 # To understand the advantages of this layered architecture lets say:
-# ham ny 1 app ki image bana li h, is image ki starting 3 layers ye hen: ubuntu, python, update. ab hame 2nd app ki image banani h, or is app me bhi hamy shuru me wohi 3 layers banani hen, to jab me 2nd app ki image banaun ga to docker first 3 layers ko build nahi kary ga balky cache sy 1st image ki hi starting 3 layers ly kar 2nd image  me laga dy ga, jis sy time bohot bachy ga.
+# ham ny 1 app ki image bana li h, is image ki starting 3 layers ye hen: ubuntu, python, update. ab hame 2nd app ki image banani h, or is app me bhi hamy shuru me wohi 3 layers banani hen, to jab me 2nd app ki image banaun ga to docker first 3 layers ko build nahi kary ga balky cache sy 1st image ki hi starting 3 layers ly kar 2nd image  me laga dy ga, jis sy time bohot bachy ga or disk space bhi.
