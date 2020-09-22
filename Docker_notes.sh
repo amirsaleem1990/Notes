@@ -164,3 +164,4 @@ networks:
 
 
 # images read-only hoti hen, agar us me koi changing karni ho to poori image dubara banani hoti hy, docker me achi baat ye h k maslan mery pas 12 layers ki image h, or me ny layer 8 ka code update karna h, or is lye mujhy image rebuild karni hy, to jab docker is ko rebuild kary ga to first 6 layers rebuild nahi kary ga balky unhe cache sy ly ly ga, or updated or us k bad wali layers rebuild kary ga.
+
