@@ -57,8 +57,8 @@ docker inspect cantainer_Name | cantainer_ID | grep -i ipaddress ........ get ca
 docker build Docker_File -t Amir/my_App
 
 # All the layeser built are cached by docker, so in case of particuler step was to failed you have to fix the issue, and rerun ;
-> docker build Docker_File -t my_App
-> docker build . -t my_App
+> docker build Docker_File -t Amir/my_App
+> docker build . -t Amir/my_App
 # it will reuse the previous layeser from cache and continue to  build the remaining layeser. the same is true if you ware to add additional steps in the docker file, this way; rebuilding the image is faster and you dont have to wait for docter to rebuild the entire image each time, this is helpfull when you update source code of your application, only the layers ABOVE the updated layers needs to be rebuilt. 
 
 # your can containarize every thing (eg: curl, chrome), (me ny suna tha k GUI waly applications containarize nahi ho sakti like web browser)
