@@ -110,6 +110,7 @@ cantainer_3_Name:
 and then run this file by:
 > docker-compose up
 
-Note: zaroori nahi h k docker-compose me likhy hwy sary cantainers hamary pas pehly sy bany hwy hon, agar esa ho k hamary pas 1 folder me app rakhi hwi h magar abhi tak ham ny us app ka cantainer nahi banaya h to zaroori nahi ham pehly manually us ka cantainer banaen or phir usy docker-compose.yml me likhen, instead ham ye kar sakty hen k <image> line ko <build> line sy replace kar den gy, or us directory ka path de den gy jahan hamari app and dockerFile rakhi hwi h, eg:
+# Note: zaroori nahi h k docker-compose me likhy hwy sary cantainers hamary pas pehly sy bany hwy hon, agar esa ho k hamary pas 1 folder me app rakhi hwi h magar abhi tak ham ny us app ka cantainer nahi banaya h to zaroori nahi ham pehly manually us ka cantainer banaen or phir usy docker-compose.yml me likhen, instead ham ye kar sakty hen k <image> line ko <build> line sy replace kar den gy, or us directory ka path de den gy jahan hamari app and Dockerfile rakhi hwi h, eg:
 before> image: image_name
 after > build: ./my_app_directory
+
