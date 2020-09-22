@@ -85,7 +85,7 @@ docker run -d --name=ubuntu --link db:db ubuntu
 # Note: in --link the <db:db> is equal to <db>, so type whatever you want.
 
 #------------------------------------------------ docker-compose
-# see /home/amir/github/Notes/image_4.png
+# see /home/amir/github/Notes/PNG_Notes/image_4.png
 # jab hamary pas more than one containers hoty hen jo 1 dusry par dependent hoty hen, to ham aasani k lye un sary cantainers ki info 1 docker-compose.yml file me likh kar us file ko run kar dety hen.
 cat > docker-compose.yml
 
@@ -121,4 +121,12 @@ after > build: ./my_app_directory
 # v1 me dependency nahi configure ho sakti k jab tak falan cantainer na chaly tab tak falan cantainer na chalao. v2, and v3 me ye configer kar sakty hen. (jo cantainer depended ho us k andar 1 pair likh len: depends_on: - x_container_name)
 # v2 or v3 ki start line ye ho gi : <version: version_number>
 # v2 or V3 ki second line ye ho gi: <services:> , or jo kuch version one me tha wo sara k block k andar aa jata h.
+
+
+# ------ networks in V3
+# agar hame ye karna h k hamari application k kuch containers backend network use karen, kuch frontend and kuch both to ham <services> k block sy bahir aa kar ye:
+networks:
+	font-end:
+	back-end:
+# likhen gy, or phir har cantainer me 1 pair add karen gy, us ki key <networks> ho gi, and value/s front-end ya back-end ye dono alag alag line me ho ga. see /home/amir/github/Notes/PNG_Notes/image_5.png
 #------------------------------------------------ 
