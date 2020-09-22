@@ -135,5 +135,9 @@ networks:
 #----------------- Docker Engine
 # when you install Docker on a linux host you're actually installing three diffrent compenents:
 1- Docker Deamon
+	# it is a backgroud process that manages docker objects such as the images, containers, volumes and networks.
 2- Rest application
+	# The API interface that programs can use to talk to the Deamon and provide instructions.
 3- Docker CLI
+	# Docker Command line interface.
+	
