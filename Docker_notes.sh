@@ -87,6 +87,7 @@ docker-compose
 # see /home/amir/github/Notes/image_4.png
 # jab hamary pas more than one containers hoty hen jo 1 dusry par dependent hoty hen, to ham aasani k lye un sary cantainers ki info 1 docker-compose.yml file me likh kar us file ko run kar dety hen.
 cat > docker compose.yml
+
 cantainer_1_Name:
 	image:
 		image_1_Name:
@@ -104,5 +105,6 @@ cantainer_3_Name:
 		image_3_Name:
 	ports:
 		- 5010:8878
+
 and then run this file by:
-docker-compose up
+> docker-compose up
