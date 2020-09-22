@@ -151,10 +151,9 @@ networks:
 
 
 # ---------------------- Storage
-# when you install a docker on a system it creates below folder structure at /var/lib/docker, here docker stores its data by default, you have multiple folders under it.
+# when you install a docker on a system it creates below folder structure at /var/lib/docker, here docker stores its data(images, containers running on the host) by default, you have multiple folders under it.
 /var/lib/docker
 	aufs
 	containars
 	image
 	volumes
-	
