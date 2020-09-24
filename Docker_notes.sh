@@ -244,3 +244,6 @@ if you on the same host:
 	> docker pull localhost:5000/my-image
 of the IP or domain name of my docker host if i accessing from anohter host in my invoirment:
 	> docker pull 192.168.56.100:5000/my-image
+
+Deploy a mysql database using the mysql:5.6 image and name it mysql-db. Attach it to the newly created network wp-mysql-network, Set the database password to use db_pass123. The environment variable to set is MYSQL_ROOT_PASSWORD
+docker run -d --name=mysql-db --network wp-mysql-network -e MYSQL_ROOT_PASSWORD=db_pass123 mysql:5.6
