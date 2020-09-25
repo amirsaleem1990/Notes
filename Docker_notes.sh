@@ -75,7 +75,7 @@ docker run -it ubuntu bash ............... start an ubuntu container and make it
 # ENTRYPOINT["sleep"]
 # CMD["5"]
 # NOTE: ENTRYPOINT and CMD ko 1 sath specify karny k lye zaroori h k wo dono list(list ko yahan wo json bol raha h) form me hon.
-# Q: agar ham ny ENTRYPOINT define kar dya h, or runtime par hame ENTRYPOINT bhi change karna h to kya karen?
+# Q: agar ham ny entrypoint define kar dya h, or runtime par hame ENTRYPOINT bhi change karna h to kya karen?
 # A: docker run --entrypoint command image_name perameter(n)
 
 --link 
@@ -247,3 +247,5 @@ of the IP or domain name of my docker host if i accessing from anohter host in m
 
 Deploy a mysql database using the mysql:5.6 image and name it mysql-db. Attach it to the newly created network wp-mysql-network, Set the database password to use db_pass123. The environment variable to set is MYSQL_ROOT_PASSWORD
 docker run -d --name=mysql-db --network wp-mysql-network -e MYSQL_ROOT_PASSWORD=db_pass123 mysql:5.6
+
+
