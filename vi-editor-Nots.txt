@@ -1,2 +1,3 @@
-vi file_name ......... go into file, now you can read and copy&pase, but you can not write
+vi file_name ......... go into file (command mode), now you can read and copy&pase, but you can not write
 i            ......... for insert mode, now you can write
+esc          ......... go from insert mode to command mode
