@@ -1,0 +1,12 @@
+rememeber you must have a space followed by colon differentiatin the key and the value, eg: <fruit: apple>
+in Yml Dictinory/Map you must have equal number of blank spaces before the properties of a single item, so they are all aligned together. eg:
+Banana:
+	color: yellow
+	price: 1
+Grapes:
+  color: green
+  price: 2
+
+watch video spaces-in-YML.mkv 
+
+any line beggining with a dash is automatically ignored and considered as a comment.
