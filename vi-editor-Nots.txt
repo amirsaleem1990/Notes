@@ -4,4 +4,8 @@ esc          ......... go from insert mode to command mode
 command mode:
 	x .......... delete a charecter
 	dd ......... delete entire line
+	yy ......... copy a line
+	p .......... pase
+	CTRL + u ... page up
+	CTRL + D ... page down
 	
