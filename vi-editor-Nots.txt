@@ -13,5 +13,5 @@ command mode:
 	:w file_name save file with name
 	:q ......... dont save and quit
 	:wq ........ save and quit
-	/word ...... find <word>
+	/word ...... find <word>, all the results is highlighted
 	
