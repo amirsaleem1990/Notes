@@ -10,4 +10,7 @@ command mode:
 	CTRL + D ... page down
 	: .......... take you to the prompt were you can type commands
 	:w ......... save the file
+	:w file_name save file with name
+	:q ......... dont save and quit
+	:wq ........ save and quit
 	
