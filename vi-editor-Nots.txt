@@ -13,5 +13,5 @@ command mode:
 	:w file_name save file with name
 	:q ......... dont save and quit
 	:wq ........ save and quit
-	/word ...... find <word>, all the results is highlighted
+	/word ...... find <word>, all the results is highlighted, and the cursor is positioned at that location. to move your cursor to the rest occurences pres <n>.
 	
