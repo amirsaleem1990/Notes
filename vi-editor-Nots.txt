@@ -8,4 +8,6 @@ command mode:
 	p .......... pase
 	CTRL + u ... page up
 	CTRL + D ... page down
+	: .......... take you to the prompt were you can type commands
+	:w ......... save the file
 	
