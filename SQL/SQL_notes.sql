@@ -1075,3 +1075,6 @@ The new table name is always aliased using <table_name AS>, which is followed by
 
 An important thing to remember: aggregators only aggregate vertically - the values of a column. If you want to perform a calculation across rows, you would do this with (simple arithmetic https://community.modeanalytics.com/sql/tutorial/sql-operators/#arithmetic-in-sql) .
 * 
+
+mysql DB sizes in MB ............... SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024 AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema
+
