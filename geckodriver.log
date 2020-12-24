@@ -1,0 +1,9 @@
+1608731365607	mozrunner::runner	INFO	Running command: "/usr/bin/firefox" "-marionette" "-foreground" "-no-remote" "-profile" "/tmp/rust_mozprofile.Zdpvy1CP23LV"
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new Error("", "(unknown module)"))
+1608731368723	Marionette	INFO	Listening on port 37299
+1608731368867	Marionette	WARN	TLS certificate errors will be ignored for this session
+1608731388927	Marionette	INFO	Stopped listening on port 37299
+JavaScript error: https://ohrm.lfdanalytics.com/symfony/web/webres_5d69118beeec64.10301452/js/jquery/jquery.ui.datepicker.js, line 986: uncaught exception: Invalid arguments
+
+###!!! [Parent][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+

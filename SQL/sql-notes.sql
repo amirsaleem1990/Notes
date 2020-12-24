@@ -20,3 +20,8 @@ ROUND(((data_length + index_length) / 1024 / 1024), 2) AS "Size (MB)"
 FROM information_schema.TABLES
 WHERE table_schema = "kashat"
 ORDER BY (data_length + index_length) DESC;
+
+# get DB backup ............ mysqldump --compress -h127.0.0.1 -udb_user -p kashat > kashat-20201224_created_from_history_folders.sql ............. (--compress here for compression. mery pas 70GB ki DB thi, me ny --compress flat use kar k backup lya to 21GB ki file bani)
+# restore from backup ............ sudo mysql -h 127.0.0.1 -P 3307 -u root -p kashat_new < kashat.sql
+# SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024 AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema 
+
