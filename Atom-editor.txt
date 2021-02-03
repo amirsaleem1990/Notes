@@ -1,1 +1,3 @@
-project pane ko hide karny k lye ............. Ctrl-K Ctrl-B
+# project pane ko hide karny k lye ............. Ctrl-K Ctrl-B
+# ALT # show manu bar
+
