@@ -25,3 +25,4 @@ ORDER BY (data_length + index_length) DESC;
 # restore from backup ............ sudo mysql -h 127.0.0.1 -P 3307 -u root -p kashat_new < kashat.sql
 # SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024 AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema 
 
+# change type to longtext ............. ALTER TABLE  MODIFY  LONGTEXT;
