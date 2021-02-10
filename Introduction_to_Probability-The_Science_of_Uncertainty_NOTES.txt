@@ -1,0 +1,39 @@
+a probabilistic model is a quantitative description of a situation / phonaminon / experement where whose outcome is uncirtien.
+
+a probabilistic model involves 2 steps:
+	1- Describe set pf possible outcomes.
+		This set must be:
+			- Mutually exclusive.
+				at the end there is exactly 1 out come.
+			- Collectively exhaustive.
+				is set me sary possible outcomes hon.
+			- At the "right" granularity.
+				eg: agar mujh ye dekhna ho k coin fear h ya nahi, to mera output set ye hona chaye {H,T}, or ye nahi hona chahye {H_and_rain, H_not_rain, T_rain, T_not_rain}
+	2- Describe belifes about likelihood of outcomes.
+
+
+whenever we have an experement with several stages (like : probability of getting 3 head in rowlling 3 dies) it is very usefull way of describing it is by providing a squential description in terms of tree. 
+
+sample space:
+	can be infinite, and can be continues.
+	1- discrete and finite:
+		eg: getting two head in rolling 2 coins.
+	2- continues and finite:
+		eg: aap mahir teer andaz hen, or har bar aap ka teer nishany (1 x 1 fit) k andar lagta h, ab aap ny kafi dafa teer chalay, or har dafa jahan aap ka teer laga h us ka x,y cordinates record kar lye. to aap ka sample space yahan 0 <= x, y <= 1 ho ga, jo continues or finite h.
+
+The ONLY probability axioms:
+	1- non negativity
+	2- notmalization
+		probabiliry(set(all_possible_outcomes)) == 1
+	for disjoint events:
+		3- (finite) additivity
+			if A and B are disjoint then p(A union B) = p(A) + p(B)
+
+probability for continues:
+	ksi bhi infinite precistion ki probability (almost) 0 hoti h, isi wajah sy Event (a subset of a sample space) ki probaility lety hen, eg: jab hame let sy pr(age==66) chahye hota h to darasal ham is cheez ki probability dekhty hen <pr(age >65)  & pr(age <= 66)>
+
+intersection:
+	in both
+union:
+	in any of both A and B
+	
