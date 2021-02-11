@@ -1,6 +1,6 @@
 a probabilistic model is a quantitative description of a situation / phonaminon / experement where whose outcome is uncirtien.
 
-a probabilistic model involves 2 steps:
+a probabilistic model involves these steps:
 	1- Describe set pf possible outcomes.
 		This set must be:
 			- Mutually exclusive.
@@ -10,6 +10,8 @@ a probabilistic model involves 2 steps:
 			- At the "right" granularity.
 				eg: agar mujh ye dekhna ho k coin fear h ya nahi, to mera output set ye hona chaye {H,T}, or ye nahi hona chahye {H_and_rain, H_not_rain, T_rain, T_not_rain}
 	2- Describe belifes about likelihood of outcomes.
+	3- identify an event of interest
+	4- calculate
 
 
 whenever we have an experement with several stages (like : probability of getting 3 head in rowlling 3 dies) it is very usefull way of describing it is by providing a squential description in terms of tree. 
@@ -23,17 +25,63 @@ sample space:
 
 The ONLY probability axioms:
 	1- non negativity
+		is axiom sy 1 or axiom bhi sabit hota h k p(A) <= 1
+			proof: p(A) = 1 - p(not_A), and p(not_A) >= 0. so p(A) must be <= 1
 	2- notmalization
-		probabiliry(set(all_possible_outcomes)) == 1
+		probabiliry(set(all_possible_outcomes)) = p(A union not_A) = 1
+		is axiom sy 1 or axiom bhi sabit hota h k P(empty_set) = 0
+			proof #1 :
+				since A union not_A = entire_set ==>
+				A intersection not_A = empty_set
+			prrof #2:
+				1 = p(all_possible_outcomes) + p(complement_of_all_possible_outcomes) ==>
+				1 = 1 + p(complement_of_all_possible_outcomes) ==>
+				p(complement_of_all_possible_outcomes) = 0
 	for disjoint events:
 		3- (finite) additivity
+
+			only for countable sequence of events, hence it is for descrete but not for continues. so unit square and read line etc is not countable.
+
+			"Area" is lagitimate probability law on the unit square, as long as we do not try to assing probabilites/areas to "very strange" sets.
+
 			if A and B are disjoint then p(A union B) = p(A) + p(B)
+
+		genralization of additivity axiom:
+			if A,B and C are disjoint, then p(A union B union C) = p(A) + p(B) + p(C)
+			sample = {A,B,C,D}
+			set_of_interest = {A,B,C}
+			sum([p(k) for k in set_of_interest])
+			proof:
+				p(A union B union C) =
+				p( p(A union B) union C) =
+				p(A union B) + p(C)
+some consequences of the probability axioms:
+	if A is the part of B, then p(A) <= p(B).
+		proof:
+			B = A union (B intersection not_A) ==>
+			since B and not_a are disjoint we apply additivity axiom here
+			p(B) = p(A) + p(B intersection not_A) ==>
+			since <p(B intersection not_A)> >= 0;
+				   p(B intersection not_A) >= p(A)
+	if A and B are not necessery disjoint:
+		p(A union B) = 
+			p(A) + p(B) - p(A intersection B)
+		anoter way:
+			p(A instersection not_B) + p(B intersection not_A) + p(A instersection B)
+	
+	if A,B and C not necessery disjoint:
+		p(A union B union C):
+			p(A) + p(not_A intersection B) + p(not_A intersection not_B intersection C)
+
+	p(A union B) <= p(A) + p(B)
+
 
 probability for continues:
 	ksi bhi infinite precistion ki probability (almost) 0 hoti h, isi wajah sy Event (a subset of a sample space) ki probaility lety hen, eg: jab hame let sy pr(age==66) chahye hota h to darasal ham is cheez ki probability dekhty hen <pr(age >65)  & pr(age <= 66)>
 
-intersection:
+
+intersection <n>:
 	in both
-union:
+union <U>:
 	in any of both A and B
 	
