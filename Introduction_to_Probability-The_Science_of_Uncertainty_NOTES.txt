@@ -82,6 +82,14 @@ probability for continues:
 
 intersection <n>:
 	in both
+	order does not metter, so A intersection B intersection C = B intersection A intersection C
 union <U>:
 	in any of both A and B
+	order does not metter, so A union B union C = B union A union C
 	
+we can define unions and intersections of more than 2 sets, even of infinitly meny sets. 
+
+SET:
+	A collection of distinct elements.
+	it is finite (eg:{a,b,c}) or infinite (eg: real numbers).
+
