@@ -93,3 +93,10 @@ SET:
 	A collection of distinct elements.
 	it is finite (eg:{a,b,c}) or infinite (eg: real numbers).
 
+
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Conditioning_and_independence:
+probaility is a way of descibing our belives about the likelihod the the given event will occur. our belivies will in general depend on the information that we have. taking into account new information lives as to consider so colled conditnal probabilites, these are reviesed probabilites that take into account the new information.
+
