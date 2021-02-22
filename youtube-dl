@@ -1,0 +1,28 @@
+Download YouTube videos in various formats and quality size:
+	# These days YouTube videos have different resolutions, you first need to check available video formats of a given YouTube video. For that run youtube-dl with “-F” option. It will show you a list of available formats.
+
+	youtube-dl -F <video_url>
+
+	# Setting language
+	#  BlXaGWbFVKY: Downloading video webpage
+	#  BlXaGWbFVKY: Downloading video info webpage
+	#  BlXaGWbFVKY: Extracting video information
+	# Available formats:
+	# 37      :       mp4     [1080x1920]
+	# 46      :       webm    [1080x1920]
+	# 22      :       mp4     [720x1280]
+	# 45      :       webm    [720x1280]
+	# 35      :       flv     [480x854]
+	# 44      :       webm    [480x854]
+	# 34      :       flv     [360x640]
+	# 18      :       mp4     [360x640]
+	# 43      :       webm    [360x640]
+	# 5       :       flv     [240x400]
+	# 17      :       mp4     [144x176]
+	# 
+	# Now among the available video formats, choose one that you like. For example, if you want to download it in MP4 version and 1080 pixel, # you should use:
+	 
+	youtube-dl -f 37<video_url>
+
+
+	
