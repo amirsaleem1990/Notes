@@ -1078,3 +1078,7 @@ An important thing to remember: aggregators only aggregate vertically - the valu
 
 mysql DB sizes in MB ............... SELECT table_schema AS "Database", SUM(data_length + index_length) / 1024 / 1024 AS "Size (MB)" FROM information_schema.TABLES GROUP BY table_schema
 
+
+
+
+create a sqlite3 database from .sql file .................. cat db.sql | sqlite3 database.db
