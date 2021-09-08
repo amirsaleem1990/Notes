@@ -1,0 +1,103 @@
+import sqlite3
+conn = sqlite3.connect("db.sqlite")
+cur = conn.cursor()
+cur.execute('''single_statement;''')
+cur.executescript('''
+	1st_statement;
+	2nd_statement;
+	3rd_statement;
+	''')
+cur.execute('''SELECT var_1 FROM table_1 WHERE var_2 = ?   ''', (value_of_var_2,))
+cur.execute('''INSERT INTO Counts (org, count) VALUES (?,1)''', (org,))
+row = cur.fetchone()
+conn.commit()
+-- sqlstr = 'SELECT org, count FROM Counts ORDER BY count DESC LIMIT 10'
+for row in cur.execute(sqlstr):
+	print(str(row[0]), row[1])
+
+
+create table table_name(
+	id        INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT UNIQUE,
+	col_1      TEXT,
+	col_2     varchar (128), #128 characters
+	col_3 INTEGET
+	PRIMARY KEY (col_1,col_2)
+)
+
+CREATE TABLE Counts (org TEXT, count INTEGER)
+
+SELECT Album.title, Artist.name FROM Album JOIN Artist ON Album.artist_id = Artist_id
+SELECT Track.title, Artist.name, Album.title, Genre.name from Track JOIN Genre join Album join Artist on Track.genre_id = Genre.id and Track.album_id = Album.id and Album.artist_id = Artist.id
+
+INSERT INTO Users(name, email) VALUES('Kristin', 'kf@umich.edu');
+DELETE FROM Users WHERE email='vlt@gmail.com';
+UPDATE Users SET name='updated_fred' WHERE email='fred@gmail.com';
+DELETE FROM Ages; -- delete all rows from (Ages) table
+DROP TABLE IF EXISTS table_name
+INSERT OR UPDATE  INTO table_name (name, email) VALUES ('amir', 'amir@gmail.com')
+INSERT OR IGNORE  INTO table_name (name)        VALUES ('amir')
+INSERT OR REPLACE INTO table_name (name)        VALUES ('amir')
+
+
+stuff = ET.parse(fname)
+all = stuff.findall('dict/dict/dict') # xml all third level 'dict'
+
+# for many to many
+	SELECT User.name, Connection_table.role, Course.title 
+	FROM User JOIN Connection_table JOIN Course
+	ON Connection_table.user_id = User.id AND Connection_table.course_id = Course.id
+	ORDER BY Course.title, Connection_table.role, DESC, User.name 
+
+
+
+row = object (tuple)
+table = relation , contains tuples and attributes
+columns = attributes
+schema = model (structure or format of a database)
+
+Building a Data Model.
+	Drawing a picture of the data object for our application and then figuring out how to represent the objects and their relationships.
+
+	Basic Rule: Don't put the same string data in twice, use a relationship instead.
+
+	When there is one thing in the "read world" there should be one copy of that thing in database.
+
+	for each "piece of info":
+		is the column an object or an attribute of another objet?
+		Once we defince objects, we need to define the relationships between objects.
+
+
+A primary key:
+	A way to refer to a particuler row.
+A foregin key:
+	wo key jo ksi or table ki primery key ho.
+		eg:
+			'account' table me 'id' columns h, jo k primery key h.
+			'bills' table me 'account_id' column h, to q k ye ksi primary key k sath attech h to ye  foregin key h.
+
+
+Relational power:
+	By removing the replicated data and replacing it with refrences to a single copy of each bit of data we build a "web" of information that the relational databases can read through very quickly - even for very lagre amounts of data.
+
+
+	Often when you want some data it comes form a number of tables linked by these 'foreign keys'
+
+
+
+The JOIN operation:
+	The join operation 'links across several tables' as part of select operation.
+
+	You must tell the JOIN how to use the keys that make the connection between the tables using 'ON' caluse.
+
+	Joining two tables without 'ON' clause gives all possible combinations of rows.
+
+
+Many to Many:
+	If there is many-to-many relation we can't model directly, so first we create "connection table".
+	We need to add a "connection" table with two foregin key and NO primay key.
+		that "connection table" models nothing but connection between them.
+		We decompose that many-to-many retaion-ship into many-to-one relation-ship  
+		Each row has two foregin keys, and it's connection.
+		
+
+
