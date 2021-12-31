@@ -4,7 +4,7 @@ docker version ........... check docker version
 print hello-world on screen ........... docker run docker/whalesay cowsay Hello-world
 docker run .............. run docker from an image on the docker host if the image is exist in local, if image is not present on the host it will go out to docker hub and pulled image down, but this is only done the first time. for the subsequant executaion the same image will be reused.
 docker ps  .............. list all running containers, and some basic information about them.
-docker ps -a ...........  to see all containers running or not, all running as well as previously stoped or exited containers. Note: not list deleted containers.
+docker ps -a ............  to see all containers running or not, all running as well as previously stoped or exited containers. Note: not list deleted containers.
 docker stop <container_ID|container_Name> ............ to stop a container.
 docker rm <container_Name> ............ to remove a stoped/exited container permenantily. Note: remove multiple containers in one command ............. docker rm cont1_Name cont2_Name 
 docker rmi <image_Name> ........... to remove an image perminently. Note: you must ensure that no containers are running of that image before attempting to remove the image. you must stop and delet all dependent containers to be able to delete an image. Note: docker run ubuntu, now ubuntu container started and immeditely stoped, now of i try to remove ubuntu image <docker rmi ubuntu>; i can not. first i should delete containers dependent on ubuntu (there is only one container that is dependent on ubuntu image, and that contains in exited, and we can not find it in <docker ps>), and then i can remove ubuntu image.
@@ -17,7 +17,7 @@ docker pull image_Name  ............... download an image
 dockder exec container_Name | container_ID command ... executing a command on a running container
 
 # Run - attach and detach
-docker run image_name ................. runs in the foreground (attachded mode), you will be attaced to the console or the standard out of the docker container and you will see the output of the application on your screen. you won't be able to do anything else in this console until this docker container stops. 
+docker run image_name ................. runs in the foreground (attachded mode), you will be attaced to the console or the standard out of the docker container and you will see the output of the application on your screen. you won\'t be able to do anything else in this console until this docker container stops. 
 docker run -d image_name .............. runs in the backgroud  (detached  mode), and you will be back to your prompt immediately, the container will continue to run in the backend.
 docker attach container_Name | container_ID ... attach back to the running container.
 # if you run <docker run image_Name> and image_Name not present in host docker try to download images from docker hub, and download latest version of image_Name, so how we can specify the old version if we need so? A: docker run image_Name:version_Number, this specification is called tag, the default tag is <latest>
@@ -176,7 +176,7 @@ networks:
 		docker run ubuntu --network=host
 		it is a private internal network created by docker on the host, all containers attached to this network by default, and they get an internal IP address, usually in the range 172.17 series, the containers can access each other using this internal IP if required. to access any of these containers from the outside world map the port of this container top ports on the docker host. another say to access the container externaly is to accosiate the container to the host network, this takes out any network isolation between the docker host and the docker container, meaning if you were to run a web server on port 5000 in a web container it is automaticaly as accessible on the same port externaly without requiring any port mapping as the web container uses the hosts network, this would also mean that unlike before you will now not be able to run multiple web containers on the same host on the same port as the ports are now common to all containers in the host network.
 	2- none
-		The containers are not atteched to any network and doesn't have any access to the external network or other containers they are run in an isolated network. 
+		The containers are not atteched to any network and doesn\'t have any access to the external network or other containers they are run in an isolated network. 
 
 	3- host
 
