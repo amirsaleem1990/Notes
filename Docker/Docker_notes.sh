@@ -1,31 +1,28 @@
+docker version # check docker version
+# docker hub   # hub.docker.com
+docker run docker/whalesay cowsay Hello-world # print hello-world on screen
+docker run   # run docker from an image on the docker host if the image is exist in local, if image is not present on the host it will go out to docker hub and pulled image down, but this is only done the first time. for the subsequant executaion the same image will be reused.
+docker ps    # list all running containers, and some basic information about them.
+docker ps -a   #  to see all containers running or not, all running as well as previously stoped or exited containers. Note: not list deleted containers.
+docker stop <container_ID|container_Name>   # to stop a container.
+docker rm <container_Name>   # to remove a stoped/exited container permenantily. Note: remove multiple containers in one command   # docker rm cont1_Name cont2_Name 
+docker rmi <image_Name>   # to remove an image perminently. Note: you must ensure that no containers are running of that image before attempting to remove the image. you must stop and delet all dependent containers to be able to delete an image. Note: docker run ubuntu, now ubuntu container started and immeditely stoped, now of i try to remove ubuntu image <docker rmi ubuntu>; i can not. first i should delete containers dependent on ubuntu (there is only one container that is dependent on ubuntu image, and that contains in exited, and we can not find it in <docker ps>), and then i can remove ubuntu image.
+docker images   # list all images present on our host.
+docker pull image_Name    # download an image
 
-docker version ........... check docker version
-# docker hub .......... hub.docker.com
-print hello-world on screen ........... docker run docker/whalesay cowsay Hello-world
-docker run .............. run docker from an image on the docker host if the image is exist in local, if image is not present on the host it will go out to docker hub and pulled image down, but this is only done the first time. for the subsequant executaion the same image will be reused.
-docker ps  .............. list all running containers, and some basic information about them.
-docker ps -a ............  to see all containers running or not, all running as well as previously stoped or exited containers. Note: not list deleted containers.
-docker stop <container_ID|container_Name> ............ to stop a container.
-docker rm <container_Name> ............ to remove a stoped/exited container permenantily. Note: remove multiple containers in one command ............. docker rm cont1_Name cont2_Name 
-docker rmi <image_Name> ........... to remove an image perminently. Note: you must ensure that no containers are running of that image before attempting to remove the image. you must stop and delet all dependent containers to be able to delete an image. Note: docker run ubuntu, now ubuntu container started and immeditely stoped, now of i try to remove ubuntu image <docker rmi ubuntu>; i can not. first i should delete containers dependent on ubuntu (there is only one container that is dependent on ubuntu image, and that contains in exited, and we can not find it in <docker ps>), and then i can remove ubuntu image.
-
-docker images ......................... list all images present on our host.
-docker pull image_Name  ............... download an image
-
-# if we run <docker run ubuntu> we would'nt see container running, it is started and then exited. so what is that? A: unlike virtual machines; containers are not meant to host an operating system. containers are ment to host a specific task or process such as to host an instance of web server, or application server, or database or any application. once the task is completes the container exits. the container only lives as long as the process inside it is a live. if the web serivce inside the container stoped or crashed then the container exits. this is why when you run a container from an ubuntu image is stops immediately, bacause ubuntu is an image of operating system that is used as the base image for other applications, there is no process opr application running in it by default, if the image isn't running any service as is the case with ubuntu you could instrect docker run a process with the <docker run> command, for example: <docker run ubuntu sleep 5>.
-
-dockder exec container_Name | container_ID command ... executing a command on a running container
+# if we run <docker run ubuntu> we would'nt see container running, it is started and then exited. so what is that? A: unlike virtual machines; containers are not meant to host an operating system. containers are meant to host a specific task or process such as to host an instance of web server, or application server, or database or any application. once the task is completes the container exits. the container only lives as long as the process inside it is a live. if the web serivce inside the container stoped or crashed then the container exits. this is why when you run a container from an ubuntu image is stops immediately, bacause ubuntu is an image of operating system that is used as the base image for other applications, there is no process opr application running in it by default, if the image isn't running any service as is the case with ubuntu you could instrect docker run a process with the <docker run> command, for example: <docker run ubuntu sleep 5>.
+dockder exec container_Name | container_ID command   # executing a command on a running container
 
 # Run - attach and detach
-docker run image_name ................. runs in the foreground (attachded mode), you will be attaced to the console or the standard out of the docker container and you will see the output of the application on your screen. you won\'t be able to do anything else in this console until this docker container stops. 
-docker run -d image_name .............. runs in the backgroud  (detached  mode), and you will be back to your prompt immediately, the container will continue to run in the backend.
-docker attach container_Name | container_ID ... attach back to the running container.
+docker run image_name   # runs in the foreground (attachded mode), you will be attaced to the console or the standard out of the docker container and you will see the output of the application on your screen. you won\'t be able to do anything else in this console until this docker container stops. 
+docker run -d image_name   # runs in the backgroud  (detached  mode), and you will be back to your prompt immediately, the container will continue to run in the backend.
+docker attach container_Name | container_ID   # attach back to the running container.
 # if you run <docker run image_Name> and image_Name not present in host docker try to download images from docker hub, and download latest version of image_Name, so how we can specify the old version if we need so? A: docker run image_Name:version_Number, this specification is called tag, the default tag is <latest>
 
 #------------- user input
 # by default docker container is not listen to user input, even though you are attached to console it is not able to read input from you, it does not have a terminal to read inputs from, it runs in non-interctive mode, if you like to provide your input you must map the standard input of your host to the docker container using <-i> paremerter, the <-i> perameter is for interective mode.
-docker run -i image_Name ............ can take an input from terminal.
-docker run -t image_Name ............ can print on terminal.
+docker run -i image_Name   # can take an input from terminal.
+docker run -t image_Name   # can print on terminal.
 
 # every docker container get an IP assigned by default.
 # ------------ port mapping
@@ -45,12 +42,12 @@ Running on http://0.0.0.0:5000/
 > docker run -v your/local/directory:/var/lib/mysql
 # ab ye ho ga k docker me jo /var/lib/mysql ho ga wo darasal mery your/local/directory ka alias ho ga.
 
-docker inspect image_Name .......... detailed info about specific container
+docker inspect image_Name   # detailed info about specific container
 
 
 # logs
-docker logs container_Name | container_ID ... logs(what should print in the terminal in the atteched mode) of the container running in the backgroud.
-docker inspect container_Name | container_ID | grep -i ipaddress ........ get container ipaddres
+docker logs container_Name | container_ID   # logs(what should print in the terminal in the atteched mode) of the container running in the backgroud.
+docker inspect container_Name | container_ID | grep -i ipaddress   # get container ipaddres
 
 
 # Build an Image
@@ -64,14 +61,14 @@ docker build Docker_File -t Amir/my_App
 # your can containarize every thing (eg: curl, chrome), (me ny suna tha k GUI waly applications containarize nahi ho sakti like web browser)
 
 
-docker run -it ubuntu bash ............... start an ubuntu container and make it live (agar ham <bash> nahi run karen gy to ubuntu ka container on ho ga, or immediately off ho jay ga)
+docker run -it ubuntu bash   # start an ubuntu container and make it live (agar ham <bash> nahi run karen gy to ubuntu ka container on ho ga, or immediately off ho jay ga)
 
 # CMD in docker file
 # jab ham image banaty hen to CMD option ko use karty hwy ham wo command  define karty hen jo container start hony k baad  chalay ga. eg: CMD sleep 10. CMD me ham ya to command likhty hen (CMD sleep 5), ye list form me likhty hen (CMD ["sleep", "5"]). Note: agar ham list use karen to us ka pehly element hamesha executable ho ga, eg(ls)
 # NOTE: jab ham docker run k aagy command specify kar dety hen (eg: docker run ubuntu_image sleep 10), to wo CMD option ko override kar deti h. is ka falsafa ye h k docker container ksi 1 kaam k lye banta h, ab ya to us kaam ko CMD me likh len ya docker run karty waqt manutally specify kar den.
 
 # ENTRYPOINT
-# opar wali misal me ham ubuntu ki image ko sleep n karna chahte hen, or ye n har dafa change ho sakta h, kabhi hame 5 seconds sleep kartna or kabhi 7 ..., to is ko ham CMD me nahi likh sakty q k wo to hard coded ho jay ga, jab k hamara (n) to change ho raha h, or agar ham isy docker run k sath likhen gy to har dafa sleep bhi type karna pary ga jo k constant h, to ham ENTRYPOINT use karty hen, eg(ENTRYPOINT["SLEEP"]), or phir container run karen gy: docker run ubuntu 10. ab 1 or masla h, wo ye k command to ham ny hardcoded kar di, or parameter user dy ga (n), agar user ny perameter na dya to kya ho ga? ham ye karen gy k perameter ki default value set kar len gy, or wo esy k ENTRYPOINT and CMD dono use kare gy, ENTRYPOINT me command define karen gy taky wo har dafa chaly, or CMD me (perameter(n)) define karen gy, agar user ny input nahi dya to CMD value value ENTRYPOINT ka parameter ban kar command execute ho gay gi, or agar user ny value dy di to CMD override ho jay ga. eg:
+# opar wali misal me ham ubuntu ki image ko sleep n karna chahte hen, or ye n har dafa change ho sakta h, kabhi hame 5 seconds sleep kartna or kabhi 7   #, to is ko ham CMD me nahi likh sakty q k wo to hard coded ho jay ga, jab k hamara (n) to change ho raha h, or agar ham isy docker run k sath likhen gy to har dafa sleep bhi type karna pary ga jo k constant h, to ham ENTRYPOINT use karty hen, eg(ENTRYPOINT["SLEEP"]), or phir container run karen gy: docker run ubuntu 10. ab 1 or masla h, wo ye k command to ham ny hardcoded kar di, or parameter user dy ga (n), agar user ny perameter na dya to kya ho ga? ham ye karen gy k perameter ki default value set kar len gy, or wo esy k ENTRYPOINT and CMD dono use kare gy, ENTRYPOINT me command define karen gy taky wo har dafa chaly, or CMD me (perameter(n)) define karen gy, agar user ny input nahi dya to CMD value value ENTRYPOINT ka parameter ban kar command execute ho gay gi, or agar user ny value dy di to CMD override ho jay ga. eg:
 # ENTRYPOINT["sleep"]
 # CMD["5"]
 # NOTE: ENTRYPOINT and CMD ko 1 sath specify karny k lye zaroori h k wo dono list(list ko yahan wo json bol raha h) form me hon.
@@ -170,28 +167,28 @@ networks:
 
 # when you install a docker its creates 3 networks automaticaly:
 	1- bridge
-		default network a container gets attached to. if you would like to accosiate the container with any other network specify the network information using the <--network> parameter, eg:
+		default #network a container gets attached to. if you would like to accosiate the container with any other network specify the network information using the <--network> parameter, eg:
 		docker run ubuntu 
 		docker run ubuntu --network=none
 		docker run ubuntu --network=host
-		it is a private internal network created by docker on the host, all containers attached to this network by default, and they get an internal IP address, usually in the range 172.17 series, the containers can access each other using this internal IP if required. to access any of these containers from the outside world map the port of this container top ports on the docker host. another say to access the container externaly is to accosiate the container to the host network, this takes out any network isolation between the docker host and the docker container, meaning if you were to run a web server on port 5000 in a web container it is automaticaly as accessible on the same port externaly without requiring any port mapping as the web container uses the hosts network, this would also mean that unlike before you will now not be able to run multiple web containers on the same host on the same port as the ports are now common to all containers in the host network.
+		# it is a private internal network created by docker on the host, all containers attached to this network by default, and they get an internal IP address, usually in the range 172.17 series, the containers can access each other using this internal IP if required. to access any of these containers from the outside world map the port of this container top ports on the docker host. another say to access the container externaly is to accosiate the container to the host network, this takes out any network isolation between the docker host and the docker container, meaning if you were to run a web server on port 5000 in a web container it is automaticaly as accessible on the same port externaly without requiring any port mapping as the web container uses the hosts network, this would also mean that unlike before you will now not be able to run multiple web containers on the same host on the same port as the ports are now common to all containers in the host network.
 	2- none
-		The containers are not atteched to any network and doesn\'t have any access to the external network or other containers they are run in an isolated network. 
+		# The containers are not atteched to any network and doesn\'t have any access to the external network or other containers they are run in an isolated network. 
 
 	3- host
 
-what if we wis hto isolate the containers within the docker host? for example the first two web containers on internal network 172 and the second two containers on a different internal network like 182, by default Docker only created one internal bridge network. but we could create our own internal network (docker network create --driver bridge --subnet 182.18.0.0/16 custom-isolated-network), (<bridge> here dirver).
-> docker network ls  ....... list networks.
+# what if we wish to isolate the containers within the docker host? for example the first two web containers on internal network 172 and the second two containers on a different internal network like 182, by default Docker only created one internal bridge network. but we could create our own internal network (docker network create --driver bridge --subnet 182.18.0.0/16 custom-isolated-network), (<bridge> here dirver).
+> docker network ls    # list networks.
 
-How do we see the network settings and IP address assinged to an existing containers?
+# How do we see the network settings and IP address assinged to an existing containers?
 > docker inspect container_Name | container_ID
-see there <Networks> section.
+# see there <Networks> section.
 
 
-containers can reach each other using their names, (ye apni IP k zarye bhi 1 dusry ko pehchan sakty hen, magar masla ye h k is bat ki koi garantee nahi h k rebot k bad bhi usy same IP mily gi, jab container ka name change nahi hota.)
-Docker has a built in DNS server that helps the containers to resolve each other using the container name. Note that built in DNS server always run at address 127.0.0.11.
-Q: so How does Docker implement networking?
-A: Dcoker uses network names spaces that creates a separete namespace for each container, it then uses virtual Ethernet pairs to connect containers together.
+# containers can reach each other using their names, (ye apni IP k zarye bhi 1 dusry ko pehchan sakty hen, magar masla ye h k is bat ki koi garantee nahi h k rebot k bad bhi usy same IP mily gi, jab container ka name change nahi hota.)
+# Docker has a built in DNS server that helps the containers to resolve each other using the container name. Note that built in DNS server always run at address 127.0.0.11.
+# Q: so How does Docker implement networking?
+# A: Dcoker uses network names spaces that creates a separete namespace for each container, it then uses virtual Ethernet pairs to connect containers together.
 
 
 
@@ -200,52 +197,49 @@ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
 
 
 
-Q: Deploy a web application named webapp, using image kodekloud/simple-webapp-mysql. Expose port to 38080 on the host. The application takes an environment variable DB_Host that has the hostname of the mysql database. Make sure to attach it to the newly created network wp-mysql-network
-A: docker run -p 38080 --name webapp -d --network wp-mysql-network -e DB_Host=mysql-db kodekloud/simple-webapp-mysql
+# Q: Deploy a web application named webapp, using image kodekloud/simple-webapp-mysql. Expose port to 38080 on the host. The application takes an environment variable DB_Host that has the hostname of the mysql database. Make sure to attach it to the newly created network wp-mysql-network
+# A: docker run -p 38080 --name webapp -d --network wp-mysql-network -e DB_Host=mysql-db kodekloud/simple-webapp-mysql
 
 
 # ----------------- Docker registry
-Q: what is registry?
-A: where docker images are saved.
+# Q: what is registry?
+# A: where docker images are saved.
 
-when we run docker container we should mention registry, user_account and repositry_name eg:
+# when we run docker container we should mention registry, user_account and repositry_name eg:
 > docker run registry/user_account/repositry_name
 > docker run docker.io/nginx/ngix
 
-registry default is: docker.io
-user_account default is: repositry_name
+# registry default is: docker.io
+# user_account default is: repositry_name
 
-to agar me srif 1 hi argument(x) dun ga to ye dono default is k sath mil kar u ho jay ga:
+# to agar me srif 1 hi argument(x) dun ga to ye dono default is k sath mil kar u ho jay ga:
 > docker run x
 > docker run docker.io/x/x
 
-there are many registries, like gcr.io (for google)
+# there are many registries, like gcr.io (for google)
 
-
-when you have applications built in house that should not be availible to the public hosting an internal private registry mey be a good solution, to run a container using an image from a private registry you first login to your private registry:
+# when you have applications built in house that should not be availible to the public hosting an internal private registry mey be a good solution, to run a container using an image from a private registry you first login to your private registry:
 > docker login private-registry.io
-then
+# then
 > docker run private-registry.io/apps/internal-app
 
 
 
 
-How to deploy you own registry witiin your orgnization?
-A: the docker registry is itself an another application (it is availible as a docker image, the name of the image is a registry, and it is exposes the API on port 5000)
+# How to deploy you own registry witiin your orgnization?
+# A: the docker registry is itself an another application (it is availible as a docker image, the name of the image is a registry, and it is exposes the API on port 5000)
 > docker run -d -p 5000:5000 --name registry registry:2
 
-now that you have your custom registry running at port 5000 on this docker host, how to push you own image to it?
-A:
+# now that you have your custom registry running at port 5000 on this docker host, how to push you own image to it?
+# A:
 > docker image tag-image localhost:5000/my-image
 > docker push localhost:5000/my-image
 
-and then pull this image within your local network:
-if you on the same host:
+# and then pull this image within your local network:
+# if you on the same host:
 	> docker pull localhost:5000/my-image
-of the IP or domain name of my docker host if i accessing from anohter host in my invoirment:
+# of the IP or domain name of my docker host if i accessing from anohter host in my invoirment:
 	> docker pull 192.168.56.100:5000/my-image
 
-Deploy a mysql database using the mysql:5.6 image and name it mysql-db. Attach it to the newly created network wp-mysql-network, Set the database password to use db_pass123. The environment variable to set is MYSQL_ROOT_PASSWORD
+# Deploy a mysql database using the mysql:5.6 image and name it mysql-db. Attach it to the newly created network wp-mysql-network, Set the database password to use db_pass123. The environment variable to set is MYSQL_ROOT_PASSWORD
 docker run -d --name=mysql-db --network wp-mysql-network -e MYSQL_ROOT_PASSWORD=db_pass123 mysql:5.6
-
-
