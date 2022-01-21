@@ -1,3 +1,10 @@
 + ........... speed up by 50%
 - ........... speed down by 50%
+CTRL + right key ....... forward fastest
+rigth key .............. forward normal
+SHIFT + right key ...... forward slow
+
+CTRL + left key ....... rewind fastest
+rigth key ............. rewind normal
+SHIFT + left key ...... rewind slow
 
