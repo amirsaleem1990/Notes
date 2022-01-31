@@ -1082,3 +1082,15 @@ mysql DB sizes in MB ............... SELECT table_schema AS "Database", SUM(data
 
 
 create a sqlite3 database from .sql file .................. cat db.sql | sqlite3 database.db
+
+# create new user
+# CREATE USER 'db_user'@'localhost' IDENTIFIED BY 'passw0rd';
+# GRANT ALL PRIVILEGES ON *.* TO 'db_user' @'localhost' WITH GRANT OPTION;
+# FLUSH PRIVILEGES;
+
+# Drop existing database
+# mysql -u db_user -p'passw0rd'  -e "DROP DATABASE kashat;" 2>/dev/null
+									
+
+# Crete new database
+# mysql -u db_user -p'passw0rd' -e "CREATE DATABASE kashat CHARACTER SET utf8mb4;"
