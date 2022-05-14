@@ -1,3 +1,4 @@
+change admin password .......... python3 manage.py changepassword
 create project ................. django-admin startproject telusko
 start server ................... ipython3 manage.py runserver
 create an app .................. ipython3 manage.py startapp calc
