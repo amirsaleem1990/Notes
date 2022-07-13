@@ -1,0 +1,11 @@
+open terminal in current working directory:
+	1- Install the following extention:
+		Name: Terminal Here
+		Id: Tyriar.vscode-terminal-here
+		Description: Creates an intergrated terminal session at the current file's directory
+		Version: 0.2.4
+		Publisher: Daniel Imms
+		VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=Tyriar.vscode-terminal-here
+	2- Create a keyboard shortcut for it.
+		settings >  keyboard shortcuts > search for 'terminalHere.create' and create a keybinding.
+
