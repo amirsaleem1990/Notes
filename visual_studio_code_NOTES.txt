@@ -9,3 +9,7 @@ open terminal in current working directory:
 	2- Create a keyboard shortcut for it.
 		settings >  keyboard shortcuts > search for 'terminalHere.create' and create a keybinding.
 
+
+
+'Line numbers for every cell in VSCode Jupyter Notebook Cells.png'
+
