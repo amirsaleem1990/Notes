@@ -1,0 +1,9 @@
+to access your Django on local network; do
+	1- go to settings.py
+		paste this 
+			ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'YOUR_IP_ADDRESS']
+		OR this
+			ALLOWED_HOSTS = ['*']
+		at the bottom (to override empty variable with same name)
+	2- run python manage.py runserver YOUR_IP_ADDRESS:8000
+	3- Now you can access this web from any local machine
