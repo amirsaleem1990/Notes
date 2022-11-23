@@ -13,3 +13,6 @@ open terminal in current working directory:
 
 'Line numbers for every cell in VSCode Jupyter Notebook Cells.png'
 
+
+
+CTRL + SHIFT + C .............. open saperate Linux terminal in the opened file path
