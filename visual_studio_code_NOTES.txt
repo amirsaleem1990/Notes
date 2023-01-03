@@ -16,3 +16,4 @@ open terminal in current working directory:
 
 
 CTRL + SHIFT + C .............. open saperate Linux terminal in the opened file path
+CTRL _ SHIFT + D .............. cuplicate current line
