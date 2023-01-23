@@ -16,4 +16,10 @@ open terminal in current working directory:
 
 
 CTRL + SHIFT + C .............. open saperate Linux terminal in the opened file path
-CTRL _ SHIFT + D .............. cuplicate current line
+CTRL + SHIFT + D .............. cuplicate current line
+ALT + SHIFT + M ............... Toggle Maximized Panel
+CTRL + SHIFT + ~ .............. Move focus to terminal
+CTRL + SHIFT + 1 .............. Move focus to first editor screen
+CTRL + SHIFT + 2 .............. Move focus to second editor screen
+CTRL + x ...................... Remove current line (You dont have to select the entire line)
+CTRL + c ...................... copy current line (You dont have to select the entire line)
