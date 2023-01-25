@@ -23,3 +23,4 @@ CTRL + SHIFT + 1 .............. Move focus to first editor screen
 CTRL + SHIFT + 2 .............. Move focus to second editor screen
 CTRL + x ...................... Remove current line (You dont have to select the entire line)
 CTRL + c ...................... copy current line (You dont have to select the entire line)
+CRTL + D ...................... go to next same word as your cursor on
