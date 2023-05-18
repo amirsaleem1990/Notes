@@ -1,0 +1,6 @@
+CTRL + s : Create a new folder
+CTRL + n : Open the current location in onther window
+CTRL + L : Get the current path
+CTRL + T : New tab
+CTRL + D : Add the current directory to the left panel for quick access
+
