@@ -1,2 +1,3 @@
 CTRL + SHIFT + left_arrow/right_arrow ............... shift subterminal into left/right
+CTRL + SHIFT + UP/DOWN .............................. scroll up/down
 
