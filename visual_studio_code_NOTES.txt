@@ -25,3 +25,4 @@ CTRL + x ...................... Remove current line (You dont have to select the
 CTRL + c ...................... copy current line (You dont have to select the entire line)
 CRTL + D ...................... go to next same word as your cursor on
 CTRL + SHIFT + left click ..... go to character by mouse, press CTRL + SHIFT and then click on something bottom or upper in the exect bottom or top.
+CTRL + L : Press CTRL + L, the current line will be hightlighted, then every extra pressing L the next line will be hightlighted
